@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Transforms and Animations</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../css/main.css">
+	<link rel="stylesheet" type="text/css" href="../../css/slides.css">
+	<link rel="stylesheet" type="text/css" href="../../css/typography.css">
+	<link rel="icon"type="image/svg"href="../../assets/favicon.svg">
+	<script src="../slides.js"></script>
+	<style>
+		.diagram{
+			background: none;
+			border: none;
+			flex: 1;
+		}
+		.square{
+			position: absolute;
+		}
+
+		.magmatic-animate{
+			line-height: 2;
+			padding-left: 20px;
+			font-size: 150px;
+		  animation: magmatic-axis 6s linear alternate infinite;
+		}
+		@keyframes magmatic-axis{
+			0% {
+			  font-variation-settings: 'wght' 100, 'wdth' 150,
+			  'XHGT' 0;
+			}
+			25% {
+			  font-variation-settings: 'wght' 900, 'wdth' 150,
+			  'XHGT' 0;
+			}
+			50% {
+			  font-variation-settings: 'wght' 900, 'wdth' 50,
+			  'XHGT' 0;
+			}
+			75% {
+			  font-variation-settings: 'wght' 100, 'wdth' 50,
+			  'XHGT' 0;
+			}
+			100% {
+			  font-variation-settings: 'wght' 100, 'wdth' 150,
+			  'XHGT' 0;
+			}
+		}
+				
+	</style>
+</head>
+<body class="layout-slides">
+	<main>
+		<section class="slide divider">
+			<div class="text">
+				<h1>CSS Transforms and Animations</h1>
+				<h2>Change & Motion</h2>
+			</div>
+			<footer class="grid">
+				<div class="runner-1">Web Typography Workshop @ Letterform Archive</div>
+				<div class="runner-2">Week 3</div>
+			</footer>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>CSS Transforms</h2>
+				<p>
+					CSS transform allows you to change the shape and position of HTML elements without disrupting the normal flow. For 2D transforms, the x-value is declared first, then the y-value.
+				</p>
+				<p>
+					The general syntax is as follows: <code>transform: { transform-type(units) }</code> Note: regardless of the <em>type</em> of transform you apply, we use the <code>transform</code> property. The property has the following parameters.
+				</p>
+			</div>
+		</section>
+
+
+		<section class="slide">
+			<div class="text">
+				<h3>Transform Origin</h3>
+				<p>
+					<code>transform-origin</code> specifies the origin point of the transformation performed. This can be specified in multiple forms, including keywords, <code>%</code> values, and <code>px</code>. It is at the center of the element by default.
+				</p>
+				<div class="grid">
+					<div class="text-column">
+						<pre class="language-css"><code>
+.example {
+	transform: rotate(-10deg);
+	transform-origin: bottom left;
+}
+						</code></pre>
+					</div>
+					<div class="text-column">
+						<div class="diagram">
+							<div class="square marked-old">
+								a
+							</div>
+							<div class="square marked" style="transform: rotate(-10deg); transform-origin: bottom left;">
+								a
+							</div>
+						</div>
+					</div>
+					
+				</div>
+
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h3>Rotate</h3>
+				<p>
+					<code>rotate()</code> Rotates the element clockwise or counter-clockwise(<code>-</code>). This must be specified in degrees (<code>deg</code>).
+				</p>
+				<div class="grid">
+					<div class="text-column">
+						<pre class="language-css"><code>
+.rotate {
+	transform: rotate(30deg);
+}
+						</code></pre>
+					</div>
+					<div class="text-column">
+
+						<div class="diagram">
+							<div class="square marked-old">
+								a
+							</div>
+							<div class="square marked" style="transform: rotate(30deg); ">
+								a
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>	
+
+		<section class="slide">
+			<div class="text">
+				<h3>2D Translate</h3>
+				<p>
+					<code>translate()</code> moves an element sideways, up, or down. This can be specified in any length unit.
+				</p>
+				<div class="grid">
+					<div class="text-column">
+						<pre class="language-css"><code>
+.translate{
+	transform: translate(40px, 20px);
+}
+						</code></pre>
+					</div>
+					<div class="text-column">
+						<div class="diagram">
+							<div class="square marked-old">
+								a
+							</div>
+							<div class="square marked" style="transform: translate(40px, 20px);">
+								a
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>						
+
+		<section class="slide">
+			<div class="text">
+				<h3>Scale</h3>
+				<p>
+					<code>scale()</code> stretches an element horizontally and/or vertically. Scale values are declared unitless, as a ratio. The scaling applies to everything within the element. When specifying one value, it will scale it by that number proportionally. When specifying two (comma-separated) values, it will scale the element along the X and Y axis accordingly. 
+				</p>
+
+				<div class="grid">
+					<div class="text-column">
+						<pre class="language-css"><code>
+.scale-preserve-ratio {
+	transform: scale(.7);
+}
+
+.scale-xy {
+	transform: scale(.5, 1.5);
+}
+						</code></pre>
+					</div>
+					<div class="text-column flex">
+						<div class="diagram">
+							<div class="square marked-old">
+								a
+							</div>
+							<div class="square marked" style="transform: scale(.7);">
+								a
+							</div>
+						</div>
+						<div class="diagram">
+							<div class="square marked-old">
+								a
+							</div>
+							<div class="square marked" style="transform: scale(.5, 1.5);">
+								a
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</section>			
+
+		<section class="slide">
+			<div class="text">
+				<h3>Skew</h3>
+				<p>
+					<code>skew()</code> stretches an element horizontally and/or vertically. Skews are defined in degrees (<code>deg</code>). Contained elements, such as text, will also be skewed. Similar to <code>scale</code>, it can apply along X and/or Y axes.
+				</p>
+				<div class="grid">
+					<div class="text-column">
+						<pre class="language-css"><code>
+.skew {
+	transform: skew(10deg, 30deg);
+}				</code></pre>
+						</div>
+						<div class="text-column">
+							<div class="diagram">
+								<div class="square marked-old">
+									a
+								</div>
+								<div class="square marked" style="transform: skew(10deg,30deg);">
+									a
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h3>Combining transforms</h3>
+					<p>
+						Multiple transforms can be applied to the same element with a space in between. Note: you cannot declare multiple transforms with separate <code>transform</code> property rules; the latter will override the former. Transforms are applied in the order they are declared. <a href="https://learn.shayhowe.com/advanced-html-css/css-transforms/">More on transforms</a> including perspectival / 3D effects.
+					</p>
+					<div class="grid">
+						<div class="text-column">
+							<pre class="language-css"><code>
+.combined-example {
+	transform: scale(.3, 1.2) rotate(30deg)
+	skewY(-15deg) translate(50px, 20%);
+
+	// this won’t combine
+	// transform: scale(.3, 1.2);
+	// transform: rotate(30deg);
+}
+							</code></pre>
+						</div>
+						<div class="text-column">
+							<div class="diagram">
+								<div class="square marked-old">
+									a
+								</div>
+								<div class="square marked" style="transform: scale(.3, 1.2) rotate(30deg) skewY(-15deg) translate(50px, 20%);">
+									a
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>See also: filters & blend modes</h2>
+					<p>
+						While transforms are one way of modifying the shapes on the page, filters and blend-modes provide similar functions to Photoshop effects and layers. See more about <a href="https://css-tricks.com/almanac/properties/f/filter/" target="_blank">filters</a>, <a href="https://css-tricks.com/almanac/properties/b/background-blend-mode/" target="_blank">background blend modes</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode" target="_blank">mix blend modes</a>. Note: <code>background-blend-mode</code> is for a background image of an element, and <code>mix-blend-mode</code> is for an html element itself.
+					</p>
+				</div>
+			</section>	
+
+			<section class="slide">
+				<div class="text">
+					<h2>CSS Transitions</h2>
+					<p>
+						Transitions allow (“animatable”) property changes in CSS values to occur smoothly over a specified duration. Transitions requires a trigger (such as <code>:hover</code>) to take effect. They are declared to the element targeted for the change. (Note: By specifying the transition on the element itself, you define the transition to occur in both directions, both on/off hover.)
+					</p>
+					<p>
+						The general syntax looks like <code>transition: background-color 1s ease-in 2s;</code> 
+						(This is theshorthand notation that combines the following properties. The first unit of time is always the duration; the second the delay.)
+					</p>
+				</div>
+			</section>
+
+		<section class="slide">
+			<div class="text">
+				<h3>Transition Demo</h3>
+				<div class="grid">
+					<div class="text-column">
+						<pre class="language-css"><code>
+.normal:hover{
+	transform: rotate(45deg);
+}
+.transition{
+	transition: transform 400ms ease-in-out;
+
+	//note that transition property is applied
+	//to the selector without the :hover
+}
+.transition:hover{
+	transform: rotate(45deg);
+}
+
+				</code></pre>
+						</div>
+						<div class="text-column flex">
+							<div class="diagram">
+								<div class="square marked hover">
+									a
+								</div>
+							</div>
+							<div class="diagram">
+								<div class="square marked hover trans">
+									a
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>			
+
+			<section class="slide">
+				<div class="text">
+					<h3>Transition Properties</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>property</th>
+								<th>description</th>
+								<th>example</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><code>transition-property</code></td>
+								<td>property being transitioned (or use <code>transition-property: all</code>) — see <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties" target="_blank">list of properties</a></td>
+								<td><code>transition-property: background-color</code></td>
+							</tr>
+							<tr>
+								<td><code>transition-duration</code></td>
+								<td>duration of effect, in seconds (s) or milliseconds (ms)</td>
+								<td><code>transition-duration: 1s;</code></td>
+							</tr>
+							<tr>
+								<td><code>transition-timing-function</code></td>
+								<td>transition style — see <a href="https://codepen.io/stephengreig/pen/bHzqm" target="_blank">common easing effects</a></td>
+								<td><code>transition-timing-function: ease-in; </code></td>
+							</tr>
+							<tr>
+								<td><code>transition-delay</code></td>
+								<td>delay until starting effect, in seconds (s) or milliseconds (ms)</td>
+								<td><code>transition-delay: 2s;</code></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>CSS Animations</h2>
+					<p>
+						Using just CSS, you can create animation sequences for any element. Unlike CSS transitions, animations allow motion without triggers. Animations consist of two separate sets of CSS declarations:
+					</p>
+					<ol>
+						<li><code>@keyframes</code> specifies the state of the element at a certain time point (relative to defined timing of animation.) These can be declared with keywords <code>from</code> and <code>to</code> or <code>%</code> units of the animation duration.
+						</li>
+						<li><code>animation</code> properties apply the keyframe animation to one or many elements (depending on the CSS selector)</li>
+					</ol>
+
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h3>Animation Demo</h3>
+					<div class="grid">
+						<div class="text-column">
+							<pre><code>
+@keyframes changecolor {
+  0% {
+    background-color: blue;
+    border-radius: 0;
+  }
+  50% {
+    background-color: red;
+  }
+  100% {
+    background-color: green;
+    border-radius: 50px;
+  }
+}
+
+#animated-div{
+	color: white;
+	background: grey;
+  animation: changecolor 10s linear 3s infinite alternate;
+}						
+					</code>
+				</pre>
+					</div>
+					<div class="text-column">
+						<div style="color: white; background: grey; padding: 1em; margin: 1em; animation: changecolor 10s linear 3s infinite alternate;">
+						  Animation Demo
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h3>Animation Properties</h3>
+				<table>
+					<thead>
+						<tr>
+							<th>property</th>
+							<th>description</th>
+							<th>example</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>animation-name</code></td>
+							<td>identifier given to animation in @keyframes declarations, any name without spaces</td>
+							<td><code>animation-name: changecolor;</code></td>
+						</tr>
+						<tr>
+							<td><code>animation-duration</code></td>
+							<td>duration of animation, which is broken up into the waypoints defined in keyframes, in seconds (s) or milliseconds (ms)</td>
+							<td><code>animation-duration: 10s;</code></td>
+						</tr>
+						<tr>
+							<td><code>animation-timing-function</code></td>
+							<td>animation style, same as transitions</td>
+							<td><code>animation-timing-function: linear; </code></td>
+						</tr>
+						<tr>
+							<td><code>animation-delay</code></td>
+							<td>delay until starting animation, in seconds (s) or milliseconds (ms)</td>
+							<td><code>animation-delay: 3s;</code></td>
+						</tr>
+						<tr>
+							<td><code>animation-iteration-count</code></td>
+							<td>number of times the animation runs, <code>infinite</code> or numbers</td>
+							<td><code>animation-iteration-count: infinite;</code></td>
+						</tr>
+						<tr>
+							<td><code>animation-direction</code></td>
+							<td>from what direction the animation begins, <code>normal</code>, <code>reverse</code>, <code>alternate</code>, <code>alternate-reverse</code></td>
+							<td><code>animation-direction: alternate;</code></td>
+						</tr>
+						<tr>
+							<td><code>animation-play-state</code></td>
+							<td>whether to play or pause, <code>running</code> (default), <code>paused</code></td>
+							<td><code>animation-play-state: running;</code></td>
+						</tr>
+						<tr>
+							<td><code>animation-fill-mode</code></td>
+							<td>whether to apply styles before and after the animation executes, <code>none</code> (default), <code>forwards</code>, <code>backwards</code>, <code>both</code></td>
+							<td><code>animation-fill-mode: none;</code></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>Animations and Transforms</h2>
+				<p>
+					Transitions and animations can be applied to any <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties" target="_blank">“animatable”</a> CSS property, but we should be careful as some properties may eat up some of your website performance (and your animation may appear choppy.) Not all properties are “animatable.” Transform properties lend well to transitions and animations. Variable font properties can also be animated.
+				</p>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h3>Variable Font Animation Demo</h3>
+				<div class="grid">
+					<div class="text-column" style=>
+						<pre><code>
+.magmatic-animate{
+  animation: magmatic-axis
+  	6s linear alternate infinite;
+}
+
+@keyframes magmatic-axis{
+0% {
+  font-variation-settings: 'wght' 100, 'wdth' 150,
+  'XHGT' 0;
+}
+25% {
+  font-variation-settings: 'wght' 900, 'wdth' 150,
+  'XHGT' 0;
+}
+50% {
+  font-variation-settings: 'wght' 900, 'wdth' 50,
+  'XHGT' 0;
+}
+75% {
+  font-variation-settings: 'wght' 100, 'wdth' 50,
+  'XHGT' 0;
+}
+100% {
+  font-variation-settings: 'wght' 100, 'wdth' 150,
+  'XHGT' 0;
+}
+}
+					</code>
+				</pre>
+					</div>
+					<div class="text-column">
+						<div class="magmatic magmatic-animate animate">
+						  Abc
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		</main>
+	</body>
+</html>

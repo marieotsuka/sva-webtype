@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSS Basics</title>
+		<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../css/main.css">
+		<link rel="stylesheet" type="text/css" href="../../css/slides.css">
+		<link rel="icon"type="image/svg"href="../../assets/favicon.svg">
+		<script src="../slides.js"></script>
+	</head>
+	<body class="layout-slides">
+		<main>
+			<section class="slide divider">
+				<div class="text">
+					<h1>CSS Basics</h1>
+					<h2>Styling your markup</h2>
+				</div>
+				<footer class="grid">
+					<div class="runner-1">Web Typography Workshop @ Letterform Archive</div>
+					<div class="runner-2">Week 1</div>
+				</footer>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>Cascading Style Sheets</h2>
+					<p>CSS = <strong>C</strong>ascading <strong>S</strong>tyle<strong>s</strong>heets</p>
+					<p>
+						CSS is the language determining the look and feel of HTML elements.<br>
+						CSS defines the form of a website’s content by listing rules for how elements should appear.
+					</p>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>Layers of a webpage</h2>
+					<table>
+						<tr>
+							<th>Layer</th>
+							<th>Language / File Type</th>
+						</tr>
+						<tr>
+							<td>content</td>
+							<td>HyperText Markup Language (HTML) </td>
+						</tr>
+						<tr>
+							<td><strong>form</strong></td>
+							<td><strong>Cascading StyleSheets (CSS)</strong></td>
+						</tr>
+						<tr>
+							<td>behavior</td>
+							<td>JavaScript (JS)</td>
+						</tr>
+					</table>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>CSS</h2>
+					<figure><code>p {
+						color: blue;
+						}
+						</code>
+					</figure>
+					<figcaption>A CSS assignment</figcaption>
+					<table>
+						<tr><td><strong>selector</strong> (targeted html element)</td><td>  <code>p</code></td></tr>
+						<tr><td>opening curly brackets</td><td> <code>{</code></td></tr>
+						<tr><td>
+							<strong>declaration</strong> (rules applied to that element)</td><td> <code>color: blue;</cotd></code>
+							<table>
+								<tr><td><strong>property</strong> what you’re formatting, such as size and color)</td><td> <code>color</code></td></tr>
+								<tr><td>colon  <code>:</code></td></tr>
+								<tr><td><strong>value</strong> (what you’re setting the specified property to be)</td><td> <code>blue</code></td></tr>
+								<tr><td>semicolon to end value</td><td><code>;</code></td></tr>
+							</table>
+						</li>
+						<tr><td>closing curly brackets</td><td> <code>}</code></td></tr>
+					</table>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>How it works</h2>
+					<p>There are 2 components to styling your website.</p>
+					<ol>
+						<li>Write your CSS with the selectors relevant to your HTML markup.</li>
+						<li>Load that CSS into your webpage.</li>
+					</ol>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>Inline CSS</h2>
+					<p>Inline styles are specified as an attribute inside of an individual HTML element with the syntax <code>style=&quot;property: value;&quot;</code> and applies only to that element. This is the least desirable way, as it can be inefficient and lead to inconsistencies.</p>
+					<pre><code>
+&lt;p style = &quot;color: blue;&quot;&gt; First paragraph text. &lt;/p&gt;
+&lt;p&gt; Second paragraph text. &lt;/p&gt;
+					</code></pre>
+					<div class="diagram">
+						<p style="color: blue;">First paragraph text.</p>
+						<p>Second paragraph text.</p>
+					</div>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>Internal CSS</h2>
+					<p>Internal CSS is declared within the head of the document. Selectors apply to all instances of that page. This keeps the HTML markup clean and uncluttered. It’s much more efficient than inline styling, but not as effective as external stylesheets.</p>
+				  <pre><code>
+&lt;html&gt;
+&lt;head&gt;
+	&lt;style type=&quot;text/css&quot;&gt;
+		p  {
+		 color: blue;
+		}
+	&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;First paragraph text.&lt;/p&gt;
+  &lt;p&gt;Second paragraph text.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+				  </code></pre>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>External CSS</h2>
+					<p>External CSS keeps all css declarations in a separate document that gets pulled into the webpage.</p>
+					
+					<figure><code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;styles.css&quot;&gt;</code></figure>
+					
+					<p>Selectors apply to <em>all matching elements</em> in <em>all webpages</em> that use the same stylesheet. This method is the ideal method of formatting your site, since it ensures consistency across pages. It also keeps things flexible: by changing one property in the external stylesheet, all instances could be easily changed.</p>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>Selectors</h2>
+					<p>The selector refers to how the CSS targets elements to style. Instead of writing a rule for every element, we can write overarching rules that apply to most elements, then override the properties on individual elements. Usually, you would want to write the most general rules first, then the more specific ones. Selectors help tailor our rules to define specific elements. The more specific the selector, the higher its priority.</p>
+				</div>
+			</section>
+					<section class="slide">
+				<div class="text">			
+					<h3>Element Selectors</h3>
+					<p>Elemen selectors simply use the HTML tag name to target that element, such as <code>body, p, h1, ul, li, table</code>, etc.</p>
+					<div class="grid">
+						<div class="text-column">
+							<figcaption>Your CSS</figcaption>							
+							<pre><code>
+body{
+	color: red;
+}								
+p{
+	color: blue;
+}
+							</code></pre>
+
+						</div>
+						<div class="text-column">
+							<figcaption>Your HTML</figcaption>
+							<pre><code>
+&lt;body&gt;						
+&lt;h1&gt;This is an h1&lt;/h1&gt;
+&lt;p&gt;Paragraphs are blue&lt;/p&gt;
+&lt;h2&gt;This is an h2&lt;/h2&gt;
+&lt;p&gt;This is another paragraph&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;A list item&lt;/li&gt;
+	&lt;li&gt;Another list item&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/body&gt;
+</code></pre>
+							
+						</div>
+					</div>
+
+					<div class="diagram">
+						<h1 style="font-size: 2em; color: red">This is an h1</h1>
+						<p style="color: blue">Paragraphs are blue</p>
+						<h2 style="font-size: 1.5em; color: red">This is an h2</h2>
+						<p style="color: blue">This is another paragraph</p>
+						<ul style="color: red; margin-left: 0;">
+							<li>A list item</li>
+							<li>Another list item</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>Inheritance</h2>
+					<p>Inheritance is a key concept in CSS. It refers to how children take on css properties of their parents if they don’t have that property specified. Not all css declarations are inherited. In the previous example, the <code>h1, h2, ul, li</code> elements all inherited the <code> color: red</code> rule from the <code>body</code>. </p>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">			
+					<h3>Classes</h3>
+					<p>By assigning a <strong>class</strong> to elements (with the <code>class</code> attribute) in your HTML, we can apply your rule to just elements that have that particular class. In your stylesheet, all class names are preceded by a period (<code>.</code>).</p>
+					<div class="grid">
+						<div class="text-column">
+							<figcaption>Your CSS</figcaption>							
+							<pre><code>
+.highlight {
+	background: yellow;
+}
+							</code></pre>
+
+						</div>
+						<div class="text-column">
+							<figcaption>Your HTML</figcaption>
+							<pre><code>
+&lt;p&gt;This is Demo text &lt;/p&gt;
+&lt;p class=&quot;highlight&quot;&gt; Paragraph text 1 &lt;/p&gt;
+&lt;p&gt; Paragraph text 2 &lt;/p&gt;
+&lt;ul&gt;
+	&lt;li class=&quot;highlight&quot;&gt;List item 1 &lt;/li&gt;
+	&lt;li&gt;List item 2&lt;/li&gt;
+	&lt;li&gt;List item 3&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+							
+						</div>
+					</div>
+
+					<div class="diagram">
+						<p>This is Demo text </p>
+						<p class="highlight"> Paragraph text 1 </p>
+						<p> Paragraph text 2 </p>
+						<ul>
+							<li class="highlight">List item 1 </li>
+							<li>List item 2</li>
+							<li>List item 3</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+				<section class="slide">
+					<div class="text">			
+						<h3>IDs</h3>
+						<p><strong>Ids</strong> work similarly to classes, but <em>only one element</em> may be given a particular id. You define id names by preceding them with a hash symbol (<code>#</code>).</p>
+						<div class="grid">
+							<div class="text-column">
+								<figcaption>Your CSS</figcaption>							
+								<pre><code>
+.highlight {
+	background: yellow;
+}
+
+#demo {
+	font-weight: bold;
+}
+							</code></pre>
+							</div>
+							<div class="text-column">
+								<figcaption>Your HTML</figcaption>
+								<pre><code>
+&lt;p id=&quot;demo&quot;&gt;This is Demo text &lt;/p&gt;
+&lt;p class=&quot;highlight&quot;&gt; Paragraph text 1 &lt;/p&gt;
+&lt;p&gt; Paragraph text 2 &lt;/p&gt;
+&lt;ul&gt;
+	&lt;li class=&quot;highlight&quot;&gt;List item 1 &lt;/li&gt;
+	&lt;li&gt;List item 2&lt;/li&gt;
+	&lt;li&gt;List item 3&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+							</div>
+						</div>
+
+						<div class="diagram">
+							<p id="demo">This is Demo text </p>
+							<p class="highlight"> Paragraph text 1 </p>
+							<p> Paragraph text 2 </p>
+							<ul>
+								<li class="highlight">List item 1 </li>
+								<li>List item 2</li>
+								<li>List item 3</li>
+							</ul>
+						</div>
+					<p><em>Note:</em> Class and IDs names should not include spaces or special characters, or begin with a number.</p>			
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>Multiple selection</h2>
+					<p>By separating selectors with commas, you can apply the same rule to multiple HTML elements.</p>
+						<div class="grid">
+							<div class="text-column">
+								<figcaption>Your CSS</figcaption>							
+								<pre><code>
+h2, .introduction{
+	font-size: 2rem;
+}
+							</code></pre>
+							</div>
+							<div class="text-column">
+								<figcaption>Your HTML</figcaption>
+								<pre><code>
+&lt;h2&gt;This is my h2&lt;/h2&gt;
+&lt;p class=&quot;introduction&quot;&gt;
+	This is a paragraph with class '.introduction'
+&lt;/p&gt;
+</code></pre>
+							</div>
+						</div>
+
+						<div class="diagram">
+							<h2 style="font-size: 2rem">This is my h2</h2>
+							<p style="font-size: 2rem" class="introduction">This is a paragraph with class '.introduction'</p>
+						</div>
+				</div>
+				</div>
+			</section>			
+			<section class="slide">
+				<div class="text">
+					<h2>Child selection</h2>
+					<p>By separating selectors with spaces, you can the structure of your HTML—the nested hierarchy—to target specific elements.</p>
+					<div class="grid">
+						<div class="text-column">
+							<figcaption>Your CSS</figcaption>							
+							<pre><code>
+p, h2{
+	font-size: 1rem;
+}
+.summary{
+	background: yellow;
+}
+.summary p{
+	font-size: 2rem;
+}
+
+						</code></pre>
+						</div>
+						<div class="text-column">
+							<figcaption>Your HTML</figcaption>
+								<pre><code>
+&lt;p&gt;This is a regular paragraph&lt;/p&gt;
+&lt;div class=&quot;summary&quot;&gt;
+	&lt;h2&gt;This is an h2 within summary&lt;/h2&gt;
+	&lt;p&gt;
+		This is a paragraph that is nested within a 
+		.summary div
+	&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+						</div>
+					</div>
+
+					<div class="diagram">
+						<p>This is a regular paragraph</p>
+						<div class="summary" style="background: yellow;">
+							<h2 style="font-size: 1rem;">This is an h2 within summary</h2>
+							<p style="font-size: 2rem;">This is a paragraph that is nested within a .summary div</p>
+						</div>
+					</div>
+			</div>
+		</div>
+		</section>
+			<section class="slide">
+				<div class="text">
+					<h2>The Cascade</h2>
+					<p>Cascade refers to the way the stylesheet processes and assigns weights to rules that apply to the same element, ultimately determining which properties will modify a given element. The weight—how strong a rule is—is determined by the following three parameters:</p>
+					<ol>
+						<li>Origin</li>
+						<li>Specificity</li>
+						<li>Rule Order</li>
+					</ol>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>1. Origin</h2>
+					<p>Stylesheets may come from 3 different sources, processed in the following order</p>
+					<ol>
+						<li><strong>User agent</strong> The browser’s default style sheet.</li>
+						<li><strong>User</strong> Such as the user’s browser options.</li>
+						<li><strong>Author</strong> This is the CSS provided by the page (whether inline, embedded or external.) Inline &gt; Internal &gt; External</li>
+					</ol>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>2. Specificity</h2>
+					<p>When rules within the same stylesheet conflict, the type of selector determines which has more weight. These are some common selectors, ordered from least specific to most specific.</p>
+					<ol>
+						<li><strong>Type</strong> Element selectors <code>h1, p, li</code></li>
+						<li><strong>Class</strong> Class selectors <code>.myclass, :hover, [disabled]</code></li>
+						<li><strong>Id</strong> ID selectors <code>#myid</code></li>
+					</ol>
+					<p>The specifity adapts according to whether you use the structure of HTML hierarchy. For example, <code>p a{ color: red;}</code> (a link tag within a paragraph) is more specific than <code> a{ color: blue; }</code> (a link tag anywhere).</p>
+				</div>
+			</section>
+			
+			<section class="slide">
+				<div class="text">
+					<h2>3. Rule order</h2>
+					<p>Between style rules of identical weight, last one wins</p>
+					<p>※ note: the <code>!important</code> rule allows overrides to this hierarchy, but should be used sparingly</p>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>Color</h2>
+					<p>Color can be specified in various formats. You can inspect color codes by using the color picker in your dev tools (inspector.)</p>
+					<table>
+						<thead>
+							<tr>
+								<th>format</th>
+								<th>sample syntax</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>RGB(A)</td>
+								<td><code>color: rgb (255,0,0); color: rgba (255,0,0,0.5);</code></td>
+							</tr>
+							<tr>
+								<td>HSL(A)</td>
+								<td><code>color: hsl(0,100%,50%); color: hsla(0,100%,50%,0.5);</code></td>
+							</tr>
+							<tr>
+								<td>Hex</td>
+								<td><code>color: #ff0000; color: #f00;</code></td>
+							</tr>
+							<tr>
+								<td>Color name</td>
+								<td><code>color: red;</code></td>
+							</tr>
+						</tbody>
+					</table>
+					<p>Note: the <code>color</code> css property only specifies the <em>foreground text color</em> of elements. Use <code>background-color</code> to specify the color of your <em>entire element area</em>.</p>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>Text</h2>
+					<p>Some common text-styling properties include:</p>
+					<table>
+						<thead>
+							<tr>
+								<th>property</th>
+								<th>description</th>
+								<th>possible values</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><code>text-align</code></td>
+								<td>alignment of text</td>
+								<td><code>left</code>, <code>right</code>, <code>center</code>, <code>justify</code></td>
+							</tr>
+							<tr>
+								<td><code>font-family</code></td>
+								<td>what typeface</td>
+								<td>see <a href="#21">typefaces</a></td>
+							</tr>
+							<tr>
+								<td><code>font-size</code></td>
+								<td>text size</td>
+								<td>see <a href="#22">units</a></td>
+							</tr>
+							<tr>
+								<td><code>font-weight</code></td>
+								<td>the weight of your type</td>
+								<td><code>normal</code>, <code>bolder</code>, <code>700</code></td>
+							</tr>
+							<tr>
+								<td><code>font-style</code></td>
+								<td>text formatting</td>
+								<td><code>normal</code>, <code>italic</code>, <code>oblique</code></td>
+							</tr>
+							<tr>
+								<td><code>line-height</code></td>
+								<td>“leading” or height of box surrounding line</td>
+								<td>best declared unit-less, relative to font, i.e. <code>1.2</code>, <code>0.9</code></td>
+							</tr>
+							<tr>
+								<td><code>letterspacing</code></td>
+								<td>“tracking” or spacing between each letter</td>
+								<td>best declared in ems, relative to font, ie. <code>0.01em</code>, <code>-0.03em</code></td>
+							</tr>
+							<tr>
+								<td><code>text-transform</code></td>
+								<td>text case</td>
+								<td><code>capitalize</code>, <code>uppercase</code>, <code>lowercase</code>, <code>none</code></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>Typefaces</h2>
+					<p>There are 3 primary sources of fonts from which you can choose:</p>
+					<ul>
+						<li><strong>System fonts</strong> These are fonts installed on the computer. If you specify on a font that exists on your system, your website visitors must also have the font installed on their machine. There are several fonts known to be installed across Windows and Mac computers, such as Arial, Helvetica, Times New Roman, Georgia, Verdana. Choices are limited.</li>
+						<li><strong>Self-hosted webfonts</strong> if you upload your own font files, you can use the <code>@font-face</code> rule. <a href="http://www.fontsquirrel.com/tools/webfont-generator">Font Squirrel</a> has a web font generator that converts desktop fonts to web font formats, but you may not have the permissions.</li>
+						<li><strong>Externally hosted webfonts</strong> Google Fonts &amp; Adobe Fonts offer services with easy implementation — simply copy/paste the provided code.</li>
+					</ul>
+					<p>More on this later!</p>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>CSS Size Units</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>unit</th>
+								<th>description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><code>px</code></td>
+								<td>absolute measurements, only relative to the resolution of the screen. The same type size will look larger when a screen has a resolution of 800x600 than it would when it is 1280x800.</td>
+							</tr>
+							<tr>
+								<td><code>em</code></td>
+								<td>ratio relative to the element’s immediate parent container</td>
+							</tr>
+							<tr>
+								<td><code>rem</code></td>
+								<td>ratio relative to the document root size (usually <code>16px</code> by default)</td>
+							</tr>
+							<tr>
+								<td><code>%</code></td>
+								<td>percentage ratio relative to the element’s immediate parent container, based on the size of same property of the parent element</td>
+							</tr>
+							<tr>
+								<td><code>vw</code></td>
+								<td>1 vw unit is 1% of the window width</td>
+							</tr>
+							<tr>
+								<td><code>vh</code></td>
+								<td>1 vh unit is 1% of the window height</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>The Box Model</h2>
+					<p>The <a href="https://css-tricks.com/the-css-box-model/" target="_blank">box model</a> refers to how block-level elements can be controlled. It is easily inspect-able in your developer tools.</p>
+					<table>
+						<tr>
+							<th>property</th>
+							<th>description</th>
+						</tr>
+						<tr>
+							<td><code>margin</code></td>
+							<td>the space around the element; between the element and its surrounding elements</td>
+						</tr>
+						<tr>
+							<td><code>border</code></td>
+							<td>a line surrounding the element width</td>
+						</tr>
+						<tr>
+							<td><code>padding</code></td>
+							<td>the space between the content and the edge of the element (or border)</td>
+						</tr>
+						<tr>
+							<td><code>content</code></td>
+							<td>the actual content / text within the element</td>
+						</tr>
+						<tr>
+							<td><code>width</code></td>
+							<td>the width of the content*</td>
+						</tr>
+						<tr>
+							<td><code>height</code></td>
+							<td>the height of the content*</td>
+						</tr>
+					</table>
+					<p>Note: *By default, the width and height of the element <em>excludes</em> the padding within the box.</p>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>Box-Model Adjustment</h2>
+				<p>If you found the box model (in which the padding and border are outside of the element dimensions) to be unintuitive, you can use the <code>box-sizing</code> property. Setting this to <code>border-box</code> includes the <code>padding</code> and <code>border</code> width in the element width. So when you set <code>box-sizing: border-box;</code> on an element, the padding and border of that element no longer increase its width or height. </p>
+			</div>
+		</section>
+		<section class="slide">
+			<div class="text">
+				<h3>Collapsing margins</h3>
+				<p>Collapsing margins, where two margins cancel out each other,  happens in 2 cases:</p>
+				<ul>
+					<li>When two vertical margins come in contact with one another. If one margin is greater than the other, then that margin overrides the other, leaving one margin.</li>
+					<li>Collapsing margins also occur when the margin of a child element crosses the margin of its parent.</li>
+				</ul>
+				<p>See examples of <a href="https://css-tricks.com/what-you-should-know-about-collapsing-margins/" target="_blank">collapsed margins</a></p>
+			</div>
+		</section>
+	
+		<section class="slide">
+			<div class="text">
+				<h2>Reference</h2>
+				<ul>
+					<li><a href="https://miro.medium.com/max/1000/1*X8t46W-iH2VGgYOB5aG1nA.jpeg">The Cascade</a></li>
+					<li><a href="http://www.colors.commutercreative.com/grid/">Color names</a></li>
+					<li><a href="https://css-tricks.com/the-css-box-model/">Box Model</a></li>
+					<li><a href="https://css-tricks.com/what-you-should-know-about-collapsing-margins/">Collapsing Margins</a></li>
+				</ul>
+				</p>
+			</div>
+		</section>
+		<section class="slide">
+			<div class="text">
+				<h2>Use the Inspector</h2>
+				<p>The element inspector is a great way to verify the CSS properties applied to your elements. When thinking about CSS properties, imagine that there is an invisible box around each HTML element. <em>Note: You may need to go into your developer tool settings to see the default browser (user-agent) styles.</em>
+				</p>
+			</div>
+		</section>
+		<section class="slide">
+			<div class="text">
+				<h2>Exercise: Inspector Experiment</h2>
+				<p>In small groups, use the browser’s inspector to adjust a webpage’s styling.</p>
+				<ol>
+					<li>Open up the same webpage.</li>
+					<li>Using the Inspector tools, make adjustments to the website. Experiment with different selectors; dig into the casacade. See what properties are inherited, what isn’t. Dive into the box model.</li>
+					<li>Take a screenshot (Mac: <code>shift + command + 4 + space</code> or Windows: <code>alt + PrtScn</code> to select a window to capture), and share this with your group. (Don’t refresh the page, as that will clear your Inspector adjustments.)</li>
+				</ol>
+			</div>
+		</section>		
+
+		<section class="slide">
+			<div class="text">
+				<h2>CSS Troubleshooting</h2>
+				<ul>
+					<li>Do you have opening and closing brackets?</li>
+					<li>Does your property and value pairs have colons in between them?</li>
+					<li>Do you have a semicolon at the end of each declaration?</li>
+					<li>Are your class / id names properly spelled, in the right case?</li>
+				</ul>
+			</div>
+		</section>
+		</main>
+	</body>
+</html>

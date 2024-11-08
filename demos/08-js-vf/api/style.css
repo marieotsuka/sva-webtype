@@ -1,0 +1,97 @@
+@font-face {
+ font-family: 'Magmatic';
+ font-weight: 100 900;
+ font-stretch: 50% 150%;
+ font-display: swap;
+ src: url('fonts/MagmaticVF-Trial.woff2') format('woff2');
+}
+
+:root{
+	--size: 3vw;
+	--size-large: 13vw;
+	--pad: 1rem;
+	--font: 'Magmatic', monospace;
+
+	--wdth: 100;
+	--wght: 400;
+	--xhgt: 100;
+}
+
+body{
+	font-family:  var(--font);
+}
+
+main{
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	font-size: var(--size);
+	text-align: center;
+}
+
+.inputarea{
+	height: 100px;
+	padding: var(--pad);
+}
+
+input, button{
+	font-size: var(--size);
+	width: 6em;
+	font-family: var(--font);
+}
+
+button{
+	background: black;
+	color: white;
+	border-radius: 0;
+	border: 0;
+}
+
+button:hover{
+	background: yellow;
+	color: black;
+}
+
+
+input{
+	border-radius: 0;
+	border: 0;
+	border-bottom: 2px solid;
+}
+input:active, input:focus{
+	outline: none;
+	background: yellow;
+}
+.resultarea{
+	flex: 1;
+	margin: auto;
+	display: flex;
+	align-items: center;
+}
+
+#temp{
+	display: inline;
+}
+
+.highlight{
+  --wdth: 100;
+  --wght: 400;
+  --slnt: 0;
+  text-transform: lowercase;
+	font-size: var(--size-large);
+	line-height: .9;
+  font-variation-settings: 'wdth' var(--wdth), 'wght' var(--wght), 'XHGT' var(--xhgt);
+}
+
+
+@media screen and (max-width: 600px){
+	:root{
+		--size: 24px;
+		--size-large: 100px;
+	}
+	button{
+		margin-top: 0.5em;
+	}
+
+}
+

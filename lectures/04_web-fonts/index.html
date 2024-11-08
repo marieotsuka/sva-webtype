@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Web Fonts</title>
+		<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../css/main.css">
+		<link rel="stylesheet" type="text/css" href="../../css/slides.css">
+		<link rel="icon"type="image/svg"href="../../assets/favicon.svg">
+		<script src="../slides.js"></script>
+	</head>
+	<body class="layout-slides">
+		<main>
+			<section class="slide divider">
+				<div class="text">
+					<h1>Web Fonts</h1>
+					<h2>Your Browser & Typefaces</h2>
+				</div>
+				<footer class="grid">
+					<div class="runner-1">Web Typography Workshop @ Letterform Archive</div>
+					<div class="runner-2">Week 2</div>
+				</footer>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>Loading Fonts</h2>
+					<ol>
+						<li>Core web fonts (The public has the font files)</li>
+						<li>Self-hosted (You have the font files)</li>
+						<li>Distributor-hosted (ie. Type Network)</li>
+						<li>Subscription-based (Adobe, Google)</li>
+					</ol>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">	
+					<h2>Core Web Fonts</h2>
+					<table>		
+						<tr class="font-sample headings">
+							<th>font-family</th>
+							<th>fallback assignment</th>
+						</tr>
+						<tr>
+							<td style="font-family: 'Arial', sans-serif;">Arial</td>
+							<td>sans-serif</td>	
+						</tr>				
+						<tr>
+							<td style="font-family: 'Helvetica', sans-serif;">Helvetica</td>
+							<td>sans-serif</td>	
+						</tr>				
+						<tr>
+							<td style="font-family: 'Comic Sans MS', curisve;">Comic Sans MS</td>
+							<td>cursive</td>	
+						</tr>				
+						<tr>
+							<td style="font-family: 'Courier', monospace;">Courier</td>
+							<td>monospace</td>	
+						</tr>				
+						<tr>
+							<td style="font-family: 'Georgia', serif;">Georgia</td>
+							<td>serif</td>	
+						</tr>				
+						<tr>
+							<td style="font-family: 'Impact', sans-serif;">Impact</td>
+							<td>sans-serif</td>	
+						</tr>				
+						<tr>
+							<td style="font-family: 'Tahoma', sans-serif;">Tahoma</td>
+							<td>sans-serif</td>	
+						</tr>				
+						<tr>
+							<td style="font-family: 'Times New Roman', Times, serif;">Times New Roman</td>
+							<td>serif</td>
+						</tr>
+						<tr>
+							<td style="font-family: 'Webdings';">Webdings </td>	
+							<td> </td>
+						</tr>
+					</table>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h3>Self-hosted</h3>
+					<p>Use the <code>@font-face</code> rule to link to typefaces in your website folder.</p>
+					<pre>					
+@font-face{
+	font-family: 'Occupant Oldstyle';
+	src: url('fonts/OccupantOldstyle-Medium-Trial.woff2') format('woff2');
+	font-weight: 400;
+}
+@font-face{
+	font-family: 'Occupant Oldstyle';
+	src: url('fonts/OccupantOldstyle-MediumItalic-Trial.woff2') format('woff2');
+	font-style: italic;
+	font-weight: 400;
+}
+				
+body {
+	font-family: 'Occupant Oldstyle'; 
+	/*this name should match the font-face rule you set up*/
+}
+						</pre>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>Anatomy of a <code>@font-face</code> assignment</h2>
+					<table>
+						<tr>
+							<td><code>font-family</code></td>
+							<td>How you will refer to this font (the font name)</td>
+							<td><code>'Occupant Oldstyle';</code> (Note that font names containing spaces should be wrapped in quote marks)</td>
+						</tr>
+						<tr>
+							<td><code>src</code></td>
+							<td>The path to the font file <em>relative to the stylesheet</em>, and the format (optional)</td>
+							<td><code>url('fonts/OccupantOldstyle-Medium-Trial.woff2') format('woff2');</code></td>
+						</tr>
+						<tr>
+							<td><code>font-style</code></td>
+							<td>Whether it is the roman or italic of the font. By default, it is assumed to roman.</td>
+							<td>
+								<code>normal</code>(default) or<br>
+								<code>italic</code></td>
+						</tr>
+						<tr>
+							<td><code>font-weight</code></td>
+							<td>Weight keywords or numerical values (recommended)</td>
+							<td>
+								<code>normal</code>(default) or <code>bold</code><br>
+								<code>1–1000</code></td>
+						</tr>
+					</table>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>Font Weight Values</h2>
+					<table>
+						<tr><th>Value</th><th>Common weight name</th></tr>
+						<tr><td>100</td><td>Thin (Hairline)</td></tr>
+						<tr><td>200</td><td>Extra Light (Ultra Light)</td></tr>
+						<tr><td>300</td><td>Light</td></tr>
+						<tr><td>400</td><td>Normal</td></tr>
+						<tr><td>500</td><td>Medium</td></tr>
+						<tr><td>600</td><td>Semi Bold (Demi Bold)</td></tr>
+						<tr><td>700</td><td>Bold</td></tr>
+						<tr><td>800</td><td>Extra Bold (Ultra Bold)</td></tr>
+						<tr><td>900</td><td>Black (Heavy)</td></tr>
+					</table>
+					<figcaption>You do not have to follow this guide, but know that 400 usually the default, normal weight of a typeface. Using this standard helps you reference the correct font within your own code.</figcaption>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>Font Stretch Values (if applicable)</h2>
+					<table>
+						<tr><th>Value</th><th>keyword</th></tr>
+						<tr><td>50%</td><td>ultra-condensed</td></tr>
+						<tr><td>62.5%</td><td>extra-condensed</td></tr>
+						<tr><td>75%</td><td>condensed</td></tr>
+						<tr><td>87.5%</td><td>semi-condensed</td></tr>
+						<tr><td>100%</td><td>normal</td></tr>
+						<tr><td>112.5%</td><td>semi-expanded</td></tr>
+						<tr><td>125%</td><td>expanded</td></tr>
+						<tr><td>150%</td><td>extra-expanded</td></tr>
+						<tr><td>200%</td><td>ultra-expanded</td></tr>
+					</table>
+					<figcaption>Width styles are declared in percentages; the default width is at 100%. Unlike weight values names, these CSS keywords may not match the font family name.</figcaption>
+				</div>
+			</section>
+	
+			<section class="slide">
+				<figure>
+					<div class="grid">
+						<div class="text-column">
+							<img src="img/adobe.png" class="wideimg">
+						</div>
+						<div class="text-column">
+							<h3>Adobe</h3>
+							<ol class="steps">
+								<li>Navigate to Adobe Fonts</li>
+								<li>Click on Add to Web Project</li>
+								<li>Create a new web project</li>
+								<li>Copy-paste the resulting code</li>
+							</ol>
+							<h4>CSS</h4>
+							<pre>body {
+	font-family: "fit", sans-serif;
+	font-variation-settings: "wdth" 482;
+}</pre>
+							<h4>HTML HEAD</h4>
+							<pre>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://use.typekit.net/znz4odv.css&quot;&gt;</pre>
+						</div>
+					</div>
+				</figure>
+			</section>
+			<section class="slide">
+				<figure>
+					<div class="grid">
+						<div class="text-column">
+							<img src="img/google.png" class="wideimg">
+						</div>
+						<div class="text-column">
+							<h3>Google</h3>
+							<ol class="steps">
+								<li>Navigate to Google Fonts</li>
+								<li>Select a Style of a font</li>
+								<li>Copy-paste the resulting code</li>
+							</ol>
+							<h4>CSS</h4>
+							<pre>body {
+	font-family: 'Fraunces', serif;
+}</pre>
+							<h4>HTML HEAD</h4>
+							<pre>&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
+&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Fraunces:opsz@9..144&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;</pre>
+						</div>
+					</div>
+				</figure>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>Variable Fonts</h2>
+					<p>
+						Variable fonts are a new format (c. 2016) that allows multiple styles of a font to be embedded into a single font. Browsers were the first to adopt support for this new font format. More on <a href="https://variable.occupantfonts.com/" target="_blank">expressive advantages of variable fonts</a>.
+					</p>
+					<ul>						
+						<li>A <a href="https://variablefonts.io/" target="_blank">Variable Fonts primer</a></li>
+						<li>A practical <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide" target="_blank">guide</a></li>
+						<li>A <a href="https://v-fonts.com/" target="_blank">large collection </a></li>
+						<li>An online <a href="https://fontgauntlet.com/" target="_blank">tester for</a> variable fonts</li>
+						<li>A general font <a href="https://wakamaifondue.com/" target="_blank">inspector</a></li>
+					</ul>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>Variable fonts</h2>
+					<p>Including variable fonts works similarly, where multiple values are accepted for <code>font-weight</code> or <code>font-stretch</code> if applicable to define the possible range within the font. The <code>format</code> is updated to <code>woff2-variations</code>. </p>
+					<pre>					
+@font-face{
+	font-family: 'Occupant Oldstyle VF';
+	src: url('fonts/OccupantOldstyle-VF-Roman-Trial.woff2') format('woff2-variations');
+	font-weight: 200 700;
+}
+@font-face{
+	font-family: 'Magmatic VF';
+	src: url('fonts/Magmatic-VF-Trial.woff2') format('woff2-variations');
+	font-stretch: 50% 150%;
+	font-weight: 100 900;
+}
+				
+body {
+	font-family: 'Occupant Oldstyle VF';
+}
+						</pre>
+				</div>
+			</section>			
+			<section class="slide">
+				<div class="text">
+					<h3>Standard Axis Tags</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Axis Tag</th>
+								<th>Description</th>
+								<th>Valid Range</th>
+								<th>CSS Equivalent</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><code>wght</code></td>
+								<td>weight</td>
+								<td><code>1—1000</code></td>
+								<td><code>font-weight</code></td>
+							</tr>
+							<tr>
+								<td><code>wdth</code></td>
+								<td>width</td>
+								<td><code>>0, % of normal width</code></td>
+								<td><code>font-stretch</code></td>
+							</tr>
+							<tr>
+								<td><code>opsz</code></td>
+								<td>optical sizing</td>
+								<td><code>>0, point sizes</code></td>
+								<td> </td>
+							</tr>
+							<tr>
+								<td><code>ital</code></td>
+								<td>italicization</td>
+								<td><code>0—1</code></td>
+								<td><code>font-style</code></td>
+							</tr>
+							<tr>
+								<td><code>slnt</code></td>
+								<td>slant</td>
+								<td><code>-90—90</code></td>
+								<td><code>font-style</code></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>			
+			<section class="slide">
+				<figure>
+					<div class="grid">
+						<div class="text-column">
+							<img src="img/wakamai.png" class="wideimg">
+						</div>
+						<div class="text-column">
+							<h3>Understanding the Axes</h3>
+							<p>
+								Use a font like <a href="https://fontgoggles.org/">Font Goggles</a> or an online tool like <a href="https://wakamaifondue.com/beta/">Wakami Fondue</a> to understand the variable range of your typeface. (For Adobe/Google hosted fonts, check out the font detail pages for this info.)
+							</p>
+						</div>
+					</div>
+				</figure>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h3>Using Variation Settings</h3>
+					<p>
+						The <em>font-variation-settings</em> is the CSS property for accessing the variable font settings. It is followed by comma-separated assignments for each axis, in the format <em>'key' numericvalue</em>.
+					</p>
+					<pre><code>
+body{
+	font-family: 'Variable Font'; 						
+	font-variation-settings: 'wght' 400;
+}
+
+h1{
+	font-family: 'Another Multi-axis Variable Font';								
+	font-variation-settings: 'wght' 300,'wdth' 120,'XHGT' 100; 
+}</code></pre>
+				</div>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h3>Using CSS Variables</h3>
+					<p>
+						It can be useful to setup CSS variables to assign into the <em>font-variation-settings</em> so that you can adjust each axis individually at each element. You can define CSS Variables by prefixing names with <em>--</em>.
+					</p>
+					<pre><code>
+:root{
+	--wght: 400;
+	--wdth: 100;
+	--XHGT: 0;
+}
+
+body{
+	font-family: 'Variable Font';
+	font-variation-settings: 'wght' var(--wght);
+}
+
+h1{
+	font-family: 'Another Multi-axis Variable Font';								
+	font-variation-settings: 'wght' var(--wght),
+	'wdth' var(--wdth),'XHGT' var(--XHGT); 
+}					</pre></code>
+<figcaption>Assigning font-variation-settings with CSS variables</figcaption>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>Exercise: Style your text</h2>
+					<p>Load a typeface and style the text you marked up in the first exercise.</p>
+					<ol>
+						<li>Make a copy of the folder containing your marked-up html page, and rename to <code>code</code></li>
+						<li>Create an external stylesheet, called <code>style.css</code> (make sure to add the .css extension)</li>
+						<li>Connect your stylesheet to your html page using the <code>link</code> tag</li>
+						<li>Write your CSS to style your markup. You might find that you want to change your markup in the process.</li>
+						<li>Setup a webfont to use with your webpage, using th <code>@font-face</code> rule.</li>
+					</ol>
+				</div>
+			</section>	
+		</main>
+	</body>
+</html>

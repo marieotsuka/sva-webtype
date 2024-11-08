@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSS Layouts</title>
+		<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../css/main.css">
+		<link rel="stylesheet" type="text/css" href="../../css/slides.css">
+		<link rel="stylesheet" type="text/css" href="../../css/typography.css">
+		<link rel="icon"type="image/svg"href="../../assets/favicon.svg">
+		<script src="../slides.js"></script>
+	</head>
+	<body class="layout-slides">
+		<main>
+			<section class="slide divider">
+				<div class="text">
+					<h1>CSS Layouts</h1>
+					<h2>Structuring your page</h2>
+				</div>
+				<footer class="grid">
+					<div class="runner-1">Web Typography Workshop @ Letterform Archive</div>
+					<div class="runner-2">Week 2</div>
+				</footer>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>Normal Flow</h2>
+					<p>
+						With HTML, the normal flow is a top-to-bottom rendering of the elements. Every block-level element appears on a new line, causing each item to appear lower down the page than the previous one. <em>Inline elements appear adjacent to each other.</em> How each element “flows” depends on its default <code>display</code> property — the most common are <code>block</code> and <code>inline</code> properties.</p>
+					<div class="grid">
+						<div class="text-column">	
+					<pre>
+						<code>
+&lt;h1&gt;Normal Flow&lt;/h1&gt;
+&lt;p&gt;
+	With HTML, the normal flow is a top-to-bottom
+	rendering of the html file.
+&lt;/p&gt;
+&lt;p&gt;
+	Every block-level element appears on a new line, 
+	causing each item to appear lower down the page than 
+	the previous one. &lt;em&gt; Inline elements appear 
+	adjacent to each other.&lt;/em&gt;
+&lt;/p&gt;							
+						</code>
+					</pre>
+						</div>
+						<div class="text-column">
+							<div class="diagram">
+								<h1>Normal Flow</h1>
+								<p>
+								  With HTML, the normal flow is a top-to-bottom rendering of the html file.
+								</p>
+								<p>
+								  Every block-level element appears on a new line, causing each item to appear lower down the page than the previous one. <em> Inline elements appear adjacent to each other.</em>
+								</p>
+							</div>
+							<figcaption><code>h1</code> and <code>p</code> elements are <code>block</code>, while <code>em</code> elements are <code>inline</code>.</figcaption>
+					</div>
+				</div>
+			</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>The display property</h2>
+					<p>While each html element comes with a default display property, this can be changed by overriding the default behavior with CSS. For example, <code>&lt;div&gt;</code> elements by default have the property <code>display: block;</code>, for example, but this can be adjusted by adding <code>display: inline</code> and specifying a <code>width</code> property for <code>div</code> in CSS.</p>
+					
+					<table>
+						<tr>
+							<td><code>inline</code></td>
+							<td> displays an element as an inline element (ex. <code>li{ display: inline; }</code>)</td>
+						</tr>
+						<tr>
+							<td><code>block</code></td>
+							<td> displays an element as a block element (ex. <code>img{ display: block; }</code>)</td>
+						</tr>
+						<tr>
+							<td><code>inline-block</code>*</td>
+							<td> displays an element as an inline-level block container. The inside of this block is formatted as block-level box, and the element itself is formatted as an inline-level box (ex. <code>.columns{ display: inline-block; }</code>) and allows you to define a width and height.
+							</td>
+						</tr>
+					</table>
+					<figcaption>Note: Because it is an <code>inline</code> element, white spaces between elements are treated in the same way as white spaces between words of text. You may get unwanted gaps appearing between elements if you have spaces are line breaks between your elements in your code.</figcaption>						
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>Grids</h2>
+					<p>CSS Grid allows you to define the column-row structure for all of your content. By declaring  <code>display: grid</code> on a container element, child elements need to be defined where they align to on the grid.</p>
+					<ul>
+						<li><a href="https://learncssgrid.com/">Learn CSS Grid</a></li>
+						<li>Read more on <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">CSS Grid properties</a></li>
+						<li>A game: <a href="https://cssgridgarden.com/">CSS Grid Garden</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<div class="grid">
+						<div class="text-column">	
+							<h4>Grid HTML</h4>							
+							<pre><code>
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;cell item&quot;&gt;
+    .special
+  &lt;/div&gt;
+  &lt;div class=&quot;cell&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;cell&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;cell&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;cell&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;cell&quot;&gt;
+  &lt;/div&gt;
+&lt;/div&gt;											
+							</code>
+							</pre>
+						</div>
+						<div class="text-column">
+							<h4>Grid CSS</h4>							
+							<pre><code>
+.container {
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 2fr 1fr;
+  column-gap: .5em;
+  height: 200px;
+}
+ 
+.special{
+  grid-column-start: 1;
+  grid-column-end: 4;
+}								
+							</code></pre>
+						</div>
+					</div>
+
+					<div class="diagram" style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 2fr 1fr; column-gap: .5em; height: 200px;" >
+					  <div class="line" style="height: auto; grid-column-start: 1; grid-column-end: 4;"> div with .special class 
+					  </div>
+					  <div class="line" style="height: auto;">
+					  </div>
+					  <div class="line" style="height: auto;">
+					  </div>
+					  <div class="line" style="height: auto;">
+					  </div>
+					  <div class="line" style="height: auto;">
+					  </div>
+					  <div class="line" style="height: auto;">
+					  </div>
+					</div>
+					<figcaption>
+						<ul>
+							<li>container element has the property <code>display: grid; </code></li>
+							<li>elements within the container will automatically take up 1 grid cell (column & row)</li>
+						</ul>
+					</figcaption>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>Flexbox</h2>
+					<p>
+						Flex box is a popular method for creating “flexible” columns of containers. By declaring <code>display: flex</code> on a container element, child elements could be made to shrink or expand according to specified properties
+					</p>
+					<ul>
+						<li>See <a href="http://learnlayout.com/flexbox.html">how it works</a></li>
+						<li>Read more on <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">flex-box properties</a></li>
+						<li>A starting point for a <a href="https://css-tricks.com/dont-overthink-flexbox-grids/">responsive flex grid</a></li>
+						<li>A game: <a href="https://flexboxfroggy.com/">Flexbox Froggy</a></li>
+					</ul>
+				</div>
+			</section>
+			
+			<section class="slide">
+				<div class="text">
+					<div class="grid">
+						<div class="text-column">	
+							<h4>Flex HTML</h4>							
+							<pre><code>
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;col&quot;&gt;
+    stuff
+  &lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;
+    stuff
+  &lt;/div&gt;
+  &lt;div class=&quot;col&quot;&gt;
+    stuff
+  &lt;/div&gt;
+&lt;/div&gt;										
+							</code>
+							</pre>
+						</div>
+						<div class="text-column">
+							<h4>Flex CSS</h4>							
+							<pre><code>
+.container{
+  display: flex; 
+  column-gap: .5em;
+}
+
+.col{
+  flex: 1;
+}
+.col:nth-child(2){
+	width: 100px;
+}		
+.col:nth-child(3){
+	flex: 2;
+}						
+							</code></pre>
+						</div>
+					</div>
+
+					<div class="diagram" style="display: flex; column-gap: .5em;">
+					  <div class="line" style="flex: 1; margin-right: 0.5em;">
+					    One third
+					  </div>
+					  <div class="line" style="width: 100px; margin-right: 0.5em;">
+					    This is 100px wide
+					  </div>
+					  <div class="line" style="flex: 2">
+					    Two-thirds of the remaining width.
+					  </div>
+					</div>
+					<figcaption>
+						<ul>
+							<li>container element still is set to fill the entire document width and has the property <code>display: flex; </code></li>
+							<li>elements within the container will automatically scale to fit the available width, unless specified</li>
+							<li>advantage: you can combine a fixed-width column and a responsive, scalable column </li>
+						</ul>
+					</figcaption>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h3>Grid vs. Flexbox vs. Inline-block?</h3>
+					<ul>
+						<li><strong>Grid</strong> is better used for defining larger content areas, including vertical alignment of elements using rows</li>
+						<li><strong>Flexbox</strong> is better suited for organizing chunks within those areas, or when you need columns to stretch flexibly</li>
+						<li><strong>Inline-block</strong> is best for when you simply want elements to flow next to each other</li>
+					</ul>
+					<p>Ordered from providing the least to the most structure:</p>
+					<ol>
+						<li>Inline / Inline-block</li>
+						<li>Flexbox</li>
+						<li>Grid</li>
+					</ol>
+				</div>
+			</section>			
+		</main>
+	</body>
+</html>

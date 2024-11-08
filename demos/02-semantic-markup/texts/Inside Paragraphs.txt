@@ -1,0 +1,104 @@
+Inside Paragraphs
+
+Cyrus Highsmith
+
+We live in a typographic wonderland. Typographers have more typefaces to choose from than ever before, and computers make setting type easier than ever. The truth is, if you’re using a good typesetting application and you just leave the settings on default, you can set type that’s more or less adequate.
+However, good typographers are experts who have something to add to the reading experience. They finely tune the typography for specific documents to make it more than just adequate. In their choice of typefaces and decisions about things like point size and spacing, typographers clarify the voice of the author and make the reading experience more enjoyable.
+
+This isn’t meant to discourage beginners from attempting typography. But it is important to acknowledge that the art of typography is often subtle, and without training it can be difficult to see what’s going on. The goal of this book is to help students train their eyes to see text as typographers do.
+
+The focus of this text is on the Latin alphabet (which is the alphabet used for English) and Latin typography. Of course, there are many other writing systems in use in our world. There are other alphabetic systems like Greek, Hebrew and Arabic. There are syllabic systems like Hangul, used for the Korean language. There are logographic systems like Chinese. The rules for Latin typography might not apply to these other writing systems.
+
+This doesn’t mean that our typographic insights are limited to English. Variants of the Latin alphabet are used all around the world to write hundreds of different languages. These include Roman languages like French, Spanish and Italian; Germanic languages like English, Dutch and German; Celtic languages like Irish and Welsh; Slavic languages like Czech and Polish; and many others. Some of these languages use characters that are not used in English, like the Danish Ø or the German ß Or characters might be dropped, like the K in Italian. The Latin alphabet is a global phenomenon.
+
+Even for languages within the same writing system, different rules may apply. In addition to the basic rules of Latin typography that they share, there are specific rules tuned to the peculiarities of a language’s grammar and appearance. The focus here is mostly limited to the common basics.
+
+The book begins with general explanations of how type works and how we read. Then it steps through the different kinds of space in a paragraph. Finally, it puts everything together with a discussion about paragraph settings.
+
+Typography started with paragraphs of printed text. Since then, it has evolved in all sorts of directions, sometimes leaving printing behind entirely. But the printed paragraph is still a good starting point. Understanding what goes on inside it is a solid foundation on which to add additional knowledge.
+
+And that’s what this book is meant to be—a foundation. It’s the book I wanted when I was a student in my first typography course.
+
+
+
+How Type Works
+
+Computers have made setting type fast and easy compared with hand-setting metal type (also known as foundry type). But many of the basic concepts of typesetting are still the same. A good way to learn how to use typesetting software and understand how type works is to go back to the very beginning, to the invention of movable type.
+
+But this isn’t exactly a historical overview. Instead, we’ll imagine what the thought processes that lead to the invention of movable type might have been. The creative leap from hand-lettered paragraphs to paragraphs of printed text will help illustrate how type works.
+
+It can be difficult to understand how something works just by reading about it, but don’t let that slow you down. The more you practice setting type, the better you’ll understand many of the concepts in this section. As you practice composing different documents and get to know more about typography by working with type, read this part again a few times. The goal is to learn what’s going on behind the scenes when you set a paragraph. The better you understand these concepts, the better you’ll be able to control what happens in your typography. And the more type you set, the better you’ll understand these concepts.
+
+Setting type can be thought of as a collaboration between the typographer and the typeface. A good typographer understands the typeface’s role in this process, in part by understanding how movable type works. But it isn’t necessary to learn all the complicated technical details of typesetting software. The important concepts can be learned by imagining how movable type was invented.
+
+
+
+Gutenberg’s Idea
+
+Johann Gutenberg of Mainz, Germany, is usually given credit for inventing movable type around the year 1450. This invention is the basis for the type we use today. Let’s imagine what Gutenberg might have been thinking.
+
+Gutenberg didn’t invent books, and his invention didn’t immediately change how a book looked to the reader. He invented a new path for creating a paragraph of text. Instead of writing out each line by hand, drawing each word and each letter, Gutenberg came up with a way of simulating a handwritten paragraph.
+
+A piece of foundry type illustrates the gist of Gutenberg’s idea: to put each letter into its own box. Putting odd-shaped things into standard-sized boxes makes them easier to handle. Think about carrying four pairs of shoes, compared with carrying four pairs of shoes in shoeboxes.
+
+This is basically what Gutenberg did with movable type. Dealing with a paragraph of text is more complicated than carrying a pile of shoes, but the concept is similar. Gutenberg put the letters into boxes so they’d be easier to pick up and arrange.
+
+Gutenberg looked at the basic elements that make up a paragraph. Then he thought about how these elements interact. Finally, he created a way of building a paragraph using these interactions in a new way—a typographic way.
+
+A paragraph has two basic visual elements: the black parts and the white parts. The black is the letters, the white is background. But instead of thinking of them as separate layers, like ink and paper, imagine the black parts and white parts together, like two parts of a puzzle.
+
+The black letters are arranged to form words, which are arranged to form lines. The white elements—the other puzzle pieces—are the white space within a letter (or counter space), the white space between the letters (letter space), the white space between words (word space), and the white space between lines (line space).
+
+Gutenberg considered the counter space, letter space, and line space. Every paragraph, whether written or printed, has these white spaces in it. But they don’t have to be thought of in isolation. Gutenberg’s idea was to attach a certain amount of each kind of space to each letter. With this innovation he created a new kind of space: the glyph space. The glyph space forms the box around each letter that makes it easy to move and rearrange.
+
+
+
+Counter Space
+
+The counter space is the fully or partly enclosed white space inside a letter.
+
+Counter space is similar to the empty space inside a bowl or container. The empty space isn’t a physical thing like the material of the bowl itself. But the sides of the bowl cause a certain amount of space to be created inside that bowl. When you move the bowl, the space moves with it. Without that space, the bowl just wouldn’t be the same.
+
+The counter space of a letter belongs to that letter just like the empty space inside a container belongs to that container. When you move a letter, the counter space moves with it. Without the counter space, the letter just wouldn’t be the same.
+
+
+
+Letter Space
+
+The letter space is the white space flanking letters on the left and right sides. In contrast to the counter space, which is interior space, letter space is exterior space.
+
+In a letter like the c, the interior counter space is only partially enclosed and it flows into the exterior letter space. In a letter like the o, the counter space is fully enclosed and is distinct from the letter space.
+
+A straight border can be imposed between each letter, splitting the white space so that a bit belongs to the letter on the left and a bit belongs to the letter on the right. These simple borders form the left and right sides of the glyph space.
+
+
+
+Line Space
+
+The line space is the white space above and below letters, formed between lines of text.
+
+Line space is similar to letter space but it involves vertical relationships instead of horizontal. Between two consecutive lines of text is a white puzzle piece that connects them. A straight horizon.tal border can be imposed between the lines, splitting the white space so the top half belongs to the letters on the line above and the bottom half belongs to the letters on the line below. There’s enough white space to accommodate the descenders of the line above and the ascenders in the line below. These simple borders form the top and bottom sides of the glyph space.
+
+Here’s the important result: the glyph space for every letter is the same height, regardless of the height of the actual letter.
+
+
+
+Glyph Space
+
+The glyph space is the shoebox of white space surrounding the letter. It’s formed by attaching the counter space, letter space and line space to the letter.
+
+You may encounter the term ‘body’ when referring to the boxes that surround each letter. In fact, you could use the terms ‘glyph space’ and ‘body’ more or less interchangeably. When discussing foundry type, ‘body’ is commonly used and refers to the actual little piece of metal. ‘Glyph space’ is helpful when discussing the space as a component within a paragraph.
+
+Thinking about white space (or negative space) is not specific to typography or even calligraphy. It’s a basic part of two dimensional design. Glyph space, however, is solely a typographic concept. It’s the mechanism that makes movable type possible. The glyph space forms a typeface’s built-in spacing, and that built-in spacing is the starting point for the structure of a paragraph.
+
+
+
+Moveable Type
+
+Movable type mimics handwritten text but doesn’t reproduce it perfectly. Imposing this kind of strict modularity naturally comes with limits. Gutenberg (and subsequent type designers) worked to adapt calligraphic letters to function within these limits. The typographic letters that they created have evolved into their own species, ranging from geometric sans serifs to elaborate decorative scripts. Digital type has now freed type designers from some of the limits of foundry type, allowing type to evolve further still.
+
+However, the concept at the heart of movable type—the idea of glyph space—is still just as critical to how type works. Thanks to today’s software, you can set type without thinking about the concept of glyph space. However, a good understanding of it can help to make you a better typographer. When setting a paragraph, the majority of the typographer’s decisions involve ing or removing space relative to each character’s glyph space.
+
+
+Note: This is a modified, abridged version of the text. The complete, illustrated version is available Princeton Architectural Press. Translated versions are available from publishers around the world. A complete list of the different editions can be found at occupantfonts.com
+

@@ -1,0 +1,36 @@
+body{
+	/* this is the outermost element on your page*/
+}
+
+h1{
+	/* main headings */
+}
+
+p{
+	/* paragraphs */	
+}
+
+a{
+	/* links */	
+}
+
+ul{
+	/* unordered list container */	
+}
+
+ol{
+	/* unordered list container */	
+}
+
+li{
+	/* list items */	
+}
+
+#idname{
+	/* an ID assignment begins with a #*/	
+}
+
+.classname{
+	/* a class assignment begins with a .*/	
+}
+

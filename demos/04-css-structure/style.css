@@ -1,0 +1,85 @@
+@font-face{
+	font-family: 'Magmatic VF';
+	src: url('fonts/Magmatic-VF-Trial.woff2') format('woff2-variations');
+	font-stretch: 50% 150%;
+	font-weight: 100 900;
+}
+
+body{
+	font-family: 'Magmatic VF';
+	margin: 0;
+	font-size: 16px;
+	background: #D8D1CB;
+}
+
+main{
+	border: 1px solid black;
+	border-top: 0;
+	border-bottom: 0;
+	height: 100vh;
+	width: 600px;
+	margin: auto;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(3, 30vh);
+	gap: 20px;
+	box-sizing: border-box;
+	padding: 2rem;
+}
+
+.large-letter{
+	grid-column-start: 1;
+	grid-column-end: 4;
+	font-size: 400px;
+	line-height: 0.9;
+	font-variation-settings: 'wdth' 150, 'wght' 600, 'XHGT' 0;
+	position: relative;
+	top: -23px;
+	transition: font-variation-settings 400ms linear;
+}
+
+.large-letter:hover{
+	font-variation-settings: 'wdth' 50, 'wght' 600, 'XHGT' 0;
+}
+
+.condensed{
+	font-size: 1.5rem;
+	line-height: 0.9;
+	font-variation-settings: 'wdth' 70, 'wght' 400, 'XHGT' 100;
+	letter-spacing: 0.02em;
+	transition: font-variation-settings 100ms linear;
+}
+
+.condensed:hover{
+	font-variation-settings: 'wdth' 70, 'wght' 400, 'XHGT' 0;
+}
+
+.box2{
+	grid-column: 4/5;
+}
+.special{
+	font-size: 2vw;
+}
+.box3{
+	grid-column-start: 1;
+	grid-column-end: 3;
+	padding-left: 35px;
+}
+
+.label{
+	grid-column: 3 / 5 ;
+}
+
+.label{
+	text-transform: uppercase;
+	font-variation-settings: 'wdth' 150, 'wght' 600, 'XHGT' 0;
+}
+
+.name{
+	font-variation-settings: 'wdth' 150, 'wght' 900, 'XHGT' 0;
+}
+
+
+
+
+

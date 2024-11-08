@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Open Type Features</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../css/main.css">
+	<link rel="stylesheet" type="text/css" href="../../css/slides.css">
+	<link rel="stylesheet" type="text/css" href="../../css/typography.css">
+	<link rel="icon"type="image/svg"href="../../assets/favicon.svg">
+	<script src="../slides.js"></script>
+	<style>
+		@font-face{
+			font-family: 'Quiosco Grades VF';
+			src: url(fonts/QuioscoRomanVF.woff2) format('woff2-variations');
+		}
+
+		@font-face{
+			font-family: 'Allium';
+			src: url(fonts/Allium-Medium.woff2) format('woff2');
+		}
+
+		.quiosco td:nth-child(4){
+			font-size: 2rem;
+			font-family: 'Quiosco Grades VF';
+		}
+
+		.allium td:nth-child(3){
+			font-size: 2rem;
+			font-family: 'Allium';
+		}
+	</style>
+</head>
+<body class="layout-slides">
+	<main>
+		<section class="slide divider">
+			<div class="text">
+				<h1>Open Type Features</h1>
+				<h2>Accessing embedded functions and typographic details</h2>
+			</div>
+			<footer class="grid">
+				<div class="runner-1">Web Typography Workshop @ Letterform Archive</div>
+				<div class="runner-2">Week 3</div>
+			</footer>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>Open Type Features</h2>
+				<p>
+					Open Type features provide ways to access embedded functionality in your typefaces that help you refine your typography by providing alternate forms. Depending on the genre of the font, these might include some from the list below. The general syntax <code>font-feature-settings: featuretag on/off;</code> or <code>1/0</code> (0 meaning off, 1 meaning on) provides general access to the features; some features may have a more specific CSS properties on modern browsers. Some features may be on by default.
+				</p>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<table class="quiosco">
+					<tr><th>Open Type Feature</th><th>feature tag</th><th>modern browser property</th><th>example</th> </tr>
+					<tr>
+						<td>Ligatures</td>
+						<td><code>liga</code></td>
+						<td><code>font-variant-ligatures: common-ligatures;</code></td>
+						<td style="font-feature-settings: 'liga' 1;">ff fi fl ffi ffl</td>						
+					</tr>
+					<tr>
+						<td>Discretionary Ligatures</td>
+						<td><code>dlig</code></td>						
+						<td><code>font-variant-ligatures: discretionary-ligatures;</code></td>
+						<td style="font-feature-settings: 'dlig' 1;">fj ft</td>
+					</tr>
+					<tr>
+						<td>Small caps</td>
+						<td><code>smcp</code>, or <code>c2sc</code></td>
+						<td><code>font-variant-caps: small-caps;</code></td>
+						<td> Cap <span style="font-feature-settings: 'c2sc' 1;">SMALL CAPS</td>						
+					</tr>
+					<tr>
+						<td>Figures Styles (Tabular, lining, oldstyle)</td>
+						<td><code>tnum</code>, <code>lnum</code>, <code>onum</code></td>
+						<td><code>font-variant-numeric: tabular-nums / lining-nums / olstyle-nums;</code></td>
+						<td> <span style="font-feature-settings: 'tnum' 1;">0123</span>  <span style="font-feature-settings: 'lnum' 1;">0123</span>  <span style="font-feature-settings: 'onum' 1;">0123</span></td>
+					</tr>
+					<tr>
+						<td>Fractions</td>
+						<td><code>frac</code></td>					
+						<td><code>font-variant-numeric: diagonal-fractions;</code></td>
+							<td style="font-feature-settings: 'frac' 1;">1/2  1/4 3/4</td>
+					</tr>
+					<tr>
+						<td>Superscript / Subscripts</td>
+						<td><code>sups</code>, <code>subs</code></td>						
+						<td><code>font-variant-position: super / sub;</code></td>
+						<td> footnote<span style="font-feature-settings: 'sups' 1;">3</span> H<span style="font-feature-settings: 'subs' 1;">2</span>0</td>
+					</tr>
+				</table>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<table class="allium">
+					<tr>
+						<th>Open Type Feature</th>
+						<th>feature tag</th>
+						<th>example</th>
+					</tr>
+					<tr>
+						<td>Stylistic Set 01*</td>
+						<td><code>ss01</code></td>
+						<td style="font-feature-settings: 'ss01' 1;">
+							a á ă â ä à ā ą å ǻ ã
+						</td>						
+					</tr>
+					<tr>
+						<td>Stylistic Set 05*</td>
+						<td><code>ss05</code></td>
+						<td style="font-feature-settings: 'ss05' 1;">
+							&
+						</td>						
+					</tr>
+<!-- 					<tr>
+						<td>Contextual Alternates</td>
+						<td><code>calt</code></td>
+						<td style="font-feature-settings: 'calt' 1;"></td>						
+					</tr>
+					<tr>
+						<td>Case-sensitive forms</td>
+						<td><code>case</code></td>
+						<td style="font-feature-settings: 'case' 1;"></td>						
+					</tr> -->
+					<tr>
+						<td>Zero slash</td>
+						<td><code>case</code></td>
+						<td style="font-feature-settings: 'zero' 1;">0</td>						
+					</tr>
+					<tr>
+						<td>Localized Forms†</td>
+						<td><code>locl</code></td>
+						<td style="font-feature-settings: 'locl' 1;" lang="bg">Д Л в г д ж з и й ѝ к л п т ц ш щ ь ъ ю </td> </tr>
+				</table>
+				<p>* The variants assigned to stylistic sets are up to the type designer—there are no standard mappings. A font can have up to 20 <code>ss</code> alternates.<br>
+				† Localized forms need to be combined with the <code>lang="xx"</code> attribute on the element, where xx is the <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" target="_blank">2-letter ISO language code</a>.</p>
+
+				<p>
+					Multiple feature properties can be applied by comma-separating the different feature activations, so that the property can be applied to the whole text block, rather than individual letters.
+				<code>font-feature-settings: 'liga' 1, 'ss01' 1;</code> will turn on both ligatures and Stylistic Set 01 (i.e. a simpified a) to the element.
+				</p>
+			</div>
+		</section>
+
+
+		<section class="slide">
+			<div class="text">
+				<h2>Details for refinement</h2>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>Quotation marks</h2>
+				<p>
+					Be careful of the difference between <code>'</code> and <code>’</code>, <code>"</code> and <code>”</code>.
+					For large texts, consider hanging your quotation mark.
+				</p>
+				<div class="grid diagram">
+					<div class="text-column">
+						<blockquote>
+							<p style="text-indent: -0.3em">
+								“<em>Straight quotes</em> are the two generic vertical quotation marks located near the return key: the straight single quote (') and the straight double quote ("). <em>Curly quotes</em> are the quotation marks used in good typography. There are four curly quote characters: the opening single quote (‘), the closing single quote (’), the opening double quote (“), and the closing double quote (”).”
+							</p>
+							<p class="caption">Matthew Butterick, <a href="https://practicaltypography.com/straight-and-curly-quotes.html" target="_blank">Practical Typography</a></p>
+						</blockquote>
+					</div>
+					<div class="text-column">
+						<blockquote>
+							<p>
+								“<em>Straight quotes</em> are the two generic vertical quotation marks located near the return key: the straight single quote (') and the straight double quote ("). <em>Curly quotes</em> are the quotation marks used in good typography. There are four curly quote characters: the opening single quote (‘), the closing single quote (’), the opening double quote (“), and the closing double quote (”).”
+							</p>
+							<p class="caption">Matthew Butterick, <a href="https://practicaltypography.com/straight-and-curly-quotes.html" target="_blank">Practical Typography</a></p>
+						</blockquote>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- <section class="slide">
+			<div class="text">
+				<h2>Bullets and Numbers</h2>
+				<p>
+					By default, bulleted lists have a left padding applied to indent the bullets. 
+				</p>
+				<div class="grid diagram">
+					<div class="text-column">
+						<ul>
+							<li>By default, bulleted lists have a left padding applied to indent the bullets.</li>
+							<li>By default, bulleted lists have a left padding applied to indent the bullets.</li>
+							<li>By default, bulleted lists have a left padding applied to indent the bullets.</li>
+						</ul>
+					</div>
+					<div class="text-column">
+						<ul>
+							<li>By default, bulleted lists have a left padding applied to indent the bullets.</li>
+							<li>By default, bulleted lists have a left padding applied to indent the bullets.</li>
+							<li>By default, bulleted lists have a left padding applied to indent the bullets.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+ -->
+		<section class="slide">
+			<div class="text">
+				<h2>Firefox weirdness</h2>
+				<p>
+					Firefox tends to display typefaces loaded via <code>@font-face</code> bolder than they should look. To mitigate this, add <code>-moz-osx-font-smoothing: grayscale;</code> to the <code>body</code> of your document.
+				</p>
+			</div>
+		</section>
+
+
+		</main>
+	</body>
+</html>

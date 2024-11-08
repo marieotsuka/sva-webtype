@@ -1,0 +1,150 @@
+Every element in web design is a rectangular box styled with CSS. 
+
+Read more on <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Web_fonts">How to use custom fonts</a> on your website.
+					<pre><code>.box {
+					  width: 300px;
+					  height: 200px;
+					  border: 6px solid coral;
+					  background: pink;
+					  padding: 10px;
+					  margin: 5px 20px 30px auto;
+					}
+				</code></pre>
+				<!-- <div class="diagram">
+					<div style="width: 300px; height: 200px; border: 6px solid coral; background: pink; padding: 10px; margin: 5px 20px 30px auto;">
+					</div>
+				</div> -->
+	<section class="slide">
+			<div class="text">
+				<h2>Advanced Selectors</h2>
+				<p>You could also use the structure of HTML to select elements in CSS. These include:</p>
+				<h3>Relationship Selectors</h3>
+				<table>
+					<thead>
+						<tr>
+							<th>Selector</th>
+							<th>Description</th>
+							<th>Sample Syntax</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>child <code>&gt;</code></td>
+							<td>matches an element that is a direct child of another</td>
+							<td><code>li&gt;a</code></td>
+						</tr>
+						<tr>
+							<td>descendant <code> </code></td>
+							<td>matches an element that is a descendent of another, not just a direct child</td>
+							<td><code>p a</code></td>
+						</tr>
+						<tr>
+							<td>adjacent sibling selector <code>+</code></td>
+							<td>matches only the specified element that immediately follows the former specified element</td>
+							<td><code>h1+p</code></td>
+						</tr>
+						<tr>
+							<td>general sibling selector <code>~</code></td>
+							<td>matches the second element only if it is preceded by the first, and both share a common parent</td>
+							<td><code>h1~p</code></td>
+						</tr>
+					</tbody>
+				</table>
+				<h3>Attribute Selectors</h3>
+				<p>If you want to select elements based on their attributes, you can use an attribute selector.</p>
+				<table>
+					<thead>
+						<tr>
+							<th>Selector</th>
+							<th>Description</th>
+							<th>Sample Syntax</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>existence <code>[attr]</code></td>
+							<td>matches a specific attribute (regardless of value)</td>
+							<td><code>a[target]</code></td>
+						</tr>
+						<tr>
+							<td>equality <code>[attr=&quot;value&quot;]</code></td>
+							<td>matches a specific attribute with a specific value (needs to match exactly)</td>
+							<td><code>a[target=&quot;_blank&quot;]</code></td>
+						</tr>
+						<tr>
+							<td>substring <code>[attr*=&quot;value&quot;]</code></td>
+							<td>matches a specific attribute whose value contains a specific substring (the specified string of letters appears somewhere in the value)</td>
+							<td><code>img[alt*=&quot;art&quot;]</code></td>
+						</tr>
+					</tbody>
+				</table>
+				<ul>
+					<li>See full list of <a href="https://css-tricks.com/almanac/selectors/a/attribute/">attribute selectors</a>.</li>
+				</ul>
+				<p>Note: <code>h1#page-title</code> and <code>h1[id=&quot;page-title&quot;]</code> are both selectors using the <code>id</code> attribute. But the latter is more specific; with conflicting rules, the latter will override the former.</p>
+				<h3>Pseudo-classes</h3>
+				<p>A CSS pseudo-class is a keyword added to selectors that specifies a special state of the element to be selected.<br>
+					The most popular use of pseudo selectors are in links. Browsers typically show text links in blue with an underline text decoration; visited links are purple. To customize this, you can target those elements using pseudo-classes, denoted by a <code>:</code> after the element.
+				</p>
+				<pre><code>a:link {
+			  color: red;
+			  text-decoration: underline;
+			}
+			a:visited {
+			  color: black;
+			}
+			a:hover {
+			  color: green;
+			  text-decoration: none;
+			}
+			a:active {
+			  color: blue;
+			  text-decoration: underline;
+			} 
+
+			</code></pre>
+				<h3>Structural Pseudo-classes</h3>
+				<p>You can use pseudo selectors to target specific children of parent elements.</p>
+				<table>
+					<thead>
+						<tr>
+							<th>Selector</th>
+							<th>Description</th>
+							<th>Sample Syntax</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>First child <code>element:first-child</code></td>
+							<td>matches the first child element, regardless of type, in a parent element</td>
+							<td><code>li:first-child</code></td>
+						</tr>
+						<tr>
+							<td>Last child <code>element:last-child</code></td>
+							<td>matches the last child element, regardless of type, in a parent element</td>
+							<td><code>li:last-child</code></td>
+						</tr>
+						<tr>
+							<td>Nth child <code>element:nth-child(_)</code></td>
+							<td>matches a child element in relation to its position within the parent element — accepts numerals, formulas, and keywords</td>
+							<td><code>li:nth-child(2)</code></td>
+						</tr>
+					</tbody>
+				</table>
+				<p>We might use it to style alternate rows in a table:</p>
+				<pre><code>tr:nth-child(even) {
+			  background: #EEE;
+			}
+			</code></pre>
+				<h3>Pseudo-elements</h3>
+				<p>Pseudo-elements allow you to style specific parts of an element or generate content around an element.</p>
+				<pre><code>p.note::before {
+			  content: &quot;Note: &quot;;
+			  font-weight: bold;
+			}
+			</code></pre>
+				<ul>
+					<li>More on pseudo-elements and <a href="https://css-tricks.com/pseudo-element-roundup/">things you can do with them</a>.</li>
+				</ul>
+			</div>
+		</section>

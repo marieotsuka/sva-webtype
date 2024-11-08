@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../css/main.css">
+	<link rel="stylesheet" type="text/css" href="../../css/slides.css">
+	<link rel="icon" type="image/svg" href="../../assets/favicon.svg">
+	<script src="../slides.js"></script>
+</head>
+
+<body class="layout-slides">
+	<main>
+		<section class="slide divider">
+			<div class="text">
+				<h1>HTML</h1>
+				<h2>Semantic Markup</h2>
+			</div>
+			<footer class="grid">
+				<div class="runner-1">Web Typography Workshop @ Letterform Archive</div>
+				<div class="runner-2">Week 1</div>
+			</footer>
+		</section>
+		<section class="slide">
+			<div class="text">
+				<h2>HyperText Markup Language</h2>
+				<p>HTML is the language of web pages interpreted by web browsers.</p>
+				<ul>
+					<li>HTML = <em>H</em>yper<em>T</em>ext <em>M</em>arkup <em>L</em>anguage</li>
+					<li>HTML defines web content by organizing text comprised of a series of nested tags</li>
+					<li>HTML can be created with any simple text editor.</li>
+				</ul>
+			</div>
+		</section>
+		<section class="slide">
+			<div class="text">
+				<h2>Layers of a webpage</h2>
+				<table>
+					<tr><th>Layer</th><th>Language / File Type</th></tr>
+					<tr><td><strong>content</strong></td><td><strong>HyperText Markup Language (HTML)</strong></td></tr>
+					<tr><td>form</td><td>Cascading StyleSheets (CSS)</td></tr>
+					<tr><td>behavior</td><td>JavaScript (JS)</td></tr>
+				</table>
+			</div>
+		</section>
+		<section class="slide">
+			<div class="text">
+				<h2>How it works</h2>
+				<p>An <code>.html</code> file has 2 forms:</p>
+				<ol>
+					<li>As code, in your text editor. This is what you edit.</li>
+					<li>As an webpage, in your browser. The browser reads HTML in a specific way.</li>
+				</ol>
+			</div>
+		</section>
+		<section class="slide">
+			<div class="text">
+				<h2>HTML Tag</h2>
+				<p><strong>Tags</strong> are used to mark-up content in HTML. The tag name is between two angled brackets.</p>
+				<figure><code>&lt;p&gt;</code></figure>
+				<figcaption>A paragraph tag</figcaption>
+				<h3>Anatomy</h3>
+				<ul>
+					<li>Left-Angle Bracket <code>&lt;</code></li>
+					<li>Tag name <code>p</code></li>
+					<li>Right-Angle Bracket <code>&gt;</code></li>
+				</ul>
+			</div>
+		</section>
+		<section class="slide">
+			<div class="text">
+				<h2>HTML Element</h2>
+				<p>All content is surrounded between opening and closing tags. A closing tag is indicated with a forward slash <code>/</code>. Most forms of markup require both. (<a href="https://web.archive.org/web/20060314044545/http://www.sewingandembroiderywarehouse.com/embtrb.htm">Here’s</a> what happens when you don’t close tags.) A set of opening and closing tags form an html <strong>element</strong>. (Some special tags don’t require closing tags.)</p>
+				<figure><code>
+					&lt;h1&gt;headline&lt;/h1&gt;
+					&lt;p&gt;lorem ipsum ...&lt;/p&gt;
+				</code></figure>
+				<h3>Anatomy</h3>
+				<ul>
+					<li>opening tag <code>&lt;h1&gt;</code></li>
+					<li>content <code>headline</code> — this is the actual text that will display</li>
+					<li>closing tag <code>&lt;/h1&gt;</code></li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>Nested Structures</h2>
+				<p>HTML works by wrapping text in opening and closing tags to indicate the role of the text to the browser. Often, elements are grouped together, constructing a hierarchy of elements nesting within each other. The foundational HTML structure is as follows</p>
+				<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;Sample File&lt;/title&gt;
+	&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+	This is where all website content goes. 
+	You can use whatever HTML elements make sense within the body tag, 
+	but these other tags are required for a webpage to properly function.
+
+&lt;/body&gt;
+&lt;/html&gt;				
+				</code>
+				</pre>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>Some elements that go in the <code>head</code> of a webpage</h2>
+				<table>
+					<tr>
+						<td><code>meta charset</code></td>
+						<td>What encoding to use. Unicode is most common.</td>
+						<td><code>"utf-8"</code></td>
+					</tr>
+					<tr>
+						<td><code>title</code></td>
+						<td>The title of the webpage — what shows up in the tab of your browser, and shows up on a search result page, for example.</td>
+						<td><code>Title of Website</code></td>
+					</tr>
+					<tr>
+						<td><code>meta name="description"</code></td>
+						<td>A summary of your webpage. This will help in search engine optimization</td>
+						<td><code>content="Your page description"</code></td>
+					</tr>
+					<tr>
+						<td><code>link rel="stylesheet"</code></td>
+						<td>The path to connect your stylesheet</td>
+						<td><code>href="path/to/cssfile.css"</code></td>
+					</tr>
+				</table>
+				<figcaption>More on <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML" target="_blank">What's in the head? Metadata in HTML</a>.
+			</div>
+		</section>
+		<section class="slide">
+			<div class="text">
+				<h2>Semantic Markup</h2>
+				<p>Semantic refers to how the elements relates to meaning in language or logic. <strong>Semantic markup</strong> establishes the hierarchy and structure of information. The latest version of html, html5, introduced several new elements (among other things) to improve how precisely a tag can describe the content it contains.</p>
+				<ul>
+					<li>headings <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>h5</code>, <code>h6</code></li>
+					<li>emphasis <code>strong</code>, <code>em</code></li>
+					<li>paragraph <code>p</code></li>
+					<li>lists <code>ul</code>, <code>ol</code>, <code>dl</code></li>
+					<li>tables <code>table</code>, <code>th</code>, <code>td</code></li>
+					<li>collapsed information <code>summary</code>, <code>details</code></li>
+				</ul>
+				<figcaption>Read more on how <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML" target="_blank">Semantic Markup is important for Web Accessibility</a></figcaption>
+			</div>
+		</section>
+		<section class="slide">
+			<div class="text">
+				<h2>The Inspector</h2>
+				<p>You can see the HTML and structure of any webpage by opening your Inspector tool on your browser.</p>
+				<p>
+					Inspect (⌘–Option–I or ⌘–Shift–C) displays the HTML structure and styles that the browser determined from the source file. You can also hover over elements to see what they correspond to on your screen. <em>The inspector is your best tool when developing websites because it bridges the gap between your intentions with your code and how the browser renders it.</em>
+				</p>
+			</div>
+		</section>
+		<section class="slide">
+			<div class="text">
+				<h2>Element hierarchy</h2>
+				<p>
+					An element nested within another is called a <strong>child</strong> element. Conversely, an element containing another is called its <strong>parent</strong>. A child element must be closed before its parent element.
+				</p>
+				<div class="grid">
+					<div class="text-column">
+						<p>This is incorrect syntax:</p>
+						<pre><code>
+&lt;h2&gt;French Bakery&lt;/h2&gt;
+&lt;p&gt;
+	All goods must be eaten &lt;em&gt;today.
+&lt;/p&gt;&lt;/em&gt;
+&lt;ul&gt;
+	&lt;li&gt;Baguettes	
+	&lt;li&gt;Croissants
+	&lt;li&gt;Pastries&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+					</div>
+					<div class="text-column">
+						<p>This is correct syntax:</p>
+						<pre><code>
+&lt;h2&gt;French Bakery&lt;/h2&gt;
+&lt;p&gt;
+	All goods must be eaten &lt;em&gt;today&lt;/em&gt;.
+&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;Baguettes&lt;/li&gt;	
+	&lt;li&gt;Croissants&lt;/li&gt;
+	&lt;li&gt;Pastries&lt;/li&gt;
+&lt;ul&gt;</code></pre>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="slide">
+			<div class="text">
+				<h2>Whitespace</h2>
+				<p>All HTML elements flow from the top to the bottom. Any whitespace (tabs or spaces) within the HTML file will have no effect on the rendered markdown; rather, it is a tool for writing readable code.</p>
+				<p>When writing code, nested elements should be kept tabbed for readability: it will help you see visually align the opening and closing tags of elements.</p>
+			</div>
+		</section>
+		<section class="slide">
+			<div class="text">
+				<h2>Elements and Attributes</h2>
+				<p>Attributes provide additional information about the contents of an element appear with the opening tag of an element. They consist of an <strong>attribute name</strong> and a <strong>attribute value</strong>. Each element type has its own appropriate attributes.</p>
+				
+				<figure><code>&lt;a href=&quot;index.html&quot;&gt;home&lt;/a&gt;</code></figure>
+
+				<h3>Anatomy</h3>
+				<ul>
+					<li>opening tag <code>&lt;a</code> (in this case, the anchor tag)</li>
+					<li>attribute name <code>href</code> (the location / path to where the link takes you)</li>
+					<li>equals sign <code>=</code></li>
+					<li>attribute value <code>&quot;index.html&quot;</code>
+						<ul>
+							<li>values must be wrapped in quotation marks</li>
+						</ul>
+					</li>
+					<li>content <code>home</code> (the text that the user clicks on)</li>
+				</ul>
+			</div>
+		</section>
+		<section class="slide">
+			<div class="text">	
+				<h2>Links</h2>
+				<div class="terms">
+					<h3>Local / Relative links</h3>
+					<p>Other pages in your site</p>
+					<code>&lt;a href=&quot;about.html&quot;&gt;learn more&lt;/a&gt;</code>
+
+					<h3>Anchor links</h3>
+					<p>Other locations within the same webpage</p>
+					<code>&lt;a href=&quot;#up&quot;&gt;go back up&lt;/a&gt;</code>
+					<p>In another part of the page</p>
+					<code>&lt;div id=&quot;#up&quot;&gt; &lt;/div&gt;</code>
+
+					<h3>Absolute links</h3>
+					<p>Other webpages outside your site</p>
+					<code>&lt;a href=&quot;https//www.google.com/&quot;&gt;search stuff&lt;/a&gt;</code>
+
+					<h3>Download links</h3>
+					<p>Any non-html file for users to download</p>
+					<code>&lt;a href=&quot;docs/resume.pdf&quot;&gt;view a PDF&lt;/a&gt;</code>
+				</div>
+			</div>
+		</section>
+		<section class="slide">
+			<div class="text">	
+				<h2>Inline vs. Block elements</h2>
+				<p>There are two primary display formats for elements.</p>
+				<p>These are default <code>display</code> CSS properties for each element.</p>
+				<p>We often use the generic <code>&lt;span&gt;</code> and <code>&lt;div&gt;</code> tags to wrap relevant elements, then assign additional CSS classes for formatting.</p>
+				<ul>
+					<li>to target in-line elements, such as text, we wrap them in a <code>span</code></li>
+					<li>to group several elements together, we wrap them in a <code>div</code></li>
+				</ul>		
+			</div>
+		</section>
+		<section class="slide">
+			<div class="text">
+				<figure class="diagram">
+					<div class="line">
+					</div>
+					<div class="flex">
+						Inline elements are 
+						<span class="inline marked">
+						</span>
+						continuous with the text flow
+					</div>
+					<div class="line">
+					</div>
+				</figure>
+
+				<p>An <strong>inline element</strong> continues along the same line as its neighboring elements and occupies as much space (width) as its content. i.e.: <code>&lt;a&gt;</code>, <code>&lt;b&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;img&gt;</code>, and <code>&lt;span&gt;</code>.</p>
+			</div>
+		</section>
+		<section class="slide">
+			<div class="text">
+				<figure class="diagram">
+					<div class="line">
+						Text before and after a block element
+					</div>
+					<div class="line marked">
+					</div>
+					<div class="line">
+						will be broken into separate lines
+					</div>
+				</figure>
+
+				<p>A <strong>block element</strong> always appears on a new line; by default, it’s as wide as its parent (containing) elements i.e.<code>&lt;section&gt;</code>,<code>&lt;article&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>, and <code>&lt;div&gt;</code>.</p>
+				
+			</div>
+		</section>
+		<section class="slide">
+			<div class="text">
+				<h2>A list of common HTML elements</h2>
+
+				<div class="grid">
+					<div class="text-column">
+						<h3>Basic elements</h3>
+						<pre><code>&lt;html&gt; ... &lt;/html&gt;</code></pre>
+						<h3>Document metadata</h3>
+						<pre><code>&lt;head&gt; ... &lt;/head&gt;</code></pre>
+						<pre><code>&lt;title&gt; ... &lt;/title&gt;</code></pre>
+						<h3>Content sectioning</h3>
+						<pre><code>&lt;header&gt; ... &lt;/header&gt;</code></pre>
+						<pre><code>&lt;nav&gt; ... &lt;/nav&gt;</code></pre>
+						<pre><code>&lt;main&gt; ... &lt;/main&gt;</code></pre>
+						<pre><code>&lt;section&gt; ... &lt;/section&gt;</code></pre>
+						<pre><code>&lt;footer&gt; ... &lt;/footer&gt;</code></pre>
+						<pre><code>&lt;h1&gt; ... &lt;/h1&gt;</code></pre>
+						<pre><code>&lt;h2&gt; ... &lt;/h2&gt;</code></pre>
+					</div>
+					<div class="text-column">	
+						<h3>Text content</h3>
+						<pre><code>&lt;ul&gt; ... &lt;/ul&gt;</code></pre>
+						<pre><code>&lt;li&gt; ... &lt;/li&gt;</code></pre>
+						<pre><code>&lt;p&gt; ... &lt;/p&gt;</code></pre>
+						<pre><code>&lt;br /></code>*</pre>
+						<h3>Flow content</h3>
+						<pre><code>&lt;img /&gt;</code>*</pre>
+						<h3>Inline text semantics</h3>
+						<pre><code>&lt;em&gt; ... &lt;/em&gt;</code></pre>
+						<pre><code>&lt;strong&gt; ... &lt;/strong&gt; </code></pre>
+					</div>
+				</div>
+				
+				<figcaption>* these elements are self-closing and do not have opening/closing tag pairs.<br> You may see them with or without the closing <code>/</code></figcaption>
+
+				<h3>Reference</h3>
+				<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">A comprehensive list of HTML Elements</a></p>
+			</div>
+		</section>
+		<section class="slide">
+			<div class="text">
+				<h2>Exercise: Semantic Markup</h2>
+				<p>Create an HTML file and markup your text, experimenting with different tags. Observe how inline and block elements work, as well as the default formatting your browser applies to certaint tags.</p>
+				<ol>
+					<li>Create a new folder in your own repository.</li>
+					<li>Copy the contents of the <code>02-semantic-markup</code> folder into it.</li>
+					<li>Markup your chosen text, or choose one of the texts from the <code>texts</code> folder to markup.</li>
+					<li>See how much you can design using only HTML markup and browser defaults.</li>
+				</ol>
+			</div>
+		</section>
+		<section class="slide">
+			<div class="text">
+				<h2>HTML Troubleshooting</h2>
+				<p>Below are some common errors to watch out for when writing HTML</p>
+				<ul>
+    				<li>Are your HTML elements wrapped in open and close tags?</li>
+    				<li>Are your HTML elements properly nested?</li>
+    				<li>Do your attribute values have matching quotation marks around them?</li>
+    				<li>Are your directory paths correct? Double check your link / path syntax.</li>
+    			</ul>
+			</div>
+		</section>
+	</main>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Responsive Design</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../css/main.css">
+	<link rel="stylesheet" type="text/css" href="../../css/slides.css">
+	<link rel="stylesheet" type="text/css" href="../../css/typography.css">
+	<link rel="icon"type="image/svg"href="../../assets/favicon.svg">
+	<script src="../slides.js"></script>
+</head>
+<body class="layout-slides">
+	<main>
+		<section class="slide divider">
+			<div class="text">
+				<h1>Responsive Design</h1>
+				<h2>Adapting your design across viewports</h2>
+			</div>
+			<footer class="grid">
+				<div class="runner-1">Web Typography Workshop @ Letterform Archive</div>
+				<div class="runner-2">Week 3</div>
+			</footer>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>Responsive Web Design</h2>
+				<p>
+					Responsive web design refers to the ability of websites to adapt the presentation of content to a range of devices and media. Making a website responsive typically involves a number of strategies:
+				</p>
+				<ul>
+				 <li>responsive meta tag</li>
+				 <li>fluid layout</li>
+				 <li>relative units</li>
+				 <li>fluid images</li>
+				 <li>media queries</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>Meta tag</h2>
+				<p>
+					Insert the <code>viewport</code> meta tag within the <code>&lt;head&gt;&lt;/head&gt;</code> of all your html pages. This ensures that the browser will register the physical width of the device’s screen as its screen width.
+				</p>
+
+				<pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+				</code></pre>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>A Fluid Layout & Relative Units</h2>
+				<p>
+					A fluid layout often has:
+				</p>
+				<ul>
+					<li>a container element that fills the entire screen size</li>
+					<li>the container element responds to adjustments in browser widths</li>
+					<li>widths of the columns nested within the container get narrower, or collapse under each other accordingly</li>
+				</ul>
+				<p>Remember CSS <a href="../03_css/#22" target="_blank">Size Units</a>.
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>Fluid Images</h2>
+				<p>
+					Any embedded assets, such as images, videos, etc will need to scale appropriately. Usually, the image container has defined width. The image itself then has <code>width: 100%</code> to resize to fill its container. Alternatively, you can use <code>max-width: 100%;</code> to scale down if its container resizes, but would never scale up to be larger than its original size.
+				</p>
+				<div class="grid">
+					<div class="text-column">
+						<figcaption>Your CSS</figcaption>							
+						<pre><code>
+.container {
+  width: 33%;
+}
+
+.figure img {
+  width: 100%;
+}
+							</code></pre>
+
+						</div>
+						<div class="text-column">
+							<figcaption>Your HTML</figcaption>
+							<pre><code>
+&lt;div class=&quot;container&quot;&gt;
+  &lt;img src=&quot;image.png&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+							
+						</div>
+					</div>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h3>Retina displays</h3>
+				<p>
+					72dpi (dots / inch, in this case pixels) used to be the standard for screen resolutions. But now with the introduction of mobile devices and retina screens, screen resolutions may be much higher. In order to have your images appear crisp on retina screens, you will need to provide higher resolution images (at least 2x large — resolutions are often 144dpi or above.) Many website prepare multiple versions of the same image so to load the best image resolution for that particular device and viewport.
+				</p>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>Media Queries</h2>
+				<p>
+					Media queries are the crux of responsive design. They define the <em>breakpoints</em> at which different CSS rules are applied. <em>Any CSS rule</em> can be added or updated within these media queries. Typically, you will style your website for one viewport size, then apply overrides for the others. You can approach writing media queries in two ways.
+				</p>
+				<ol>
+					<li><em>Desktop-first</em>, defining css rules for wide screens as default, and setting <code>max-width</code> breakpoints to go smaller</li>
+					<li><em>Mobile-first</em>, defining css rules for narrow screens as default, and setting <code>min-width</code> breakpoints to go larger</li>
+				</ol>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>Breakpoints and Responsive CSS</h2>
+				<p>
+					Breakpoints determine the browser widths at which new CSS rules apply, including how your containers will rearrange into a single column. Note: instead of relying on the latest device specifications, I would choose your breakpoints depending on the needs of your layout, using the inspector as a guide to test out different viewports. (Tip: turn on the <em>ruler</em> icon on your inspector.)
+				</p>
+				<ul>
+					<li>Sometimes you need to use both <code>min</code> and <code>max</code></li>
+					<li>Collapsed columns: Block-level containers are rearranged according to the DOM (HTML structure). You may need to reconsider your HTML structure when you begin writing your responsive rules.</li>
+					<li>Collapsed menu</li>
+					<li>Scaled type sizes</li>
+					<li>Adjusted line-height</li>
+					<li>Adjusted paragraph widths (measure)</li>
+					<li>Shortened words, omitted items</li>
+					<li>Adjusted image sizes</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>Media Query Syntax</h2>
+				<p>Media queries are written with the <code>@media</code> keyword, with <code>max-width</code> and/or <code>min-width</code> conditions specified within parentheses. </p>
+
+				<pre><code>
+/* default styles */	
+.container{
+	width: 80%;
+	margin: auto;
+}
+.grid{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+/* mobile styles */	
+@media (max-width: 480px){ 
+  .container{
+    width: 100%;
+  }
+  .grid{
+  	display: block;
+  }
+}	</code></pre>
+<p class="caption">Note: nested braces, similar to <code>@keyframe</code> rules.
+				
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>Screen and Print Media</h2>
+				<p>
+					You can also be specific about what kind of media—screen or print. This lets you easily style your webpage for printing-out.
+				</p>
+				<pre><code>
+/* mobile styles */	
+@media screen and (max-width: 480px){ 
+  .container{
+    width: 100%;
+  }
+  .grid{
+  	display: block;
+  }
+}	
+
+/* print styles */	
+@media print{ 
+  nav{
+  	display: none;
+  }
+}	
+</code></pre>
+
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>Reference</h2>
+				<ul>
+					<li><a href="https://alistapart.com/article/responsive-web-design/">Ethan Marcotte: Responsive Web Design</a></li>
+					<li><a href="https://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/">Smashing Magazine: Responsive Web Design</a></li>
+					<li><a href="https://mediaqueri.es/">Collection of examples</a></li>
+					<li><a href="https://alistapart.com/blog/post/variable-fonts-for-responsive-design/">Nick Sherman: Variable Fonts for Responsive Design</a></li>
+					<li><a href="https://alistapart.com/article/live-font-interpolation-on-the-web/">Andrew Johnson: Live Interpolation on the Web</a></li>
+					<li><a href="https://typetura.scottkellum.com/">Scott Kellum: Fluid typography and the creation of Typetura</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>Exercise</h2>
+				<p>Make your styled text (from last week) or your web poster responsive. Commit your code to publish it into a live page, and try accessing it with your mobile device.
+				</p>
+				<ul>
+					<li><a href="https://alistapart.com/article/responsive-web-design/">Ethan Marcotte: Responsive Web Design</a></li>
+					<li><a href="https://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/">Smashing Magazine: Responsive Web Design</a></li>
+					<li><a href="https://mediaqueri.es/">Collection of examples</a></li>
+					<li><a href="https://alistapart.com/blog/post/variable-fonts-for-responsive-design/">Nick Sherman: Variable Fonts for Responsive Design</a></li>
+					<li><a href="https://alistapart.com/article/live-font-interpolation-on-the-web/">Andrew Johnson: Live Interpolation on the Web</a></li>
+					<li><a href="https://typetura.scottkellum.com/">Scott Kellum: Fluid typography and the creation of Typetura</a></li>
+				</ul>
+			</div>
+		</section>
+
+
+		</main>
+	</body>
+</html>

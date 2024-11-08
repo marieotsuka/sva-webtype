@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSS Positioning</title>
+		<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../css/main.css">
+		<link rel="stylesheet" type="text/css" href="../../css/slides.css">
+		<link rel="stylesheet" type="text/css" href="../../css/typography.css">
+		<link rel="icon"type="image/svg"href="../../assets/favicon.svg">
+		<script src="../slides.js"></script>
+	</head>
+	<body class="layout-slides">
+		<main>
+			<section class="slide divider">
+				<div class="text">
+					<h1>CSS Positioning</h1>
+					<h2>Breaking the grid and flow</h2>
+				</div>
+				<footer class="grid">
+					<div class="runner-1">Web Typography Workshop @ Letterform Archive</div>
+					<div class="runner-2">Week 3</div>
+				</footer>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>Position property</h2>
+					<p>
+						Positioning allows you to control the layout of a page using the position property. Positioning allows you to establish elements independent of the normal flow. By default, all elements have a <code>position: static</code> CSS property which gives them their normal flow.	Other position properties include: <code>relative</code>, <code>absolute</code>, and <code>fixed</code>, and are applied along with <code>top, left, right</code>, or <code>bottom</code> properties to shift elements along the X/Y axis. Note: postioning has nothing to do with <em>alignment</em> — rather, it is often used to mis-align or disrupt the normal behavior of aligned elements. Use techniques described in <a href="../06_layouts/">Layouts</a> and the <a href="../03_css/#23">Box Model</a> to control your alignments and whitespace overall structure.
+					</p>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>Relative Positioning</h2>
+					<p>
+						This offsets an element from the position it would be in normal flow, shifting it to the top, right, bottom, or left of where it would have been placed. This does not affect the position of surrounding elements; they stay in the position they would be in in normal flow.
+					</p>
+					<div class="grid">
+						<div class="text-column">	
+							<h4>HTML</h4>							
+							<pre><code>
+&lt;div&gt;...&lt;/div&gt;
+&lt;div class=&quot;example&quot;&gt;...&lt;/div&gt;
+&lt;div&gt;...&lt;/div&gt;											
+							</code>
+							</pre>
+						</div>
+						<div class="text-column">
+							<h4>CSS</h4>							
+							<pre><code>
+.example {
+  background: blue;
+  position: relative; 
+  top: -15px;
+  left: 100px;
+}							
+							</code></pre>
+						</div>
+					</div>
+
+					<div class="diagram">
+					  <div class="line"></div>
+					  <div class="line marked" style="background: blue; position: relative;
+					  top: -15px;
+					  left: 100px;"></div>
+					  <div class="line"></div>
+					</div>
+
+					<figcaption>
+						<ul>
+							<li><code>Position: relative</code>, other surrounding elements act as if it is still in its original place</li>
+						</ul>
+					</figcaption>
+				</div>					
+
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>Absolute Positioning</h2>
+					<p>
+						The element’s box is completely removed from the flow of the document and positioned with respect to its <a href="#the-container">containing block</a>, which may be another element in the document or the initial containing block. Whatever space the element might have occupied in the normal document flow is closed up, as though the element did not exist.
+					</p>
+
+					<div class="grid">
+						<div class="text-column">	
+							<h4>HTML</h4>							
+							<pre><code>
+&lt;section class=&quot;container&quot;&gt;
+	&lt;div&gt;...&lt;/div&gt;
+	&lt;div class=&quot;example&quot;&gt;...&lt;/div&gt;
+	&lt;div&gt;...&lt;/div&gt;
+&lt;/div&gt;											
+							</code>
+							</pre>
+						</div>
+						<div class="text-column">
+							<h4>CSS</h4>							
+							<pre><code>
+.container{
+	position: relative;
+	border: 1px solid red;
+}								
+.example {
+  background: red;
+  position: absolute; 
+  top: 0; 
+  right: 0;
+  width: 60%;
+}						</code></pre>
+						</div>
+					</div>
+
+					<div class="diagram">
+					  <div class="line"></div>
+					  <div class="line marked" style="background: red; position: absolute; top: 0;
+					  right: 0;
+					  width: 60%; "></div>
+					  <div class="line"></div>
+					</div>
+
+					<figcaption>
+						<ul>
+							<li>With <code>position: absolute</code>, the element is completely removed from the normal flow of elements and placed relative to its <strong>container</strong>.</li>
+						</ul>
+					</figcaption>
+				</div>					
+
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>The Container</h2>
+					<p>
+						When positioning elements, the containing block / parent is your positioning context or reference point. (Elements can be visually positioned outside of their containing block but still operate with the same parent-child relationship.)
+					</p>
+					<p>						
+						For <strong>relatively positioned</strong> elements, the reference point is the position the block would take if it were not moved.
+					</p>
+					<p>
+						For <strong>absolutely positioned</strong> elements the containing block is set to the nearest <em>ancestor</em> (any containing element, not necessarily the container directly above it) that has a <code>position</code> value other than the default <code>static</code>, i.e. <code>relative</code> or <code>absolute</code> or <code>fixed</code>. For this reason, we often set the container to which we want the absolutely positioned element to refer to as <code>position: relative</code>, without setting <code>top</code> or <code>left</code> values. We aren’t offsetting the container, but simply specifying the context for the absolutely positioned element it contains.
+					</p>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>Fixed positioning</h2>
+					<p>
+						The element’s box behaves as though it were set to absolute, but its containing block is the viewport. Viewport refers to the boundaries of browser window. This means that fixed position elements don’t move when the page is scrolled, because it is always relative to the current window.
+					</p>
+					<div class="grid">
+						<div class="text-column">	
+							<h4>HTML</h4>							
+							<pre><code>
+	&lt;div class=&quot;square&quot;&gt;...&lt;/div&gt;							
+							</code>
+							</pre>
+
+						</div>
+						<div class="text-column">							
+							<h4>CSS</h4>							
+							<pre><code>
+	.square{
+	  width: 80px;
+	  height: 80px;
+	  background: yellow;
+	  position: fixed;
+	  top: 0;
+	  right: 0;
+	}
+	</code></pre>							
+						</div>
+					</div>
+					<figcaption>The persistent yellow square on the top right corner of this presentation is set to <code>position: fixed</code>.</figcaption>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>Z-index</h2>
+					<p>
+						The <code>z-index</code> value specifies the stack order of an element for any non-standard positioned elements. This is similar to how layers work in Photoshop.	An element with a bigger number is always in front of an element with a smaller number.	The default is <code>0</code>. We often use intervals of <code>10</code> in case additional elements need to be placed in between.
+					</p>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<div class="grid">
+						<div class="text-column">	
+							<h4>HTML</h4>							
+							<pre><code>
+&lt;div class=&quot;square&quot;&gt;...&lt;/div&gt;
+&lt;div class=&quot;square&quot;&gt;...&lt;/div&gt;
+&lt;div class=&quot;square&quot; &gt;...&lt;/div&gt;								
+							</code>
+							</pre>
+
+						</div>
+						<div class="text-column">							
+							<h4>CSS</h4>							
+							<pre><code>
+.square{
+  width: 80px;
+  height: 80px;
+  background: grey;
+  display: inline-block;
+  position: relative;
+}
+.square:nth-child(2) {
+  background: blue;
+  z-index: 10; 
+  top: 40px;
+  left: -40px;
+}
+.square:nth-child(3) {
+  top: 80px;
+  left: -80px;
+}				</code></pre>							
+						</div>
+					</div>
+
+					<div class="diagram" style="height: 200px;">
+					  <div class="square" style="display: inline-block;"></div>
+					  <div class="square marked" style="display: inline-block; position: relative; top: 40px; left:-40px; z-index: 10;"></div>
+					  <div class="square" style="display: inline-block; position: relative; top: 80px; left:-80px;"></div>
+					</div>
+	
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>Overflow</h2>
+					<p>Overflow property accounts for what happens when your content doesn’t fit within the container. By default <code>auto</code> will add a scroll bar if the content exceeds the width / height of its container. Use <code>overflow: hidden</code> to crop or hide the overflowing contents.</p>
+					<div class="grid">
+						<div class="text-column">	
+							<h4>HTML</h4>							
+							<pre><code>
+&lt;section class=&quot;container&quot;&gt;
+  &lt;div class=&quot;line&quot;&gt;...&lt;/div&gt;
+  &lt;div class=&quot;line&quot;&gt;...&lt;/div&gt;
+  &lt;div class=&quot;line&quot;&gt;...&lt;/div&gt;
+&lt;/section&gt;								
+							</code>
+							</pre>
+
+						</div>
+						<div class="text-column">							
+							<h4>CSS</h4>							
+							<pre><code>
+.container {
+  overflow: hidden; 
+  height: 80px;
+}
+.line {
+  height: 1.5em;
+  background: #e6e6e6;
+  margin-bottom: .5em;
+}			</code></pre>							
+						</div>
+					</div>
+
+					<div class="diagram" style="overflow: hidden; height: 80px;">
+					  <div class="line"></div>
+					  <div class="line"></div>
+					  <div class="line"></div>
+					</div>
+					<figcaption>The third line is hidden due to the <code>overflow: hidden</code> property on the container. Note that the container must have a specified <code>height</code> for clipping to occur; the default behavior of elements is to expand to fit its contents.</figcaption>
+	
+				</div>
+			</section>
+		
+			<section class="slide">
+				<div class="text">
+					<h2>Positioning Properties Summary</h2>
+					<p>
+						Position property adjusts the regular flow of HTML by horizontal or vertical units, relative to <code>top / left / right / bottom</code> properties that are additionally declared.
+					</p>
+					<table>
+						<tr>
+							<td><code>static</code></td>
+							<td> this is the default behavior — it is usually not specified this way, unless cancelling out another positioning property. </td>
+						</tr>
+						<tr>
+							<td><code>relative</code></td>
+							<td> offsets relative to its original position in the flow</td>
+						</tr>
+						<tr>
+							<td><code>absolute</code></td>
+							<td> offsets relative to a containing element that does <em>not</em> have static positioning, or the <code>body</code></td>
+						</tr>
+						<tr>
+							<td><code>fixed</code></td>
+							<td> offsets relative to the viewport</td>
+						</tr>
+					</table>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>Caution!</h2>
+					<p>
+						Exercise restraint when using positioning properties. It is easy to use <code>absolute</code> positioning to reach pixel perfection—only to realize that on different screen sizes or viewports, the layout looks askew. Always use the underlying <em>flow</em> of the content, and be explicit with your reference points.
+					</p>
+				</div>
+			</section>
+
+
+
+
+			<div class="diagram">
+				<div class="square" style="position: fixed; background: yellow; top: 0; right: 0;">
+				</div>
+			</div>
+		</main>
+	</body>
+</html>

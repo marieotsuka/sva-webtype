@@ -1,0 +1,66 @@
+/*setup the variable font*/
+
+@font-face {
+    font-family: 'Dispatch2 VF';
+    font-weight: 200 700;
+    font-stretch: 50% 200%;
+    src: url(fonts/Dispatch2VF-Trial.woff2) format("woff2-variations");
+}
+
+/*setup default css variables*/
+:root{
+  --wdth: 100;
+  --wght: 300;
+  --XGHT: 0;
+
+  --pad: 1rem;
+
+  --size-large: 480px;
+  --size-base: 1.4rem;
+
+  --color-bg: rgb(0 0 0);
+  --color-text: rgb(255 255 255);
+  --color-accent: rgb(190, 0, 217);
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* MAIN STRUCTURES */
+
+body{
+  font-family: 'Dispatch2 VF';
+  font-variation-settings: 'wdth' var(--wdth), 'wght' var(--wght), 'XHGT' var(--XGHT);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: var(--size-base);
+}
+section{
+  position: relative;
+  padding: var(--pad-large);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jsvalue{
+  color: var(--color-accent);
+  display: inline-block;
+  width: 3em;
+}
+
+#vfanimate{
+  line-height: 0.5;
+  font-size: var(--size-large);
+  font-variation-settings: 'wdth' var(--wdth), 'wght' var(--wght), 'XHGT' var(--XGHT);
+}
+
+figcaption{
+  position: absolute;
+  bottom: var(--pad);
+  letter-spacing: 0.05em;
+}

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../css/main.css">
+	<link rel="stylesheet" type="text/css" href="../../css/slides.css">
+	<link rel="stylesheet" type="text/css" href="../../css/typography.css">
+	<link rel="icon"type="image/svg"href="../../assets/favicon.svg">
+	<script src="../slides.js"></script>
+</head>
+<body class="layout-slides">
+	<main>
+		<section class="slide divider">
+			<div class="text">
+				<h1>JavaScript</h1>
+				<h2>Designing interaction</h2>
+			</div>
+			<footer class="grid">
+			  <div class="runner-1">Web Typography Workshop @ Letterform Archive</div>
+			  <div class="runner-2">Week 4</div>
+			</footer>
+		</section>
+		<section class="slide">
+			<div class="text">
+				<h2>Layers of a webpage</h2>
+				<p>
+					Unlike HTML and CSS, Javascript is a programming language and can perform all sorts of actions. JavaScript is list of instructions to be interpreted and executed by your computer, either by a browser or other JavaScript interpreter (in the command line.)
+				</p>
+
+				<table>
+					<tr>
+						<th>Layer</th>
+						<th>Language / File Type</th>
+					</tr>
+					<tr>
+						<td>content</td>
+						<td>HyperText Markup Language (HTML) </td>
+					</tr>
+					<tr>
+						<td>form</td>
+						<td>Cascading StyleSheets (CSS)</td>
+					</tr>
+					<tr>
+						<td><strong>behavior</strong></td>
+						<td><strong>JavaScript (JS)</strong></td>
+					</tr>
+				</table>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<p>Javascript can add interactivity to a page by manipulating the DOM (Document Object Model).</p>
+				<ul>
+					<li>Access the content of the page</li>
+					<li>Modify the content of the page</li>
+					<li>Program rules or instructions the browser can follow</li>
+					<li>React to events triggered by the user or browser</li>
+					<li>Use an API via HTTP(S)</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<p>
+					Some common interactions JavaScript might detect on a page are:
+				</p>
+				<ul>
+					<li>Mouseover / Mouseout*</li>
+					<li>Click</li>
+					<li>Drag & drop</li>
+					<li>Scroll</li>
+					<li>Input (field entry, slider range)</li>
+					<li>Keydown / keyup</li>
+					<li>Window resize*</li>
+				</ul>
+				<p class="caption">
+					*These interactions can be detected purely with CSS, but for more complex outcomes, JavaScript may be necessary.
+				</p>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h3>Click</h3>
+				<ul>
+					<li><a href="https://clickclickclick.click">Click Click Click</a></li>
+					<li><a href="http://www.c3.hu/collection/form/index1.html">Form Form Form</a></li>
+					<li><a href="https://codepen.io/ZachSaucier/pen/gOXOyq">Click Rotation Demo — Code Pen</a></li>
+				</ul>
+			</div>
+		</section>
+			
+		<section class="slide">
+			<div class="text">	
+				<h3>Scroll</h3>
+				<ul>
+					<li><a href="https://www.nytimes.com/interactive/2021/12/13/opinion/climate-change-effects-countries.html">Climate Change’s Effects on 193 Countries — The New York Times</a></li>					
+					<li><a href="https://www.nytimes.com/interactive/2014/09/14/sports/baseball/jeter-swings.html">342,000 Swings Later, Derek Jeter Calls It a Career</a></li>
+					<li><a href="https://www.nytimes.com/interactive/2015/01/09/sports/the-dawn-wall-el-capitan.html">The Dawn Wall</a></li>
+					<li><a href="https://www.nytimes.com/interactive/2022/05/13/us/covid-deaths-us-one-million.html">How America Lost One Million People</a></li>
+					<li><a href="https://mocastepandrepeat.tumblr.com/">Step &amp; Repeat — MOCA</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">	
+				<h2>Setup</h2>
+				<p>Like CSS, JavaScript can be included within the <code>&lt;head&gt;&lt;/head&gt;</code> your <code>html</code> file as well as linked as an external file. It can also be included at the bottom of your document, right before the closing <code>&lt;/body&gt;</code> tag.</p>
+
+				<figcaption>Insert in the <code>head</code> of your HTML page:</figcaption>
+				<pre>
+					<code>
+&lt;!-- Internal JavaScript --&gt;
+&lt;script language=&quot;javascript&quot; type=&quot;text/javascript&quot;&gt;
+  JavaScript code 
+&lt;/script&gt;
+
+&lt;!-- External JavaScript --&gt;
+&lt;script language=&quot;javascript&quot; src=&quot;js/filename.js&quot;&gt;&lt;/script&gt;						
+					</code>
+				</pre>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">	
+				<h2>Output</h2>
+				<p>When you instruct Javascript to perform a task, it will usually give you some output, but it won’t automatically display it anywhere. You can verify your result by using the Console of your browser.</p>
+				<pre>
+					<code>
+&lt;script language=&quot;javascript&quot; type=&quot;text/javascript&quot;&gt;
+	console.log(&quot;Hello World!&quot;);
+&lt;/script&gt;					
+					</code>
+				</pre>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">	
+				<h2>Comments</h2>
+				<p>As with HTML and CSS, comments are important to keep your code legible — they help you keep notes in regular English on your intentions for each piece of code you write. They’re a great tool to keep track of what’s happening in your script. They also help future you (and others) read and understand your code.</p>
+				<pre>
+					<code>
+&lt;script language=&quot;javascript&quot; type=&quot;text/javascript&quot;&gt;
+      
+  // &rdquo;//&rdquo; starts a single line comment.
+
+  /* &ldquo;/*&rdquo; opens a multiline comment,
+     and &ldquo;*/&rdquo; closes it. */
+
+&lt;/script&gt;					
+					</code>
+				</pre>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>Syntax</h2>
+				<p>A script is a series of instructions that a computer can follow one-by-one. Each individual instruction or step is known as a <em>statement</em>. Statements should end with a semicolon (<code>;</code>) Statements are composed of <em>values</em>, <em>operators</em>, <em>expression</em>, <em>keywords</em>, and <em>comments</em>. Semicolons are not needed after curly brackets <code>}</code> (except when it is an expression.)</p>
+
+				<table>
+				<thead>
+				<tr>
+				<th>term</th>
+				<th>description</th>
+				<th>example</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				<td>values</td>
+				<td>Fixed values are called <em>literals</em>, such as numbers or texts (strings). Variable values are called <em>variables</em>.</td>
+				<td><code>&quot;Hello!&quot;</code> <code>23</code></td>
+				</tr>
+				<tr>
+				<td>operators</td>
+				<td>Operators determine the relationship between the left and right side of the operand. There are many kinds of operators, such as an <em>assignment</em> operator <code>=</code>, or the <em>addition</em> operator <code>+</code>.</td>
+				<td><code>let x = 5;</code> <code>(5 + 6) * 9;</code></td>
+				</tr>
+				<tr>
+				<td>expression</td>
+				<td>An expression is a combination of values, variables, and operators, which computes to a value. The computation is called an evaluation.</td>
+				<td><code>(5 + 6) * 9;</code> <code>&quot;Web&quot; + &quot; &quot; + &quot;Design&quot;;</code> <code>x * 10;</code></td>
+				</tr>
+				<tr>
+				<td>keywords</td>
+				<td>Keywords are used to identify actions to be performed. For example, the <code>let</code> or <code>var</code> keyword signifies that you are setting up a new <em>variable</em>.</td>
+				<td><code>let x = 5;</code></td>
+				</tr>
+				</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>Common Data Types</h2>
+				<table>
+					<tr>
+						<th>type</th>
+						<th>description</th>
+						<th>example</th>
+					</tr>
+					<tr>
+						<td>Strings</td>
+						<td>In programming languages, any textual content that is not part of the programming instructions must be surrounded in single or double quotes (just make sure they match, and that they’re not curly quotes.)</td>
+						<td><pre><code>"Hello World";   // works
+'Hi';            // works
+"This';         // won’t work
+						</code></pre></td>
+					</tr>
+					<tr>
+						<td>Numbers</td>
+						<td>Numbers — whether an integer or decimal number — do not need to be surrounded in quotes <code>""</code>.</td>
+						<td><pre><code>1    // integers
+0.5  // non-integers with decimal digits are called floats
+						</code></pre></td>
+					</tr>
+					<tr>
+						<td>Boolean</td>
+						<td>A binary value of either <code>true</code> or <code>false</code>. </td>
+						<td><pre><code>let x = false;
+if (x) {
+  // this code is not executed
+}
+						</code></pre></td>
+					</tr>
+					<tr>
+						<td>Variables</td>
+						<td>A variable is a named location for storing a value. That way a changing value can be accessed through a predetermined name. A variable can serve as a container for anything (numbers, strings, booleans, arrays, other variables.)</td>
+						<td><pre><code>const width = 500;
+let x = 9;
+let workshop = "Letterform Archive";
+let myHelloFunction = function() {
+  console.log("hello");
+};
+						</code></pre></td>
+					</tr>
+				</table>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>Variable Naming Conventions</h2>
+				<p>
+					You can call a variable pretty much anything you like, but there are limitations. Generally, you should stick to just using Latin characters (0-9, a-z, A-Z) and the underscore character.
+				</p>
+				<ul>
+				<li>Avoid underscores at the start of variable names — this is used in certain JavaScript constructs to mean specific things, so may get confusing.</li>
+				<li>Avoid numbers at the start of variables.</li>
+				<li>A safe convention to stick to is so-called “lower camel case”, where you stick together multiple words, using lower case for the whole first word and then capitalize subsequent words. <code>camelCase</code></li>
+				<li>Make variable names intuitive, so they describe the data they contain. Avoid single letters/numbers, or big long phrases.</li>
+				<li>Variables are case sensitive — so myage is a different variable from myAge.</li>
+				<li>Avoid using JavaScript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords">reserved words</a> as your variable names — like <code>var</code>, <code>function</code>, <code>let</code>, and <code>for</code> — since browsers recognize them as code.</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>Arrays</h2>
+				<p>An array is a data type that contains a group of values. This can be a list of anything—strings, integers, variables. An array is defined by a comma-separated list of items in square brackets <code>[]</code>.</p>
+				<pre><code>
+let colors = ["red","green","blue"];					
+				</code></pre>
+				<p>You can access array items by their <em>index,</em> or numerical label, inserted between square brackets<code>[]</code>. The starting position is <code>0</code>, not <code>1.</code>  The <code>length</code> property will give you the number of items in an array.</p>
+				<pre><code>
+colors[0] // red
+colors[1] // green
+colors.length // 3
+				</code></pre>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>Objects</h2>
+					<p>An object is a collection of data, where each data in the collection has a unique name that identifies it. An object is defined by a comma-separated list of key: value pairs in curly brackets <code>{}</code>.</p>
+					<pre><code>
+let numbers = {e: 2.7183, pi: 3.1416};			
+					</code></pre>
+					<p>Each item in the object has a <em>key</em> and a <em>value.</em> You use the key to get at the value! You can access the value either by a <code>.</code> before the key or by inserting the key within square brackets <code>[]</code>. If using square brackets, make sure to surround the key in quotes <code>''</code> if you’re using a string key. If you are using a variable as a key, you must use the bracket notation.</p>
+					<pre><code>
+numbers.e // 2.7183
+numbers['pi'] // 3.1416
+
+let myKey = 'e';
+numbers[myKey] // 2.7183
+					</code></pre>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>Assignment operators</h2>
+					<p>The assignment operator <code>=</code> assigns the right-hand value to the left-hand operand.</p>
+					<pre><code>
+let name = "Beatrice"; // assigns Beatrice to the name variable
+name = "Betty"; // updates the value of name to Betty
+
+let count = 5; //assigns 5 to the variable count
+count = count + 3; // updates the count variable by adding 3 to itself. count is now 8.			
+					</code></pre>
+					<p>There is a commonly-used shorthand for variables to cumulatively add new values to itself.</p>
+					<pre><code>
+count += 3; // same as count = count + 3
+count ++;  // same as count += 1, or count = count + 1
+					</code></pre>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>String operators</h2>
+					<p>The concatenation operator (<code>+</code>) concatenates two string values together, returning another string that is the union of the two operand strings.</p>
+					<pre><code>
+let mystring = "alpha";
+mystring += "bet";
+// evaluates to "alphabet" and assigns this value to mystring.
+
+let anotherStringVar = 'word';
+let concatenated = mystring + " " + anotherStringVar;
+//evaluates to "alphabet word"
+					</code></pre>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>Comparison operators</h2>
+					<p>Comparison evaluates an expression, returning a boolean, <code>true</code> or <code>false</code>. Below are some examples — these are <strong>strict</strong> comparison formats, meaning they will check both the data type and the value.</p>
+					<table>
+						<thead>
+						<tr>
+						<th>operator</th>
+						<th>description</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+						<td><code>===</code></td>
+						<td>checks whether they are equal</td>
+						</tr>
+						<tr>
+						<td><code>!==</code></td>
+						<td>checks whether they are NOT equal</td>
+						</tr>
+						<tr>
+						<td><code>&lt;</code> or <code>&gt;</code></td>
+						<td>checks that the number on the left is less than or greater than the right</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>Logical operators</h2>
+					<p>Logical operators combine multiple conditions</p>
+					<table>
+					<thead>
+					<tr>
+					<th>operator</th>
+					<th>description</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+					<td><code>&amp;&amp;</code></td>
+					<td>logical AND <br> <code>3 &lt; 5 &amp;&amp; 2 &gt; 9 // evaluates to false</code></td>
+					</tr>
+					<tr>
+					<td><code>||</code></td>
+					<td>logical OR <br> <code>3 &lt; 5 || 2 &gt; 9 // evaluates to true, because 3 < 5 evaluates to true</code></td>
+					</tr>
+					</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>Conditionals</h2>
+					<p>Conditionals allow you to declare different actions based on different conditions. You can use If <code>if</code> / Then <code>else if</code> / Else <code>else</code> logic to define your scenarios.</p>
+					<pre><code>
+let x = 2
+if (x === 2) {
+  console.log("x is 2");
+}
+else if (x === 3){
+  console.log("x is 3");
+}
+else {
+  console.log("x is neither 2 nor 3");
+}						
+					</code></pre>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>Functions</h2>
+					<p>A function is a set of actions to be performed. These can include built-in functions, like <code>console.log</code> or <code>alert</code>, or you can define your own function. Most functions are groups of other functions. After declaring a function, you can execute its statements by calling the function. While it’s possible to call a function before it’s declared, it’s best practice to declare your functions before you call them.
+					</p>
+					<pre><code>
+// define custom function we called sayHi. This only defines the function and does not execute it.
+function sayHi() { 		
+  console.log("Hi!");  // native function console.log
+  alert("Hi");  // native function alert
+}
+
+//call (execute) the sayHi function
+sayHi();								
+					</code></pre>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h3>Parameters and arguments</h3>
+					<p>A function may need inputs to process its statements. These inputs are known as <em>parameters</em> and are used as variables in the function’s statements — you can give them whatever name is appropriate. <em>Arguments</em> are inputs passed into the function when it is called. When you expect a function to provide an answer or output, it’s know as the <em>return value</em></p>
+					<pre><code>
+//sets up "something" as a parameter.
+function saySomething(something) { 	
+  console.log(something);	
+  alert(something);					
+}
+
+//call saySomething function via the function name and parentheses (). 
+saySomething("Hi");  // executes the same statements as before
+saySomething("Bye"); // but you can reuse the function							
+					</code></pre>
+					<p class="caption">You can also set up multiple arguments</p>
+					<pre><code>
+//define function with parameters width and height
+function getArea(width, height) {
+   return width*height;
+}
+
+//call getArea function with arguments 3 and 5
+getArea(3, 5); //returns 15								
+					</code></pre>					
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>Loops</h2>
+					<p>Loops allow you to run a function by specifying the number of iterations you want it to repeat; it uses a counter as its condition to run. There are a number of different kinds of loops. Common loops are the <code>for</code> and <code>forEach</code> loop.</p>
+					<p class="caption">For loops use an index counter to keep track of the repeated function. <code>i</code> is the index, or the count value of the loop. It start at <code>0</code> and will increment (<code>i++</code>) every iteration, until it’s no longer <code>< 3</code>.
+					<pre><code>
+// logs "Hello" in the console 5 times
+for(var i = 0; i < 3; i++){ 
+	console.log(i, "Hello"); 
+}	
+// Expected output:	
+// 0 Hello
+// 1 Hello	
+// 2 Hello					
+					</code></pre>
+					<p class="caption">Another is a <code>forEach</code> loop on <code>array</code> data types.</p>
+					<pre><code>
+const myArray = ['a', 'b', 'c'];
+
+myArray.forEach( (element) => console.log(element) );
+
+// Expected output:
+// a
+// b
+// c						
+					</code></pre>					
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>Objects, properties, and methods</h2>
+					<p>Objects are containers for named values, which could <em>properties</em> or <em>methods</em>. <em>Properties</em> are data (see data types above) associated to the particular object, and <em>Methods</em> are specific functions for ane object. Both properties and methods are accessible as <em>key</em>s of the object.
+					</p>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h3>The Document Object</h3>
+					<p>The most important object in JavaScript is the Document Object: it represents an HTML web page.</p>
+					<ul>
+					<li><em>Properties</em> describe characteristics of the current web page (such as the title of the page).</li>
+					<li><em>Methods</em> perform tasks associated with the document currently loaded in the browser (such as getting information from a specified element or adding new content).</li>
+					<li><em>Events</em>, such as a user clicking or tapping on an element, can be used as triggers for methods</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h3>The Math Object</h3>
+					<p>There is a <code>Math</code> object in JavaScript can be used to work with numbers, and it comes with several <em>methods</em>. The outputs of these can be scaled to your desired range.</p>
+					<table>
+					<thead>
+					<tr>
+					<th>method</th>
+					<th>description</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+					<td><code>Math.random()</code></td>
+					<td>generates a number [0, 1) that is, from 0 (inclusive) up to but not including 1 (exclusive).</td>
+					</tr>
+					<tr>
+					<td><code>Math.floor()</code></td>
+					<td>returns the largest integer less than or equal to a given number</td>
+					</tr>
+					<tr>
+					<td><code>parseInt()</code> and <code>parseFloat()</code></td>
+					<td>converts its first argument to a string, parses it, and returns an integer / float / <code>NaN</code> (not a number.) This is useful when grabbing number values from HTML, which is by default processed as a string. To perform <code>Math</code> functions on these values, they need to be converted into a <code>number</code> data type.</td>
+					</tr>
+					</tbody>
+					</table>
+					<pre><code>// get a random integer between 2 numbers, including the min and max.
+function getRandomNumber(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min; 
+}
+
+getRandomNumber(0, 5); // returns a random number: 0, 1, 2, 3, 4, or 5.						
+					</code></pre>
+				</div>
+			</section>
+
+
+			<section class="slide">
+				<div class="text">
+					<h2>Why all this math?</h2>
+					<p>All of these programming concepts may initially seem unrelated to how we think about interaction on the web. One thing we will learn in JavaScript programming, however, is how our interactions are interpreted through numbers—for example, a mouse event is captured through X Y coordinate values on the screen. A scroll event is captured with the scroll distance in pixels. A window resize event changes the pixel width property of the window. Using JavaScript entails capturing the relevant numbers for our interaction effectively, then setting up certain consequences for certain numbers. </p>
+					<figcaption>Demos</figcaption>
+					<ul>
+						<li><a href="demos/08-js-vf/mouse/">Cursor Demo</a></li>
+						<li><a href="demos/08-js-vf/api/">API / data Demo</a></li>
+					</ul>
+					<figcaption>Student Examples</figcaption>
+					<ul>
+						<li><a href="https://shony853.github.io/core-2-int-lab/projects/project3/project3.html" target="_blank">Baby Names / Hannah Li</a></li>
+						<li><a href="https://shony853.github.io/core-2-int-lab/projects/project3/project3.html" target="_blank">Air Quality / Jenna Shon</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>References</h2>
+					<ul>
+						<li><a href="https://eloquentjavascript.net/00_intro.html" target="_blank">Eloquent JavaScript</a></li>
+						<li><a href="https://www.codecademy.com/learn/introduction-to-javascript" target="_blank">Codecademy: JavaScript tutorials</a></li>
+						<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction" target="_blank">MDN: Introduction to JavaScript</a></li>
+					</ul>
+				</div>
+			</section>
+	</main>
+</body>
+</html>

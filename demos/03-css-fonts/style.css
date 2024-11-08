@@ -1,0 +1,75 @@
+/*@font-face{
+	font-family: 'Occupant Oldstyle';
+	src: url('fonts/OccupantOldstyle-Regular-Trial.woff2') format('woff2');
+	font-weight: 400;
+}
+@font-face{
+	font-family: 'Occupant Oldstyle';
+	src: url('fonts/OccupantOldstyle-Italic-Trial.woff2') format('woff2');
+	font-style: italic;
+	font-weight: 400;
+}
+
+@font-face{
+	font-family: 'Occupant Oldstyle';
+	src: url('fonts/OccupantOldstyle-Bold-Trial.woff2') format('woff2');
+	font-weight: 700;
+}
+
+@font-face{
+	font-family: 'Occupant Oldstyle';
+	src: url('fonts/OccupantOldstyle-BoldItalic-Trial.woff2') format('woff2');
+	font-style: italic;
+	font-weight: 700;
+}*/
+
+@font-face{
+	font-family: 'Occupant Oldstyle VF';
+	src: url('fonts/OccupantOldstyle-VF-Roman-Trial.woff2') format('woff2-variations');
+	font-weight: 200 700;
+}
+
+@font-face{
+	font-family: 'Occupant Oldstyle VF';
+	src: url('fonts/OccupantOldstyle-VF-Italic-Trial.woff2') format('woff2-variations');
+	font-weight: 200 700;
+	font-style: italic;
+}
+
+*{
+	margin: 0;
+}
+html{
+/*	font-size: 30px;*/
+}
+body{
+	font-family: 'Occupant Oldstyle VF';
+	font-variation-settings: 'wght' 320;
+/*	font-family: 'Inclusive Sans', sans-serif;*/
+}
+
+h1,h2,h3,h4,h5,h6{
+	margin-top: 1em;
+	font-weight: 700;
+	font-size: 2rem; 
+	font-variation-settings: 'wght' 230;
+/*	
+	font-family: "fit-variable", sans-serif;
+	font-variation-settings: "wdth" 300;*/
+}
+
+h2:hover{
+	font-variation-settings: 'wght' 700;
+}
+
+.inverted{
+	background: black;
+	color: white;
+	font-variation-settings: 'wght' 280;
+}
+
+
+/*.occ-oldstyle-vf{
+	font-family: 'Occupant Oldstyle VF';
+}
+*/

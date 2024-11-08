@@ -1,0 +1,144 @@
+.diagram{
+    --pos: rgb(255,255,255);
+    --whiteshape: rgb(255 173 166);
+    background: white;
+}
+.area:last-child{
+    margin-bottom: 0;
+}
+.col2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    .col:nth-child(2){
+        grid-column: span 2;
+    }
+}
+.area{
+    height: 50px;
+    background: var(--pos);
+    border: none;
+    margin-bottom: 0.5rem;
+}
+.i1{
+    height: 100px;
+    font-size: 210px;
+    line-height: 0.8;
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+}
+p.p1{
+    font-family: 'Times', 'Times New Roman', serif;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    height: auto;
+    letter-spacing: 0;
+}
+.controller{
+    position: absolute;
+    top: -30px;
+    left: -1px;
+    height: 30px;
+    width: 80px;
+}
+.switch{
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border: 1px solid;
+    border-radius: 50%;
+    &:hover{
+        border-color: var(--secondcolor);
+        cursor: pointer;
+    }
+}
+.black{
+    background: black;
+}
+.reset{
+    border: none;
+    margin-left: 5px;
+    &::before{
+        content: '↻';
+        color: var(--default);
+        position: relative;
+        top: -5px;
+    }
+    &:hover{
+        border: none;
+    }
+}
+
+#page{
+    .p1{
+        font-size: 12px;
+    }
+    padding: 2rem 3rem;
+}
+#paragraph{
+    p{
+        text-indent: 2rem;
+        line-height: 1.5;
+        margin-bottom: 1em;
+    }
+}
+.p2{
+    text-indent: 0;
+    text-align: justify;
+}
+.p3{
+    text-align: center;
+}
+
+#line{
+    p{
+        font-size: 1.2rem;
+    }
+}
+#word {
+    padding: 0;
+    .p1{
+        line-height: 1.0;
+        font-size: 4rem;
+        letter-spacing: 2px;
+    }
+    .area{
+        --pos: transparent;
+    }
+}
+#letter{
+    padding: 0;
+    width: 200px;
+    height: 200px;
+    svg{
+        width: 100%;
+    }
+}
+
+#word .area{
+    border-right: 1px solid white;
+    display: inline-block;
+    margin: -1px;
+    height: 100%;
+}
+
+[data-shapemode='white']{
+    background: var(--whiteshape);
+    &#word, &#letter{
+        .cls-1{
+            fill: white;
+        }
+    }
+}
+[data-shapemode='black']{
+    --pos: rgb(153 42 42 / 50%);
+    &#word, &#letter {
+        .cls-1{
+            fill: var(--pos);
+        }
+       
+    }
+}
+[data-shapemode='reset']{
+
+}

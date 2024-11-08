@@ -1,0 +1,110 @@
+/*setup the variable font*/
+
+@font-face {
+    font-family: 'Quiosco VF';
+    font-weight: 400 700;
+    src: url(fonts/Quiosco-VF-Roman-Trial.woff2) format("woff2-variations");
+}
+
+@font-face {
+    font-family: 'Quiosco VF';
+    font-weight: 400 700;
+    font-style: italic;
+    src: url(fonts/Quiosco-VF-Italic-Trial.woff2) format("woff2-variations");
+}
+
+
+:root{
+  --wght: 270;
+  --grad: 0;
+
+  --pad: 4rem;
+  --pad-small: 1.2rem;
+  --size-large: 3rem;
+  --size-medium: 2rem;
+  --size-base: 1.2rem;
+  --size-small: 1rem;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Quiosco VF';
+    font-variation-settings: 'wght' var(--wght), 'GRAD' var(--grad);
+}
+
+body{
+    background: white;
+    color: black;
+}
+
+.darkmode{
+    background: black;
+    color: white;
+    --grad: -100;
+}
+
+.darkmode h3{
+    color: yellow;
+}
+
+#darkmodeTrigger{
+    margin-top: 1em;
+    border: 1px solid;
+    padding: 10px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+#darkmodeTrigger:hover{
+    background: grey;
+    cursor: pointer;
+}
+
+
+article{
+    padding: var(--pad);
+}
+header{
+    position: fixed;
+    width: 40%;
+}
+main{
+    margin-left: 50%;
+    max-width: 36em;
+}
+
+section{
+    background: white;
+    margin: auto;
+    width: 600px;
+    padding: var(--pad);
+    box-sizing: border-box;
+}
+
+
+h1, h2{
+  font-size: var(--size-large);
+  line-height: 1.0;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+h2, h3{
+    --wght: 500;
+    font-size: var(--size-medium);
+    margin: var(--pad) 0;
+    margin-bottom: var(--pad-small);
+}
+
+p{
+    font-size: var(--size-base); 
+    line-height: 1.5;
+    hyphens: auto;
+    margin-bottom: 1em;
+}
+strong{
+    --wght: 700;
+}

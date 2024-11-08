@@ -1,0 +1,124 @@
+
+@font-face{
+	font-family: 'Occupant Oldstyle VF';
+	src: url('fonts/OccupantOldstyleVF_roman.woff2') format('woff2-variations');
+	font-weight: 200 700;
+}
+
+@font-face{
+	font-family: 'Occupant Oldstyle VF';
+	src: url('fonts/OccupantOldstyleVF_italic.woff2') format('woff2-variations');
+	font-weight: 200 700;
+	font-style: italic;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html{
+}
+body{
+	font-family: 'Occupant Oldstyle VF';
+	font-variation-settings: 'wght' 320;
+	padding: 2rem 0;
+}
+
+main{
+	max-width: 1200px;
+	margin: auto;
+}
+h1,h2,h3,h4,h5,h6{
+	margin-top: 1em;
+	font-weight: normal;
+	font-size: 1.6rem; 
+	font-variation-settings: 'wght' 230;
+/*	
+	font-family: "fit-variable", sans-serif;
+	font-variation-settings: "wdth" 300;*/
+}
+
+
+h1{
+	font-size: 3rem;
+	line-height: 1.0;
+	letter-spacing: -0.02em;
+	max-width: 15em;
+	margin-bottom: 0.5rem;
+}
+p{
+	width: 50%;
+	margin-bottom: 1.5em;
+	line-height: 1.5;
+}
+
+ul{
+	margin-left: 2rem;
+}
+em{
+	color: rgb(120, 20, 220);
+}
+
+section{
+	background: rgba(120, 20, 220, 0.1);
+	padding: 2rem;
+}
+.grid{
+	display: flex;
+	flex-wrap: wrap;
+}
+.column{
+	width: 50%;
+	padding-right: 1em;
+}
+.column p{
+	width: 100%;
+}
+
+.smallcaps{
+	font-feature-settings: 'smcp' 1;
+}
+
+.frac{
+	font-feature-settings: 'frac' 1;
+}
+
+
+@media (max-width: 1300px){
+	main{
+		width: 80%;
+	}
+}
+
+@media (max-width: 1000px){
+	main{
+		width: 90%;
+		font-size: 15px;
+	}
+}
+
+@media (max-width: 800px){
+	p{
+		width: 100%;
+		max-width: 28em;
+	}
+	.column{
+		width: 100%;
+	}
+	.grid{
+		display: block;
+	}
+	h3{
+		font-size: 1.2rem;
+	}
+
+}
+
+@media (max-width: 500px){
+	section{
+		padding: 1rem;
+	}
+
+}
+
