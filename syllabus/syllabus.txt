@@ -1,0 +1,40 @@
+Week 11: The Browser
+
+Week 12: Layout
+
+Week 13: Positioning and Animation
+
+Week 14: Interaction
+
+Week 15: Final Critique
+
+
+3. Web Specimen
+Thursdays	3:20 – 6:10
+Fall:		11.14.24 – 12.17.24
+Spring:		4.3.25 – 5.1.25
+In this final five-week course, explore the exciting world of type design applied digitally. Leverage the techniques, skills, and insights acquired from previous courses to tailor your typography for a variety of digital media.
+
+
+Week 11: Semantic Markup with HTML, Introduction to CSS
+Activity:	Introduction to what makes a website. Inspector Tool exploration.
+Homework:	Based on the design mockup produced in week 10, markup your typographic single-page website using HTML. Consider your content hierarchy and how that maps to your HTML tags. Experiment with overriding browser-default styling using a stylesheet.
+Learning:	Build a familiarity with the basic web languages involved with websites, and get your files organized in preparation for publishing a website. Understanding browser defaults. Loading fonts, accessing Open Type Features / stylistic alts, proper weight and italic management, establishing typographic hierarchy 
+
+Week 12: CSS Typography and Layout Systems
+Activity: 	(Loosely) recreate / reinterpret a typographic poster using CSS grid or flexbox. See Josef Müller-Brockmann posters for reference .
+Homework:	Define a basic structure and add typographic control to your type specimen. Consider primary and secondary typefaces.
+Learning:	Structuring content on a webpage, responsive design / media queries
+
+Week 13: CSS Positioning, Transforms, and Animations
+Activity: 	Collective CSS alphabet to “draw” with CSS, using techniques such as positioning and transforms.
+Homework:	Refine the layout of your website.
+Learning: 	CSS techniques for controlling typographic positioning, breaking the grid, and interactivity
+
+Week 14: Introduction to JavaScript, Variable Font Interaction
+Activity:	Adding interaction: a basic overview of JavaScript. Add an alternate “mode” for a webpage by toggling a class.
+Homework:	Finish your microsite
+Learning:	Typeface as software, a program that can be manipulated via web languages
+Week 15: Final Crit
+Activity:	Review final microsites. Guest Crit?	
+Homework:	Course Evaluations

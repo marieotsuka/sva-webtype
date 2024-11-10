@@ -6,89 +6,50 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="icon"type="image/svg"href="assets/favicon.svg">
+	<script src="js/script.js"></script>
 </head>
 <body>
-	<nav class="grid">
-		<div class="box">
-			<a href="#syllabus" class="link-internal">Syllabus</a>
-		</div>
-		<div class="box">
-			<a href="#schedule" class="link-internal">Schedule</a>
-		</div>
-		<div class="box">
-			<a href="" class="link">Slack</a>
-			<a href="" class="link">Github</a>
-			<a href="" class="link">Canvas</a>
-			<a href="" class="link">Office Hours</a>
-			<a href="" class="link">Zoom</a>
-		</div>
-		<div class="box">
-			<a href="#lectures">Lectures</a>
-		</div>
-		<div class="box">
-			<h1>Typography on the Web</h1>
-			<h2>§3. Type Specimen</h2>
-			<h4>School of Visual Arts, Fall 2024</h4>
-		</div>
-		<div class="box">
-			<a href="#assignments" class="link-internal">Assignments</a>
-		</div>
-		<div class="box">
-			<h4>Students</h4>
-			<a href="" class="link">Hyojung</a>
-			<a href="" class="link">Justus</a>
-			<a href="" class="link">Annie</a>
-			<a href="" class="link">Yuan</a>
-			<a href="" class="link">Yuha</a>
-			<a href="" class="link">Kyubin</a>
-			<a href="" class="link">Gabrielle</a>
-			<a href="" class="link">Maria</a>
-			<a href="" class="link">Aanya</a>
-			<a href="" class="link">Hye</a>
-			<a href="" class="link">Eden</a>
-			<a href="" class="link">Eunju</a>
-			<a href="" class="link">Messiah</a>
-			<a href="" class="link">Junghoon</a>
-			<a href="" class="link">Yixuan</a>
-			<a href="" class="link">Soo</a>
-			<a href="" class="link">Eric</a>
-			<a href="" class="link">Jeehye</a>
-			<a href="" class="link">George</a>
-			<a href="" class="link">Jochi</a>
-		</div>
-		<div class="box">
-			<a href="#resources" class="link-internal">Resources</a>
-		</div>
-		<div class="box">
-			<footer class="caption">
-				<p>
-					Course: 24/FA DSD-3662-A<br>
-					Instructor: Marie Otsuka<br>
-					motsuka1@sva.edu / marie@motsuka.com<br>
-					School of Visual Arts<br>
-					209 E23rd Street, Room 302					
-				</p>
-				<p>
-					This course is part of a 3-part type design + typography bundle of workshops with §1. Type Drawing by Ryan Bugden and §2. Type Design by Nick Sherman.<br>
-				</p>
-				<h5>Settings</h5>
-				<div class="options">
-					<input type="checkbox"> <label>Oldstyle figures</label>
-					<input type="checkbox"> <label>Small Caps</label>
-					<input type="checkbox"> <label>Simplified a and y</label>
-				</div>
-			</footer>
-		</div>
-	</nav>
 	<main class="grid">
 		<div class="box col">
+			<nav>
+				<div class="box">
+					<a href="#syllabus" class="link-internal">Syllabus</a>
+				</div>
+				<div class="box">
+					<a href="#lectures">Lectures</a>
+				</div>
+				<div class="box">
+					<h4>Students</h4>
+					<a href="" class="link">Hyojung</a>
+					<a href="" class="link">Justus</a>
+					<a href="" class="link">Annie</a>
+					<a href="" class="link">Yuan</a>
+					<a href="" class="link">Yuha</a>
+					<a href="" class="link">Kyubin</a>
+					<a href="" class="link">Gabrielle</a>
+					<a href="" class="link">Maria</a>
+					<a href="" class="link">Aanya</a>
+					<a href="" class="link">Hye</a>
+					<a href="" class="link">Eden</a>
+					<a href="" class="link">Eunju</a>
+					<a href="" class="link">Messiah</a>
+					<a href="" class="link">Junghoon</a>
+					<a href="" class="link">Yixuan</a>
+					<a href="" class="link">Soo</a>
+					<a href="" class="link">Eric</a>
+					<a href="" class="link">Jeehye</a>
+					<a href="" class="link">George</a>
+					<a href="" class="link">Jochi</a>
+				</div>
+			</nav>
+
 			<section id="syllabus">
 				<h2>Syllabus</h2>
 				<p>
-					In this final five-week course, we will explore how to work with your typeface on the web—ranging from loading a webfont to animating variable fonts. By embracing the browser as a creative medium, we will understand how to experiment with interaction and typographic form online.
+					In this final five-week course, we will explore how to work with your typeface on the web—ranging from loading a webfont to animating variable fonts. By embracing the browser as a creative medium, we will understand how to refine and experiment with typographic form online.
 				</p>
 				<p>
-					We will discuss how to control visual composition and basic interactivity on the web, using <span class="sm">HTML & CSS</span> and possibly some JavaScript. You need no prior knowledge of these languages, but you should be prepared to dive into coding!
+					We will discuss how to control visual composition and basic interactivity on the web using <span class="sm">HTML & CSS</span> and possibly some JavaScript. You need no prior knowledge of these languages, but you should be prepared to dive into coding!
 				</p>
 
 				<div class="text-column">
@@ -126,7 +87,7 @@
 					<p>
 						We will be using the following tools for this class.
 					</p>
-					<ol>
+					<ul>
 						<li>
 							A laptop & internet access
 						</li>
@@ -139,7 +100,7 @@
 						<li>
 							A prototyping tool to quickly mockup designs, such as <a href="https://www.figma.com/">Figma</a> or Adobe programs.
 						</li>
-					</ol>
+					</ul>
 				</details>
 
 				<details>
@@ -163,9 +124,28 @@
 						Use discretion and credit when appropriate when reusing code found from the internet. Information on practical implementation that is available anywhere need not be credited, but exercise caution a specific mechanism or designed funtionality. Is it available for your use? Does it support your design concept?
 					</p>
 				</details>
+
+				<blockquote>
+					<p>
+						“In today’s highly commercialised web of multinational corporations, proprietary applications, read-only devices, search algorithms, Content Management Systems, <span class="sm">WYSIWYG</span> editors, and digital publishers it becomes an increasingly radical act to hand-code and self-publish experimental web art and writing projects.” — <a href="https://luckysoap.com/statements/handmadeweb.html" target="_blank" class="link">J.R. Carpenter</a>
+					</p>
+				</blockquote>				
 			</section>
 		</div>
-		<div class="box col row2">
+		<div class="box col">
+			<nav>
+				<div class="box">
+					<a href="#schedule" class="link-internal">Schedule</a>
+				</div>
+				<div class="box">
+					<h1>Typography on the Web</h1>
+					<h2>§3 Type Specimen</h2>
+					<h4>School of Visual Arts, Fall 2024</h4>
+				</div>
+				<div class="box">
+					<a href="#resources" class="link-internal">Resources</a>
+				</div>
+			</nav>
 			<section id="schedule">
 				<h2>Schedule</h2>
 				<p>
@@ -181,10 +161,11 @@
 								</p>
 								<ul>
 									<li>Introductions</li>
-									<li class="list-link"><em>Lecture</em>: What is a Website?</li>
+									<li><em>Lecture</em>: What is a Website?</li>
 									<li class="list-link"><em>Activity</em>: Inspector</li>
 									<li class="list-link"><em>Exercise</em>: Setting up Github</li>
-									<li class="list-link"><a href="lectures/04_web-fonts/">Loading Fonts</a></li>
+									<li><a href="lectures/04_web-fonts/">Loading Fonts</a></li>
+									<li><a href="lectures/09_open-type/">Accessing Open Type Features</a></li>
 								</ul>
 							</details>
 						</div>
@@ -198,7 +179,6 @@
 								<p>CSS Typography and Layout Systems</p>
 								<ul>
 									<li><a href="lectures/05_typography/">Typography Review</a></li>
-									<li><a href="lectures/09_open-type/">Accessing Open Type Features</a></li>
 									<li><a href="lectures/06_layouts/">CSS Layouts</a></li>
 									<li><em>Exercise:</em> CSS Grid Poster</li>				
 									<li><a href="lectures/10_responsive-design/">Responsive Design</a></li>
@@ -259,7 +239,35 @@
 				</p>
 			</section>
 		</div>
-		<div class="box col row3">
+		<div class="box col">
+			<nav>
+				<div class="box">
+					<a href="" class="link">Slack</a>
+					<a href="" class="link">Github</a>
+					<a href="" class="link">Canvas</a>
+					<a href="" class="link">Office Hours</a>
+					<a href="" class="link">Zoom</a>
+				</div>
+				<div class="box">
+					<a href="#assignments" class="link-internal">Assignments</a>
+				</div>
+				<div class="box">
+					<footer class="caption">
+						<p>
+							Course: 24/FA DSD-3662-A<br>
+							Instructor: Marie Otsuka, motsuka1@sva.edu, marie@motsuka.com | 
+							School of Visual Arts | 209 E23rd Street, Room 302					
+						</p>
+						<p>
+							This course is part of a 3-part type design + typography bundle of workshops with Ryan Bugden (§1 Type Drawing) and Nick Sherman (§2 Type Design.)<br>
+						</p>
+						<div class="options">
+							<input type="checkbox" checked id="option-sticker"> <label for="option-sticker">HTML Stickers</label>
+							<input type="checkbox" id="option-simplified"> <label for="option-simplified">Simplified a and y</label>
+						</div>
+					</footer>
+				</div>
+			</nav>
 			<section id="assignments">
 				<h2>Assignments</h2>
 				<p>
@@ -349,6 +357,10 @@
 				</div>
 
 	</main>
-	<!-- <p>※ Clicking around on this site, you might notice that you’ll see the underlying HTML tags. But the best way to see this is to open up the Inspector.</p> -->
+	<!-- <p>※ Clicking around on this site, you might notice that you’ll see the underlying HTML tags. But the best way to see this is to open up the 
+	Inspector.</p> -->
+	<div id="tag-label">
+		&lt;<span class="tag-name">DIV</span>&gt;
+	</div>
 </body>
 </html>
