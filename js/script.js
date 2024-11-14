@@ -12,8 +12,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		}
 	});
 
-
-
 	const stickerEl = document.getElementById('tag-label');
 	document.getElementById('option-sticker').addEventListener('change', (e)=>{		
 		if (e.target.checked){
@@ -35,12 +33,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
   			var x = e.pageX;
   			var y = e.pageY;
   			stickerEl.querySelector('.tag-name').innerText = elementname;
-  			stickerEl.style.cssText = `display: block; top: ${y-30}px; left: ${x+30}px;`;
+  			stickerEl.classList.add('active');
+  			stickerEl.style.cssText = `top: ${y-30}px; left: ${x+30}px;`;
   		}
   	}else{
-  		stickerEl.style.cssText = 'display: none;';
+  		stickerEl.classList.remove('active');
   	}
   });
+
+  const cols = document.querySelectorAll('.col');
+  cols.forEach( col=>{
+  	col.addEventListener("scroll", (e)=>{	 
+  	console.log('scroll'); 	
+		  if( stickerEl.classList.contains('active') ){
+		  	stickerEl.classList.remove('active');	
+			} 	
+  	});
+  });
+  
+ 
 
 
 });

@@ -1,4 +1,7 @@
 // sass --watch main.scss main.css
+@use 'typography';
+@use 'slides';
+
 *{
 	margin: 0;
 	padding: 0;
@@ -26,7 +29,7 @@
   --pad-small: 0.3rem;
   --pad-line: 1.25em;
   --pad: 1rem;
-  --pad-section: 3rem;
+  --pad-section: calc(var(--base)*5);
 
   --indent: 1em;
 
@@ -132,12 +135,9 @@ p+p{
 	text-indent: var(--indent);
 }
 blockquote{
-	font-family: 'Caper';
 	font-style: italic;
 	padding-left: var(--indent);
-	 p{
-		text-indent: -0.5em;
-	}
+	text-indent: -0.5em;
 }
 
 footer{
@@ -200,11 +200,32 @@ h5,.schedule-header{
 }
 
 
+ul,ol{
+	margin-left: var(--indent);
+	li{
+		list-style-type: none;
+		position: relative;
+		&:before{
+			display: inline-block;
+			width: var(--indent);
+			position: absolute;
+			left: calc( var(--indent)*-1 );
+		}
+	}
+}
+
+ol {
+	--onum: 0;
+  counter-reset: item;
+}
+
+ol li::before {
+  content: counter(item) " ";
+  counter-increment: item;
+}
+
 ul li{
-	list-style-type: none;
-	padding-left: 1em;
-	text-indent: -1em; 
-	&:before{
+	&::before{
 		content: "• ";
 	}
 	&.list-link:before{
@@ -212,12 +233,9 @@ ul li{
 	}
 }
 
-ol{
-	margin-left: calc(var(--indent)*2);
-	li{
-		padding-left: var(--indent);
-	}
-}
+
+
+
 
 pre{
 	tab-size: 1rem;
@@ -226,8 +244,8 @@ pre{
 	overflow: hidden;
 }
 code{
-	font-size: .85em;
-	line-height: .95;
+	// font-size: .85em;
+	// line-height: .95;
 	color: var(--color-tertiary);	
 }
 
@@ -264,7 +282,9 @@ main{
 	section{
 		position: relative;
 		background: var(--color-bg);
+		padding-bottom: var(--pad-section);
 	}
+
 }
 nav{
 	position: sticky;
@@ -339,8 +359,9 @@ SECTIONS
 	}
 }
 
+//sticker
 #tag-label {
-  display: none;
+  opacity: 0;
   position: absolute;
   background: var(--color-link);
   color:  var(--color-tertiary);
@@ -353,6 +374,10 @@ SECTIONS
   padding-bottom: calc( var(--pad-line)*0.8);
   border-radius: 50%;
   --case: 1;
+  transition: opacity 100ms ease-in-out;
+  &.active{
+  	opacity: 1;
+  }
 }
 
 @media print {
@@ -361,3 +386,5 @@ SECTIONS
     color: black;
   }
 }
+
+

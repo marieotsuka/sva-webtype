@@ -1,15 +1,22 @@
 //SLIDE STYLES
 .layout-slides {
-  --size-small: 1.2rem;
-  --size-base: 1.8rem;
+  // override main css styles
+  --size-base: calc( var(--base) * 2);
+  --lineheight: calc( var(--base) * 2.25);
+
   header, footer, section{
     max-width: none;
     margin: 0;
     width: 100%;
-    // override main css styles
+  }
+  h2{
+    border-bottom: 0;
+    margin-top: var(--pad);
+  }
+  main{
+    margin: 0;
   }
 }
-
 
 table{
   margin: auto;
@@ -73,9 +80,6 @@ table{
 	}
 	figure{
 		width: 100%;	
-    code{
-      font-size: 2rem;
-    }
     margin: var(--pad) 0;
 	}
 	img, video{
@@ -92,8 +96,10 @@ table{
     margin: auto;
   }
   figcaption{
+    --wdth: 100;
     margin-top: var(--pad);
     font-size: var(--size-small);
+    line-height: calc(var(--base)*1.25);
   }
 	iframe{
 		width: 100%;
@@ -114,8 +120,8 @@ table{
     text-align: left;
     padding: var(--pad);
     left: 0;
-    div{
-      grid-column: span 4
+    .runner-2{
+      grid-column-start: 3;
     }
   }
   &.divider{
@@ -365,9 +371,7 @@ p + pre {
 }
 
 @media (max-width: 1200px){
-  .layout-slides{
-    --size-base: 1.4rem;
-  }
+
   .text{
     width: 90%;
     margin: auto;
