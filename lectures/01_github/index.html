@@ -52,7 +52,7 @@
 				<h2>Create your own repository</h2>
 				<ol>
 					<li>Open your browser to get back to <a href="https://github.com/" target="_blank">github.com</a>, and create a new repository using <strong>+New</strong> button on the leftside of your GitHub homepage.</li>					
-					<li>Name your repository <code>yourusername.github.io</code>. For example, my username is <code>marieotsuka</code>, so my repository should be named <code>marieotsuka.github.io</code>. When you create the repository, check the box to <strong>initiate with a .README file</strong>. This repository will be the home for all of your assignments and exercises for this class. (<em>If you already have a Github account and a repository with that name, you might make a different repository name instead. In this case, be careful of root-relative links, because your website will live in <code>yourusername.github.io/project-name</code></em>)
+					<li>Name your repository <code>username.github.io</code>. For example, my username is <code>marieotsuka</code>, so my repository should be named <code>marieotsuka.github.io</code>. When you create the repository, check the box to <strong>initiate with a .README file</strong>. This repository will be the home for all of your assignments and exercises for this class. (<em>If you already have a Github account and a repository with that name, you might make a different repository name instead. In this case, be careful of root-relative links, because your website will live in <code>username.github.io/project-name</code></em>)
 					</li>
 				</ol>
 			</div>
@@ -63,7 +63,7 @@
 				<ol>
 					<li>Now, <strong>clone</strong> your own new repository, in the same way that you cloned the class repository.</li>
 					<li>After clicking <strong>Open in Desktop</strong>, click the <code>Choose</code> button and navigate to the folder where you plan to save your work for this class, then press the <code>Open</code> button. This is where the <code>local</code> version of your project will live, and your working directory for all website files for this class.</li>
-					<li>You should now have a folder called <code>yourusername.github.io</code> on your computer. Make sure to save all of your work into this folder.</li>
+					<li>You should now have a folder called <code>username.github.io</code> on your computer. Make sure to save all of your work into this folder.</li>
 				</ol>
 		</section>
 		<section class="slide">
@@ -101,33 +101,24 @@
 				<h2>Commit and Push to your repository</h2>
 				<p>Uploading your <code>local</code> files on your computer to the <code>remote</code> server—in our case, hosted on Github—requires 2 steps: <code>commit</code> and <code>push</code>. <em>Don’t forget to push after committing your code!</em></p>
 			</div>
-			<div class="text span2">				
-				<table>
-					<tr>
-						<td><code>commit</code></td>
-						<td>This will add and save any changes since your last commit to the local repository. It is a way to save a “snapshot” of the code of your website — a version to go back to, as reference. This is the “Git” version-control program that is part of Github. Note: you must fill out the <code>Summary</code> field, which is a description of your update, to commit files.
-						</td>
-					</tr>
-					<tr>
-						<td><code>push</code></td>
-						<td>
-							This will send your committed changes to a remote repository. This second step is necessary for to push your code to the Github servers, and for others to see the changes on your website.
-						</td>
-					</tr>
-				</table>
+			<div class="text">
 				<figure>
 					<img src="img/commit.png">
 					<div class="mark" id="annot-commit">
 					</div>
 				</figure>
-
+				<h3><code>Commit</code></h3>
+				<p>This will add and save any changes since your last commit to the local repository. It is a way to save a “snapshot” of the code of your website — a version to go back to, as reference. This is the “Git” version-control program that is part of Github. Note: you must fill out the <code>Summary</code> field with a description of your update, to commit files.</p>				
+			</div>											
+			<div class="text">
 				<figure>
 					<img src="img/push.png">
 					<div class="mark" id="annot-push">
-				</div>
 				</figure>
-				
+				<h3><code>Push origin</code></h3>
+				<p>This will send your committed changes to a remote repository. This second step is necessary for to push your code to the Github servers, and for others to see the changes on your website.</p>
 			</div>
+			</figure>
 		</section>
 		<section class="slide">
 			<div class="text">
@@ -152,7 +143,19 @@
 					In your GitHub.com repository page, find the “Settings” tab. Select Github Pages on the sidebar, and press the Select Source and choose <code>master</code> from the dropdown. This is the source files for your webpage.
 				</p>
 				<p>
-					After you click save, click the link listed in the same section, which should be  <code>yourusername.github.io</code> to view your website that should say “Hello World”. You can now upload any page and publish it to the web.
+					After you click save, click the link listed in the same section, which should be  <code>username.github.io</code> to view your website that should say “Hello World”. You can now upload any page and publish it to the web!
+				</p>				
+			</div>
+			<div class="text span2">
+				<h2>Your Live Site</h2>
+				<p>
+					Your live webpage will take on the name of your repository. If your repository is named <code>username.github.io</code>, your website url will be <code>https://marieotsuka.github.io/</code>. (If you used a diffferent repository name, it will be at <code>https://marieotsuka.github.io/repositoryname</code>.)
+				</p>
+				<p>
+					It is important to confirm that everything is working on the <strong>live</strong> version of your website. This is the URL you should use to share your work and submit assignments. <em>Do not use your local preview URL beginning with <code>file:</code>. This won’t be accessible to anyone else.</em>
+				</p>
+				<p>
+					Note: It may take a couple of minutes for the live website to reflect updates after pushing your changes to Github. Make sure you also do a <code>hard refresh</code> of your site to clear any cache. (Keyboard shortcut is Shift + command + R).
 				</p>
 			</div>
 		</section>

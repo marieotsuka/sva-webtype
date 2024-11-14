@@ -173,10 +173,6 @@ table {
   margin: auto;
   margin-top: 0;
 }
-table th {
-  --wght: 500;
-  border-bottom: 2px solid;
-}
 table td {
   min-width: 8em;
   vertical-align: top;
@@ -190,6 +186,9 @@ table th:first-child, table td:first-child {
 }
 table th:last-child, table td:last-child {
   padding-right: 0;
+}
+table th {
+  padding-top: 0;
 }
 table.dense {
   font-size: var(--size-small);
@@ -208,12 +207,16 @@ table.dense {
 }
 .slide h1 {
   font-size: var(--size-large);
+  line-height: 1;
 }
 .slide h2, .slide h3, .slide h4 {
   font-size: var(--size-base);
 }
 .slide h3, .slide h4 {
   margin-top: var(--pad);
+}
+.slide .text > h3:first-child {
+  margin-top: 0;
 }
 .slide p {
   max-width: 30em;
@@ -259,9 +262,6 @@ table.dense {
   padding-left: 1em;
   border: none;
 }
-.slide .text-column {
-  text-align: left;
-}
 .slide footer {
   font-size: var(--size-small);
   position: absolute;
@@ -280,9 +280,16 @@ table.dense {
 .slide .span2 {
   grid-column-end: span 2;
 }
+.slide .span3 {
+  grid-column-end: span 3;
+}
 
 .pad {
   background: white;
+}
+
+.img-border {
+  border: 1px solid var(--color-tertiary);
 }
 
 figure.small img {
@@ -291,6 +298,23 @@ figure.small img {
 
 figure.wide {
   width: 80%;
+}
+
+.xl {
+  line-height: 1;
+  font-size: var(--size-xlarge);
+}
+
+.l {
+  line-height: 1;
+  font-size: var(--size-large);
+}
+
+.highlight {
+  background: var(--color-tertiary);
+}
+.highlight code {
+  color: var(--color-base);
 }
 
 /*-----------------
@@ -306,17 +330,17 @@ p + pre {
   border: 1px solid var(--color-tertiary);
   padding: var(--pad);
   position: relative;
+  color: var(--color-base);
 }
 .diagram h1, .diagram h2, .diagram h3, .diagram h4, .diagram p, .diagram em {
   text-transform: none;
   color: var(--color-base);
   text-indent: 0;
-}
-.diagram .highlight {
-  background: yellow;
+  margin: 0;
 }
 .diagram #demo {
   font-weight: bold;
+  --wght: 900;
 }
 .diagram ul li {
   list-style-type: disc;
@@ -334,18 +358,16 @@ p + pre {
   margin-bottom: 1rem;
 }
 
-.diagram p {
-  margin-bottom: 1rem;
-}
-
 .diagram em {
   font-style: italic;
 }
 
 .line {
+  background: var(--color-tertiary);
+}
+
+#block-element .line {
   height: 1.5em;
-  background: var(--color-base);
-  color: var(--color-bg);
   margin-bottom: 0.5em;
 }
 
@@ -369,12 +391,6 @@ p + pre {
 
 .flex {
   display: flex;
-}
-
-.inline {
-  width: 32%;
-  height: 1.5em;
-  margin-bottom: 0.5em;
 }
 
 .solid {
@@ -533,8 +549,8 @@ p + pre {
   --size-small: calc( var(--base)*1.25);
   --size-base: calc( var(--base)*1.6);
   --size-medium: calc( var(--base)*2);
-  --size-large: calc( var(--base)*3);
-  --size-xlarge: calc( var(--base)*4);
+  --size-large: calc( var(--base)*5);
+  --size-xlarge: calc( var(--base)*12);
   --tracking: 0.04em;
   --lineheight: calc( var(--base)*2);
   --wdth: 95;
@@ -548,6 +564,7 @@ p + pre {
 
 ::selection {
   background: var(--color-tertiary);
+  color: var(--color-base);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -607,12 +624,12 @@ section h2 {
   margin-bottom: var(--lineheight);
 }
 
-h3, h5, blockquote {
-  margin-top: var(--pad);
-}
-
 p + p {
   text-indent: var(--indent);
+}
+
+h3, h5, blockquote, h3 + p, p + details {
+  margin-top: var(--lineheight);
 }
 
 blockquote {
@@ -710,6 +727,7 @@ pre {
 
 code, strong {
   color: var(--color-tertiary);
+  --onum: 0;
 }
 
 .sm {
@@ -767,7 +785,7 @@ nav {
 
 .schedule-item {
   border-bottom: 2px solid;
-  padding: var(--pad) 0;
+  padding: var(--lineheight) 0;
 }
 
 .inactive {

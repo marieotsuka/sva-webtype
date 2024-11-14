@@ -26,10 +26,6 @@ table{
   border-collapse: collapse;
   margin: auto;
   margin-top: 0;
-  th{
-    --wght: 500;
-    border-bottom: 2px solid;
-  }
   td{
     min-width: 8em;
     vertical-align: top;
@@ -43,6 +39,9 @@ table{
     &:last-child{
     	padding-right: 0;
     }
+  }
+  th{
+    padding-top: 0;
   }
   &.dense{
     font-size: var(--size-small);
@@ -60,15 +59,18 @@ table{
   grid-template-columns: repeat(3, minmax(0, 1fr) );
   gap: var(--pad-line);
 
- 
 	h1{
 		font-size: var(--size-large);
+    line-height: 1.0;
 	}
 	h2, h3, h4{
 		font-size: var(--size-base);
 	}
   h3, h4{
     margin-top: var(--pad);
+  }
+  .text > h3:first-child{
+    margin-top: 0;
   }
 	p{
 		max-width: 30em;
@@ -116,9 +118,6 @@ table{
 		padding-left: 1em;
 		border: none;
 	}
-	.text-column{
-    text-align: left;
-	}
   footer{
     font-size: var(--size-small);
     position: absolute;
@@ -139,6 +138,9 @@ table{
   .span2{
     grid-column-end: span 2;
   }
+  .span3{
+    grid-column-end: span 3;
+  }
   // .fullimg{
   //   margin: 0;
   //   grid-column: 1/-1;
@@ -150,7 +152,9 @@ table{
 .pad{ 
 	background: white;
 }
-
+.img-border{
+  border: 1px solid var(--color-tertiary);
+}
 
 figure.small img{
 	height: 70vh;
@@ -159,6 +163,20 @@ figure.wide{
 	width: 80%;
 }
 
+//text figures
+.xl{
+  line-height: 1.0;
+  font-size: var(--size-xlarge);
+}
+.l{
+  line-height: 1.0;
+  font-size: var(--size-large);
+}
+
+.highlight{
+  background: var(--color-tertiary);
+  code{color: var(--color-base);}
+}
 
 /*-----------------
 DIAGRAMS
@@ -173,19 +191,18 @@ p + pre {
   border: 1px solid var(--color-tertiary);
   padding: var(--pad);
   position: relative;
+  color: var(--color-base);
 
   h1, h2, h3, h4, p, em,{
     text-transform: none;
     color: var(--color-base);
     text-indent: 0;
-  }
-
-  .highlight {
-    background: yellow;
+    margin: 0;
   }
 
   #demo {
     font-weight: bold;
+    --wght: 900;
   }
   ul li{
     list-style-type: disc;
@@ -204,21 +221,16 @@ p + pre {
   font-weight: bold;
   margin-bottom: 1rem;
 }
-.diagram p {
-  margin-bottom: 1rem;
-}
 .diagram em {
   font-style: italic;
 }
 
 .line {
+  background: var(--color-tertiary);
+}
+#block-element .line{
   height: 1.5em;
-  background: var(--color-base);
-  color: var(--color-bg);
   margin-bottom: 0.5em;
-  // &:last-child{
-  //  margin-bottom: 0;
-  // }
 }
 
 .square {
@@ -243,11 +255,7 @@ p + pre {
   // justify-content: space-between;
 }
 
-.inline {
-  width: 32%;
-  height: 1.5em;
-  margin-bottom: 0.5em;
-}
+
 
 .solid {
   background: transparent;
