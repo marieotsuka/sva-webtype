@@ -148,7 +148,7 @@ p.p1 {
 }
 
 .layout-slides {
-  --size-base: calc( var(--base) * 2);
+  --size-base: calc( var(--base) * 1.75);
   --lineheight: calc( var(--base) * 2.25);
 }
 .layout-slides header, .layout-slides footer, .layout-slides section {
@@ -158,6 +158,8 @@ p.p1 {
 }
 .layout-slides h2 {
   border-bottom: 0;
+}
+.layout-slides h1 + h2 {
   margin-top: var(--pad);
 }
 .layout-slides main {
@@ -165,12 +167,11 @@ p.p1 {
 }
 
 table {
-  margin: auto;
-  margin-top: var(--pad);
-  font-size: var(--size-small);
   text-align: left;
   width: 100%;
   border-collapse: collapse;
+  margin: auto;
+  margin-top: 0;
 }
 table th {
   --wght: 500;
@@ -181,6 +182,7 @@ table td {
   vertical-align: top;
 }
 table th, table td {
+  border-bottom: 2px solid;
   padding: 0.25em 0.5em;
 }
 table th:first-child, table td:first-child {
@@ -189,28 +191,26 @@ table th:first-child, table td:first-child {
 table th:last-child, table td:last-child {
   padding-right: 0;
 }
+table.dense {
+  font-size: var(--size-small);
+}
 
 .slide {
   position: relative;
   width: 100%;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  background: var(--color-bg);
-  padding: var(--pad);
-}
-.slide h1, .slide h2, .slide h3, .slide h4 {
-  font-weight: bold;
+  color: var(--color-bg);
+  background: var(--color-base);
+  padding: var(--pad-line);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--pad-line);
 }
 .slide h1 {
   font-size: var(--size-large);
 }
 .slide h2, .slide h3, .slide h4 {
   font-size: var(--size-base);
-}
-.slide h3 {
-  text-transform: none;
-  letter-spacing: 0;
 }
 .slide h3, .slide h4 {
   margin-top: var(--pad);
@@ -227,15 +227,16 @@ table th:last-child, table td:last-child {
   margin-top: var(--pad-section);
 }
 .slide figure {
-  width: 100%;
-  margin: var(--pad) 0;
+  position: relative;
+}
+.slide p + figure {
+  margin-top: var(--lineheight);
 }
 .slide img, .slide video {
   display: block;
   width: 100%;
-  max-width: 100%;
-  height: 100%;
-  max-height: calc(90vh - 150px);
+  height: auto;
+  max-height: calc(100vh - 100px);
   object-fit: contain;
   object-position: top left;
 }
@@ -247,7 +248,7 @@ table th:last-child, table td:last-child {
   --wdth: 100;
   margin-top: var(--pad);
   font-size: var(--size-small);
-  line-height: calc(var(--base) * 1.25);
+  line-height: calc(var(--base) * 1.5);
 }
 .slide iframe {
   width: 100%;
@@ -273,22 +274,15 @@ table th:last-child, table td:last-child {
   grid-column-start: 3;
 }
 .slide.divider {
-  background: var(--color-base);
-  color: var(--color-bg);
-  text-align: center;
+  background: var(--color-tertiary);
+  color: var(--color-base);
 }
-.slide.divider .text {
-  margin: auto;
-  padding: 0;
+.slide .span2 {
+  grid-column-end: span 2;
 }
 
 .pad {
   background: white;
-}
-
-.text {
-  padding-left: 12.5%;
-  max-width: 42em;
 }
 
 figure.small img {
@@ -504,13 +498,6 @@ p + pre {
     width: 100%;
   }
 }
-@media (max-width: 1200px) {
-  .text {
-    width: 90%;
-    margin: auto;
-    padding-left: 0;
-  }
-}
 @media (max-width: 500px) {
   .text {
     width: 100%;
@@ -531,15 +518,14 @@ p + pre {
 :root {
   --color-dark: rgb(15 15 15);
   --color-bg: rgb(250, 250, 250);
-  --color-base: rgb(0 0 0);
-  --color-tertiary: rgb(255, 20, 0);
+  --color-base: rgb(50 20 20);
+  --color-tertiary: rgb(149 182 255);
   --color-txt: rgb(255 255 255);
   --color-link: rgb(215 255 15);
   --base: 14px;
   --pad: var(--base);
-  --pad-small: 0.3rem;
-  --pad-line: 1.25em;
-  --pad: 1rem;
+  --pad-small: calc(var(--base)*0.5);
+  --pad-line: calc(var(--base)*1.5);
   --pad-section: calc(var(--base)*5);
   --indent: 1em;
   --width-wide: 1200px;
@@ -604,7 +590,7 @@ a.anchor {
 }
 
 em {
-  font-style: normal;
+  font-style: italic;
 }
 
 ul {
@@ -618,12 +604,7 @@ h1, h2, h3, h4, h5, h6 {
 
 section h2 {
   border-bottom: 2px solid;
-  margin-bottom: var(--pad);
-}
-
-h3 {
-  font-feature-settings: "c2sc" 1, "smcp" 1;
-  letter-spacing: 0.05em;
+  margin-bottom: var(--lineheight);
 }
 
 h3, h5, blockquote {
@@ -677,6 +658,10 @@ label {
   cursor: pointer;
 }
 
+label[for=option-sticker] {
+  margin-right: var(--pad);
+}
+
 .options {
   margin-top: var(--pad);
 }
@@ -723,7 +708,7 @@ pre {
   overflow: hidden;
 }
 
-code {
+code, strong {
   color: var(--color-tertiary);
 }
 
@@ -821,10 +806,11 @@ SECTIONS
 
 #tag-label {
   opacity: 0;
-  position: absolute;
-  background: var(--color-link);
-  color: var(--color-tertiary);
-  box-shadow: inset 2px 2px 4px var(--color-tertiary);
+  position: fixed;
+  mix-blend-mode: multiply;
+  background: var(--color-tertiary);
+  color: var(--color-link);
+  box-shadow: inset 2px 2px 4px var(--color-base);
   padding: 8px 8px 0px;
   line-height: 1;
   z-index: 100;

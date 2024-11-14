@@ -16,9 +16,10 @@
   // --color-bg: rgb(255 253 230);
   --color-bg: rgb(250, 250, 250);
   // --color-base: rgb(0 40 255);
-  --color-base: rgb(0 0 0);
+  --color-base: rgb(50 20 20);
 
-  --color-tertiary: rgb(255, 20, 0);
+  --color-tertiary: rgb(149 182 255);
+  // rgb(150 170 0);
   --color-txt: rgb(255 255 255);
   // --color-link: rgb(20 210 0);
   --color-link: rgb(215 255 15);
@@ -26,9 +27,8 @@
   --base: 14px;
 
   --pad: var(--base);
-  --pad-small: 0.3rem;
-  --pad-line: 1.25em;
-  --pad: 1rem;
+  --pad-small: calc(var(--base)*0.5);
+  --pad-line: calc(var(--base)*1.5);
   --pad-section: calc(var(--base)*5);
 
   --indent: 1em;
@@ -110,7 +110,7 @@ a.anchor{
 }
 
 em{
- font-style: normal;
+ font-style: italic;
 }
 ul{
 	margin-bottom: var(--pad);
@@ -122,12 +122,12 @@ h1, h2, h3, h4, h5, h6{
 }
 section h2{
 	border-bottom: 2px solid;
-	margin-bottom: var(--pad);
+	margin-bottom: var(--lineheight);
 }
-h3{
-	font-feature-settings: 'c2sc' 1, 'smcp' 1;
-	letter-spacing: 0.05em;
-}
+// h3{
+// 	font-feature-settings: 'c2sc' 1, 'smcp' 1;
+// 	letter-spacing: 0.05em;
+// }
 h3, h5, blockquote{
 	margin-top: var(--pad);
 }
@@ -170,6 +170,9 @@ input[type="checkbox"]:checked::before {
 }
 label{
 	cursor: pointer;
+}
+label[for="option-sticker"]{
+	margin-right: var(--pad);
 }
 
 .options{
@@ -243,7 +246,7 @@ pre{
 	color: var(--color-tertiary);
 	overflow: hidden;
 }
-code{
+code, strong{
 	// font-size: .85em;
 	// line-height: .95;
 	color: var(--color-tertiary);	
@@ -362,10 +365,11 @@ SECTIONS
 //sticker
 #tag-label {
   opacity: 0;
-  position: absolute;
-  background: var(--color-link);
-  color:  var(--color-tertiary);
-  box-shadow: inset 2px 2px 4px var(--color-tertiary);
+  position: fixed;
+  mix-blend-mode: multiply;
+  background: var(--color-tertiary);
+  color: var(--color-link);
+  box-shadow: inset 2px 2px 4px var(--color-base);
   padding: 8px 8px 0px;
   line-height: 1;
   z-index: 100;

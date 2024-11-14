@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event) { 
 	const body = document.body;
-	let sticker = true;
+	let sticker = false;
 
 	document.getElementById('option-simplified').addEventListener('change', (e)=>{		
 		if (e.target.checked){
@@ -30,11 +30,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   		if( elementname !== 'summary' && target.closest('a') == null ){
   			// if not clicking on link
-  			var x = e.pageX;
-  			var y = e.pageY;
+  			var x = e.clientX;
+  			var y = e.clientY;
   			stickerEl.querySelector('.tag-name').innerText = elementname;
   			stickerEl.classList.add('active');
-  			stickerEl.style.cssText = `top: ${y-30}px; left: ${x+30}px;`;
+  			stickerEl.style.cssText = `top: ${y-30}px; left: ${x-30}px;`;
   		}
   	}else{
   		stickerEl.classList.remove('active');
@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   const cols = document.querySelectorAll('.col');
   cols.forEach( col=>{
   	col.addEventListener("scroll", (e)=>{	 
-  	console.log('scroll'); 	
 		  if( stickerEl.classList.contains('active') ){
 		  	stickerEl.classList.remove('active');	
 			} 	

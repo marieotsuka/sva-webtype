@@ -22,76 +22,90 @@
 		</section>
 		<section class="slide">
 			<div class="text">
-				<h2>Create Account</h2>
-				<p>Sign up for an account at <a href="https://github.com/" target="_blank">GitHub</a>.</p>
-			</div>
-		</section>
-		<section class="slide">
-			<div class="text">
-				<h2>Install Github Desktop</h2>
-				<p>Download the <a href="https://desktop.github.com/" target="_blank">Github Desktop</a> application and install it on your computer.</p>
-			</div>
-		</section>
-		<section class="slide">
-			<div class="text">
-				<h2>Clone the Class Repository</h2>
-				<p>This repository contains all of the demos for the class in the <code>demos</code> folder. You can have access to the latest code on your computer by cloning this repository, and syncing as needed.</p>
+				<h2>Set up Github</h2>
 				<ol>
-					<li>Go to <a href="https://github.com/marieotsuka/sva-webtype" target="_blank">this repository on Github</a> and click the green <code>Clone</code> button and choose<code>Open in Desktop</code></li>
+					<li>Sign up for an account at <a href="https://github.com/" target="_blank">GitHub</a>.</li>
+					<li>Download the <a href="https://desktop.github.com/" target="_blank">Github Desktop</a> application and install it on your computer.</li>
+					<li>Open Github Desktop and sign-in with your account.</li>
+				</ol>
+			</div>
+			<div class="text span2">
+				<h2>Clone the Class Repository</h2>
+				<p>This repository contains all of the demos for the class in the <code>demos</code> folder.</p>
+				<ol>
+					<li>Log into <a href="https://github.com/" target="_blank">github.com</a>.</li>
+					<li>Go to <a href="https://github.com/marieotsuka/sva-webtype" target="_blank">this repository on Github</a> and click the green <code>Clone</code> button and choose <code>Open in Desktop</code>.</li>
 					<li>
 						When you press this button, it should launch the Github desktop application you downloaded before.(If it doesn’t happen, open the application manually.)
 					</li>
-				</ol>
-			</div>
-		</section>
-		<section class="slide">
-			<div class="text">
-				<h2>Your local repositories</h2>
-				<p>
-					For the local path, select a place on your computer where you want the <code>local</code> version of your projects to live. Select the <code>Choose</code> button, navigate to the folder where you plan to save your work for this workshop, then press the <code>Open</code> button. It might be somewhere like <code>/Users/motsuka/Sites</code>.
-				</p>
-				<p>
-					Github will create a folder named <code>web-typography-workshop</code> there. This is the <code>local</code> version of this github repository. 
-				</p>
-			</div>
-		</section>
-		<section class="slide">
-			<div class="text">
-				<h2>Create your Repository</h2>
-				<ol>
-					<li>Log into <a href="https://github.com/" target="_blank">github.com</a> and create a new repository using the link under the + icon in the upper right of the GitHub homepage.</li>
-					<li>Name your repository <code>yourusername.github.io</code>. For example, my username is marieotsuka, so my repository should be named <code>marieotsuka.github.io</code>. When you create the repository, check the box to <strong>initiate with a .README file</strong>. This repository will be the home for all of your assignments and exercises for this class.</li>
-					<li><em>If you already have a Github account, you might make a different repository name instead. In this case, be careful of root-relative links, because your website will live in <code>yourusername.github.io/project-name</code></em>
+					<li>
+						Select a place on your computer where you want your copy of the repository to live. It might be somewhere like <code>/Users/motsuka/Sites</code>.
+					</li>
+					<li>
+						Every week, make sure to click on the <strong>Fetch origin</strong> button on the top right. This syncs up your local copy the repository the folder with the latest code.
 					</li>
 				</ol>
 			</div>
 		</section>
 		<section class="slide">
-			<div class="text">
-				<h2>Clone your Repository to your computer</h2>
-				<p>
-					Once you’ve initialized your repository, it will take you to the home screen of the repository
-				</p>
-				<p>
-					You should now have a folder called yourusername.github.io on your computer. Make sure to save all of your work into this folder.
-				</p>
-
+			<div class="text span2">
+				<h2>Create your own repository</h2>
+				<ol>
+					<li>Open your browser to get back to <a href="https://github.com/" target="_blank">github.com</a>, and create a new repository using <strong>+New</strong> button on the leftside of your GitHub homepage.</li>					
+					<li>Name your repository <code>yourusername.github.io</code>. For example, my username is <code>marieotsuka</code>, so my repository should be named <code>marieotsuka.github.io</code>. When you create the repository, check the box to <strong>initiate with a .README file</strong>. This repository will be the home for all of your assignments and exercises for this class. (<em>If you already have a Github account and a repository with that name, you might make a different repository name instead. In this case, be careful of root-relative links, because your website will live in <code>yourusername.github.io/project-name</code></em>)
+					</li>
+				</ol>
 			</div>
 		</section>
-
+		<section class="slide">
+			<div class="text span2">
+				<h2>Clone your own repository</h2>
+				<ol>
+					<li>Now, <strong>clone</strong> your own new repository, in the same way that you cloned the class repository.</li>
+					<li>After clicking <strong>Open in Desktop</strong>, click the <code>Choose</code> button and navigate to the folder where you plan to save your work for this class, then press the <code>Open</code> button. This is where the <code>local</code> version of your project will live, and your working directory for all website files for this class.</li>
+					<li>You should now have a folder called <code>yourusername.github.io</code> on your computer. Make sure to save all of your work into this folder.</li>
+				</ol>
+		</section>
 		<section class="slide">
 			<div class="text">
-				<h2>Create your first Webpage</h2>
-				<p>Paste the demos/01-starterkit folder <strong>contents</strong> into your new repository. <em>Do not copy the entire folder, instead, select the files within the folder and copy them. The index.html page should be located directly within your repository folder.</em></p>
+				<h2>Create your first webpage!</h2>
+				<ol>
+					<li>Navigate to the class repository on your Finder.</li>
+					<li>Copy the <em>contents of</em> <code>demos/00-starterkit folder</code> into your new repository (the <code>index.html</code> and <code>style.css</code> file.) </li>
+					<li>Paste these files into <em>your own repository</em> folder. <em>Do not copy the entire folder,</em> instead, select <em>only the files within the folder</em> and copy them to your own repository folder. The <code>index.html</code> file should be located directly within your repository (what we call your <strong>root</strong>) not in a subfolder.
+					</li>
+				</ol>
+			</div>
+			<div class="text span2">
+				<h2>Open your HTML file in the Browser</h2>
+				<ol>
+					<li>Double-click on the <code>index.html</code> file to open it in your Browser.
+					</li>
+					<li>
+						Note: if your default browser is Safari, I recommend changing this to Chrome or Firefox at this time for easier access to browser tools.
+					</li>
+					<li>
+						You’re now seeing your own very simple website!
+					</li>
+				</ol>
+				<p>This is a <code>local preview</code> of your website, only accessible to you. Notice that the <code>url</code> is something specific to your computer, i.e. <code>file:///Users/motsuka/Sites/sva-webtype/demos/00-starterkit/index.html</code>
+				</p>
+				<figure>
+					<img src="img/sample-html.png">
+					<figcaption>An html file opened in a browser.</figcaption>
+				</figure>
 			</div>
 		</section>
 		<section class="slide">
 			<div class="text">
 				<h2>Commit and Push to your repository</h2>
+				<p>Uploading your <code>local</code> files on your computer to the <code>remote</code> server—in our case, hosted on Github—requires 2 steps: <code>commit</code> and <code>push</code>. <em>Don’t forget to push after committing your code!</em></p>
+			</div>
+			<div class="text span2">				
 				<table>
 					<tr>
 						<td><code>commit</code></td>
-						<td>This will add and save any changes since your last commit to the local repository. It is a way to save a snapshot of your website — a version to go back to, as reference. This is the “Git” version-control program that is part of Github.
+						<td>This will add and save any changes since your last commit to the local repository. It is a way to save a “snapshot” of the code of your website — a version to go back to, as reference. This is the “Git” version-control program that is part of Github.
 						</td>
 					</tr>
 					<tr>
@@ -106,12 +120,18 @@
 		<section class="slide">
 			<div class="text">
 				<h2>Confirm your Changes</h2>
-					<p>Confirm you see changes made to your file in the <code>Changes Tab</code> on the Github app. Fill in a brief description of the change you made in the Summary field — this is a note for your future self.</p>
-					<p>
-						Press <code>Commit</code> button and then Press <code>Push Origin</code> in the top right tab
-						Check to make sure your changes were pushed to the master repository Reload your project GitHub home page.
-					</p>
-				</div>
+					<ol>
+					<li>Confirm you see changes made to your file in the <code>Changes Tab</code> on the Github app. Fill in a brief description of the change you made in the <code>Summary</code> field — this is a required field, and a note for your future self.</li>
+					<li>
+						Press <code>Commit</code> button and then Press <code>Push Origin</code> in the top right tab.
+					</li>
+					<li>
+						Check the <code>remote</code> files by navigating to <code>github.com/yourusername</code>. Verify that your changes were pushed to the master repository.
+					</li>
+				</ol>
+			</div>
+			<div class="text">
+			</div>
 		</section>
 		<section class="slide">
 			<div class="text">
