@@ -165,6 +165,9 @@ p.p1 {
 .layout-slides main {
   margin: 0;
 }
+.layout-slides a:hover {
+  color: var(--color-link);
+}
 
 table {
   text-align: left;
