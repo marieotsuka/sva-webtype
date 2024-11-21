@@ -1,20 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Web Fonts</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../../css/main.css">
+<title>Web Fonts</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="../../css/main.css">
+<style>
 
-	<link rel="icon"type="image/svg"href="../../assets/favicon.svg">
-	<script src="../slides.js"></script>
+@font-face{
+font-family: 'Quiosco Grades VF';
+src: url(../../assets/fonts/QuioscoRomanVF.woff2) format('woff2-variations');
+}
+
+@font-face{
+font-family: 'Allium';
+src: url(../../assets/fonts/Allium-Medium.woff2) format('woff2');
+}
+
+.quiosco td:nth-child(4){
+	width: 25%;
+}
+.quiosco td:nth-child(4), .quiosco span{
+font-size: 2rem;
+font-family: 'Quiosco Grades VF';
+}
+
+.ss td:nth-child(3){
+	width: 50%;
+}
+
+</style>
+
+<link rel="icon"type="image/svg"href="../../assets/favicon.svg">
+<script src="../slides.js"></script>
 </head>
 <body class="layout-slides">
 	<main>
 		<section class="slide divider">
 			<div class="text">
 				<h1>Web Fonts</h1>
-				<h2>Your Browser & Typefaces</h2>
+				<h2>Your browser & typefaces</h2>
 			</div>
 			<footer class="grid">
 				<div class="runner-1">SVA Section 3 24/FA DSD-3662-A</div>
@@ -89,24 +114,24 @@
 			</div>
 			<figue class="span2">
 				In your CSS file:
-				<pre>					
-					@font-face{
-						font-family: 'My Font';
-						src: url('fonts/FontName-Medium.woff2') format('woff2');
-						font-weight: 400;
-					}
-					@font-face{
-						font-family: 'My Font';
-						src: url('fonts/FontName-MediumItalic.woff2') format('woff2');
-						font-style: italic;
-						font-weight: 400;
-					}
+<pre>					
+@font-face{
+	font-family: 'My Font';
+	src: url('fonts/FontName-Medium.woff2') format('woff2');
+	font-weight: 400;
+}
+@font-face{
+	font-family: 'My Font';
+	src: url('fonts/FontName-MediumItalic.woff2') format('woff2');
+	font-style: italic;
+	font-weight: 400;
+}
 
-					body {
-						font-family: 'My Font'; 
-						/*this name should match the font-face rule you set up*/
-					}
-				</pre>
+body {
+	font-family: 'My Font'; 
+	/*this name should match the font-face rule you set up*/
+}
+</pre>
 			</div>
 		</figue>
 	</section>
@@ -192,12 +217,12 @@
 				<div class="text">
 					<h3>CSS</h3>
 					<pre>body {
-	font-family: "fit", sans-serif;
-	font-variation-settings: "wdth" 482;
-}</pre>
+						font-family: "fit", sans-serif;
+						font-variation-settings: "wdth" 482;
+					}</pre>
 					<h3>HTML HEAD</h3>
 					<pre>&lt;link rel=&quot;stylesheet&quot;
-href=&quot;https://use.typekit.net/znz4odv.css&quot;&gt;</pre>
+					href=&quot;https://use.typekit.net/znz4odv.css&quot;&gt;</pre>
 				</div>
 				<figure>
 					<img src="img/adobe.png">
@@ -215,16 +240,16 @@ href=&quot;https://use.typekit.net/znz4odv.css&quot;&gt;</pre>
 				<div class="text">						
 					<h3>CSS</h3>
 					<pre>body {
-	font-family: 'Fraunces', serif;
-}</pre>
+						font-family: 'Fraunces', serif;
+					}</pre>
 					<h3>HTML HEAD</h3>
 					<pre>&lt;link rel=&quot;preconnect&quot;
-href=&quot;https://fonts.googleapis.com&quot;&gt;
-&lt;link rel=&quot;preconnect&quot;
-href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;
-&lt;link href=&quot;https://fonts.googleapis.com/css2?family=
-Fraunces:opsz@9..144&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
-</pre>
+						href=&quot;https://fonts.googleapis.com&quot;&gt;
+						&lt;link rel=&quot;preconnect&quot;
+						href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;
+						&lt;link href=&quot;https://fonts.googleapis.com/css2?family=
+						Fraunces:opsz@9..144&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+					</pre>
 				</div>
 				<figure>
 					<img src="img/google.png">
@@ -283,7 +308,7 @@ h1{
 				<div class="text">
 					<h3>Standard Axis Tags</h3>
 					<p>
-						A variable font often contains standard axes based on how typeface families are often defined, such as variations in weight, width, and slant. These are denoted in a 4-letter, lowercase <code>axis tag</code>.
+						A variable font often contains standard axes based on how typeface families are often defined, such as variations in weight, width, and slant. These are denoted in a 4-letter, lowercase <code>axis tag</code>. Custom variable axis names defined by the type designer are set in ALLCAPS.
 					</p>
 				</div>
 				<div class="text span2">
@@ -339,54 +364,227 @@ h1{
 					</p>
 				</div>
 				<figure class="span2">
-					<img src="img/wakamai.png" class="wideimg">
-					<figcaption>A screenshot from “wakamai fondue”</figcaption>
+					<img src="img/wakamai.png">					
 				</figure>
 			</section>
 <!-- 			<section class="slide">
-				<div class="text">
-					<h3>Using CSS Variables</h3>
-					<p>
-						It can be useful to setup CSS variables to assign into the <em>font-variation-settings</em> so that you can adjust each axis individually at each element. You can define CSS Variables by prefixing names with <em>--</em>.
-					</p>
-				</div>
-				<figure class="span2">
-					<pre><code>
-						:root{
-							--wght: 400;
-							--wdth: 100;
-							--XHGT: 0;
-						}
+<div class="text">
+<h3>Using CSS Variables</h3>
+<p>
+It can be useful to setup CSS variables to assign into the <em>font-variation-settings</em> so that you can adjust each axis individually at each element. You can define CSS Variables by prefixing names with <em>--</em>.
+</p>
+</div>
+<figure class="span2">
+<pre><code>
+:root{
+--wght: 400;
+--wdth: 100;
+--XHGT: 0;
+}
 
-						body{
-							font-family: 'Variable Font';
-							font-variation-settings: 'wght' var(--wght);
-						}
+body{
+font-family: 'Variable Font';
+font-variation-settings: 'wght' var(--wght);
+}
 
-						h1{
-							font-family: 'Another Multi-axis Variable Font';								
-							font-variation-settings: 'wght' var(--wght),
-							'wdth' var(--wdth),'XHGT' var(--XHGT); 
-						}					</pre></code>
-						<figcaption>Assigning font-variation-settings with CSS variables</figcaption>
-					</figure>
-				</section> -->
+h1{
+font-family: 'Another Multi-axis Variable Font';								
+font-variation-settings: 'wght' var(--wght),
+'wdth' var(--wdth),'XHGT' var(--XHGT); 
+}					</pre></code>
+<figcaption>Assigning font-variation-settings with CSS variables</figcaption>
+</figure>
+</section> -->
 
-			<section class="slide">
-				<div class="text">
-					<h2>Exercise: Style your text</h2>
-					<p>Load a typeface and style the text you marked up in the first exercise.</p>
-				</div>
-				<div class="text span2">
-					<ol>
-						<li>Make a copy of the folder containing your marked-up html page, and rename to <code>code</code></li>
-						<li>Create an external stylesheet, called <code>style.css</code> (make sure to add the .css extension)</li>
-						<li>Connect your stylesheet to your html page using the <code>link</code> tag</li>
-						<li>Write your CSS to style your markup. You might find that you want to change your markup in the process.</li>
-						<li>Setup a <code>woff2</code> export of your font to use with your webpage, using the <code>@font-face</code> rule.</li>
-					</ol>
-				</div>
-			</section>	
+<section class="slide">
+	<div class="text">
+		<h2>Open Type Features</h2>
+		<p>
+			Open Type features provide ways to access embedded functionality in your typefaces that help you refine your typography by providing alternate forms. Depending on the genre of the font, these might include some from the list below. The general syntax <code>font-feature-settings: featuretag on/off;</code> or <code>1/0</code> (0 meaning off, 1 meaning on) provides general access to the features; some features may have a more <strong>specific CSS properties</strong> on modern browsers. Depending on how the typeface designer set up the font, some features may be on by default.
+		</p>
+	</div>
+</section>
+
+<section class="slide">
+<figure class="span3">
+<table class="quiosco">
+<tr><th>Open Type Feature</th><th>feature tag</th><th>
+feature syntax or css property</th><th>example</th><th></th></tr>
+<tr data-feature="1">
+	<td>Ligatures</td>
+	<td><code>liga</code></td>
+	<td>
+		<code>font-feature-settings: 'liga' 1;</code> or<br>
+		<code>font-variant-ligatures: common-ligatures;</code></td>
+		<td style="font-feature-settings: 'liga' var(--toggle);">ff fi fl ffi ffl</td>
+		<td class="toggle-feature">
+			<input type="checkbox" checked title="toggle feature on/off">
+		</td>						
+	</tr>
+	<tr data-feature="1">
+		<td>Discretionary ligatures</td>
+		<td><code>dlig</code></td>						
+		<td>
+			<code>font-feature-settings: 'dlig' 1;</code> or<br>
+			<code>font-variant-ligatures: discretionary-ligatures;</code></td>
+			<td style="font-feature-settings: 'dlig' var(--toggle);">fj ft</td>
+			<td class="toggle-feature">
+				<input type="checkbox" checked title="toggle feature on/off">
+			</td>	
+		</tr>
+	<tr data-feature="1">
+		<td>Small caps</td>
+		<td><code>smcp</code>, or <code>c2sc</code></td>
+		<td>
+			<code>font-feature-settings: 'c2sc' 1;</code> or<br>
+			<code>font-variant-caps: small-caps;</code></td>
+			<td><span style="font-feature-settings: 'c2sc' var(--toggle);">SMALL CAPS</td>						
+			<td class="toggle-feature">
+				<input type="checkbox" checked title="toggle feature on/off">
+			</td>	
+		</tr>
+		<tr data-feature="1">
+			<td>Figures styles (tabular, lining, oldstyle)</td>
+			<td><code>tnum</code>, <code>lnum</code>, <code>onum</code></td>
+			<td>
+				<code>font-feature-settings: 'tnum' 1;</code> or<br>
+				<code>font-variant-numeric: tabular-nums;</code> (also <code>lining-nums</code> and <code>oldstyle-nums</code></td>
+				<td> <span style="font-feature-settings: 'tnum' var(--toggle);">0123</span>  <span style="font-feature-settings: 'lnum' var(--toggle);">0123</span>  <span style="font-feature-settings: 'onum' var(--toggle);">0123</span></td>
+				<td class="toggle-feature">
+					<input type="checkbox" checked title="toggle feature on/off">
+				</td>	
+			</tr>
+			<tr data-feature="1">
+				<td>Fractions</td>
+				<td><code>frac</code></td>					
+				<td>
+					<code>font-feature-settings: 'frac' 1;</code> or<br>
+					<code>font-variant-numeric: diagonal-fractions;</code></td>
+					<td style="font-feature-settings: 'frac' var(--toggle);">1/2  1/4 3/4</td>
+					<td class="toggle-feature">
+						<input type="checkbox" checked title="toggle feature on/off">
+					</td>	
+				</tr>
+				<tr data-feature="1">
+					<td>Superscript / Subscripts</td>
+					<td><code>sups</code>, <code>subs</code></td>						
+					<td>
+						<code>font-feature-settings: 'sups' 1;</code> or<br>
+						<code>font-variant-position: super;</code> (also <code>sub</code>)</td>
+						<td> footnote<span style="font-feature-settings: 'sups' var(--toggle);">3</span> H<span style="font-feature-settings: 'subs' var(--toggle);">2</span>0</td>
+						<td class="toggle-feature">
+							<input type="checkbox" checked title="toggle feature on/off">
+						</td>	
+					</tr>
+				</table>
+			</figure>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>Stylistic Alternates</h2>
+				<p>Features can also handle alternative glyphs contained within the typeface.</p>
+				<p>
+					*The variants assigned to stylistic sets are up to the type designer—there are no standard mappings. A font can have up to 20 <code>ss</code> alternates.</p>
+				<p>
+					†Localized forms need to be combined with the <code>lang="xx"</code> attribute on the element, where xx is the <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" target="_blank">2-letter ISO language code</a>.</p>
+				<p>
+					<em>Multiple feature properties can be applied by comma-separating the different feature activations.</em> If you set another <code>font-feature-settings</code> property below another, it will cancel the first setting, so the features must always be combined into a single line. For example, <code>font-feature-settings: 'liga' 1, 'ss01' 1;</code> will turn on both ligatures and Stylistic Set 01 (i.e. a simpified a) to the element.
+				</p>
+			</div>
+			<figure class="span2">
+				<table class="ss">
+					<tr>
+						<th>Open Type Feature</th>
+						<th>feature tag</th>
+						<th>example</th>
+						<th></th>
+					</tr>
+					<tr data-feature="1">
+						<td>Stylistic Set 01*</td>
+						<td><code>ss01</code></td>
+						<td style="font-feature-settings: 'ss01' var(--toggle);">
+							a á ă â ä à ā ą å ǻ ã
+						</td>						
+						<td class="toggle-feature">
+							<input type="checkbox" checked title="toggle feature on/off">
+						</td>	
+					</tr>
+					<tr data-feature="1">
+						<td>Stylistic Set 04*</td>
+						<td><code>ss04</code></td>
+						<td style="font-feature-settings: 'ss04' var(--toggle);">
+							&
+						</td>						
+						<td class="toggle-feature">
+							<input type="checkbox" checked title="toggle feature on/off">
+						</td>	
+					</tr>
+<!-- 					<tr>
+						<td>Contextual Alternates</td>
+						<td><code>calt</code></td>
+						<td style="font-feature-settings: 'calt' var(--toggle);"></td>						
+						<td class="toggle-feature">
+							<input type="checkbox" checked title="toggle feature on/off">
+						</td>	
+					</tr> -->
+					<tr data-feature="1">
+						<td>Case punctuation</td>
+						<td><code>case</code></td>
+						<td style="font-feature-settings: 'case' var(--toggle);">
+							3:12 (POS) [pos] {pos}
+						</td>						
+						<td class="toggle-feature">
+							<input type="checkbox" checked title="toggle feature on/off">
+						</td>	
+					</tr>
+					<tr data-feature="1">
+						<td>Zero slash</td>
+						<td><code>zero</code></td>
+						<td style="font-feature-settings: 'zero' var(--toggle);">0</td>						
+						<td class="toggle-feature">
+							<input type="checkbox" checked title="toggle feature on/off">
+						</td>	
+					</tr>
+					<tr data-feature="1">
+						<td>Localized Forms†</td>
+						<td><code>locl</code></td>
+						<td style="font-feature-settings: 'locl' var(--toggle);" lang="bg">Д Л в г д ж з и й ѝ к л п т ц ш щ ь 		ъ ю</td> 
+						<td class="toggle-feature">
+							<input type="checkbox" checked title="toggle feature on/off">
+						</td>
+					</tr>
+				</table>				
+			</figure>
+		</section>
+		<section class="slide">
+			<div class="text">
+				<h2>Exercise: Style your text</h2>
+				<p>Load a typeface and style the text you marked up in the first exercise.</p>
+			</div>
+			<div class="text span2">
+				<ol>
+					<li>Make a copy of the folder containing your marked-up html page, and rename to <code>code</code></li>
+					<li>Create an external stylesheet, called <code>style.css</code> (make sure to add the .css extension)</li>
+					<li>Connect your stylesheet to your html page using the <code>link</code> tag</li>
+					<li>Write your CSS to style your markup. You might find that you want to change your markup in the process.</li>
+					<li>Setup a <code>woff2</code> export of your font to use with your webpage, using the <code>@font-face</code> rule.</li>
+				</ol>
+			</div>
+		</section>
 	</main>
+	<script>
+		let toggles = document.querySelectorAll('input[type="checkbox"]');
+		toggles.forEach( checkbox=>{
+			let div = checkbox.closest('tr');
+			checkbox.addEventListener('change', (e)=>{
+				if (e.target.checked){
+					div.dataset.feature = 1;
+				}else{
+					div.dataset.feature = 0;
+				}
+			});
+		})
+	</script>
 </body>
 </html>

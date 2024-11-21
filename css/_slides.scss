@@ -415,3 +415,14 @@ p + pre {
     display: block;
   }
 }
+
+[data-feature="1"]{
+  --toggle: 1;
+}
+[data-feature="0"]{
+  --toggle: 0;
+}
+
+input[type="checkbox"]{
+  --color-base: var(--color-bg);
+}
