@@ -8,7 +8,7 @@
 	box-sizing: border-box;
 	font-family: 'Caper';
 	font-variation-settings: "wdth" var(--wdth), "wght" var(--wght);
-	font-feature-settings: "onum" var(--onum), "case" var(--case), "ss01" var(--ss01), "ss03" var(--ss03);
+	font-feature-settings: "onum" var(--onum), "tnum" var(--tnum), "case" var(--case), "ss01" var(--ss01), "ss03" var(--ss03);
 }
 
 :root{
@@ -50,6 +50,7 @@
   --wght: 450;
   --ital: 0;
   --onum: 1;
+  --tnum: 0;
   --case: 0;
   --ss01: 0;
   --ss03: 0;

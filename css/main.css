@@ -177,7 +177,6 @@ table {
   margin-top: 0;
 }
 table td {
-  min-width: 8em;
   vertical-align: top;
 }
 table th, table td {
@@ -195,6 +194,11 @@ table th {
 }
 table.dense {
   font-size: var(--size-small);
+}
+
+.table-fontvalues th:first-child, .table-fontvalues td:first-child {
+  width: 20%;
+  --tnum: 1;
 }
 
 .slide {
@@ -410,12 +414,25 @@ p + pre {
   opacity: 0.2;
 }
 
+.vf {
+  margin: auto;
+  margin-top: calc(var(--base) * 3);
+  text-align: center;
+  animation: vf 3s linear alternate infinite;
+}
+
 @keyframes vf {
   0% {
-    font-variation-settings: "wght" 20, "wdth" 100, "slnt" 0;
+    font-variation-settings: "wdth" 50, "wght" 200;
+  }
+  33% {
+    font-variation-settings: "wdth" 50, "wght" 900;
+  }
+  66% {
+    font-variation-settings: "wdth" 200, "wght" 900;
   }
   100% {
-    font-variation-settings: "wght" 140, "wdth" 100, "slnt" 0;
+    font-variation-settings: "wdth" 200, "wght" 200;
   }
 }
 @keyframes changecolor {
@@ -531,7 +548,7 @@ p + pre {
   box-sizing: border-box;
   font-family: "Caper";
   font-variation-settings: "wdth" var(--wdth), "wght" var(--wght);
-  font-feature-settings: "onum" var(--onum), "case" var(--case), "ss01" var(--ss01), "ss03" var(--ss03);
+  font-feature-settings: "onum" var(--onum), "tnum" var(--tnum), "case" var(--case), "ss01" var(--ss01), "ss03" var(--ss03);
 }
 
 :root {
@@ -560,6 +577,7 @@ p + pre {
   --wght: 450;
   --ital: 0;
   --onum: 1;
+  --tnum: 0;
   --case: 0;
   --ss01: 0;
   --ss03: 0;

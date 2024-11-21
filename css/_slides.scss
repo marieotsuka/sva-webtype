@@ -30,7 +30,6 @@ table{
   margin: auto;
   margin-top: 0;
   td{
-    min-width: 8em;
     vertical-align: top;
   }
   th,td{
@@ -48,6 +47,13 @@ table{
   }
   &.dense{
     font-size: var(--size-small);
+  }
+}
+
+.table-fontvalues{
+  th:first-child, td:first-child{
+    width: 20%;
+    --tnum: 1;
   }
 }
 .slide{
@@ -274,14 +280,28 @@ p + pre {
   opacity: 0.2;
 }
 
+
+.vf{
+  margin: auto;
+  margin-top: calc(var(--base)*3);
+  text-align: center;
+  animation: vf 3s linear alternate infinite;
+}
 @keyframes vf {
   0% {
-    font-variation-settings: "wght" 20, "wdth" 100, "slnt" 0;
+    font-variation-settings: "wdth" 50, "wght" 200;
+  }
+  33% {
+    font-variation-settings: "wdth" 50, "wght" 900;
+  }
+  66% {
+    font-variation-settings: "wdth" 200, "wght" 900;
   }
   100% {
-    font-variation-settings: "wght" 140, "wdth" 100, "slnt" 0;
+    font-variation-settings: "wdth" 200, "wght" 200;
   }
 }
+
 @keyframes changecolor {
   0% {
     background-color: blue;
@@ -317,8 +337,6 @@ p + pre {
 .animate{
  animation-play-state: paused;
 }
-
-
 
 .arrowanimate{
   animation: arrowanimate 1s 400ms linear alternate infinite forwards;
