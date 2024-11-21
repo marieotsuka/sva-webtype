@@ -201,12 +201,15 @@ p + pre {
   padding: var(--pad);
   position: relative;
   color: var(--color-base);
-
+  background: var(--color-bg);
   h1, h2, h3, h4, p, em,{
     text-transform: none;
     color: var(--color-base);
     text-indent: 0;
     margin: 0;
+    font-family: Times New Roman, serif;
+    line-height: 1.2;
+    margin-bottom: 1em;
   }
 
   #demo {

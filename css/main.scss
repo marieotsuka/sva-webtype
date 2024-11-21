@@ -163,6 +163,7 @@ input[type="checkbox"]::before {
   position: relative;
   top: 3px;
   border: 2px solid var(--color-base);
+  cursor: pointer;
 }
 input[type="checkbox"]:focus{
 	outline: 0;

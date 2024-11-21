@@ -190,12 +190,16 @@ p + pre {
   padding: var(--pad);
   position: relative;
   color: var(--color-base);
+  background: var(--color-bg);
 }
 .diagram h1, .diagram h2, .diagram h3, .diagram h4, .diagram p, .diagram em {
   text-transform: none;
   color: var(--color-base);
   text-indent: 0;
   margin: 0;
+  font-family: Times New Roman, serif;
+  line-height: 1.2;
+  margin-bottom: 1em;
 }
 .diagram #demo {
   font-weight: bold;
@@ -546,6 +550,7 @@ input[type=checkbox]::before {
   position: relative;
   top: 3px;
   border: 2px solid var(--color-base);
+  cursor: pointer;
 }
 
 input[type=checkbox]:focus {
