@@ -21,6 +21,10 @@
   a:hover{
     color: var(--color-link);
   }
+
+  input[type="checkbox"]{
+    --color-base: var(--color-bg);
+  }
 }
 
 table{
@@ -426,6 +430,4 @@ p + pre {
   --toggle: 0;
 }
 
-input[type="checkbox"]{
-  --color-base: var(--color-bg);
-}
+

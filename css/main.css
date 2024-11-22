@@ -20,6 +20,9 @@
 .layout-slides a:hover {
   color: var(--color-link);
 }
+.layout-slides input[type=checkbox] {
+  --color-base: var(--color-bg);
+}
 
 table {
   text-align: left;
@@ -404,10 +407,6 @@ p + pre {
 
 [data-feature="0"] {
   --toggle: 0;
-}
-
-input[type=checkbox] {
-  --color-base: var(--color-bg);
 }
 
 * {

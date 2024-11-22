@@ -1,4 +1,4 @@
-/*@font-face{
+@font-face{
 	font-family: 'Occupant Oldstyle';
 	src: url('fonts/OccupantOldstyle-Regular-Trial.woff2') format('woff2');
 	font-weight: 400;
@@ -9,7 +9,7 @@
 	font-style: italic;
 	font-weight: 400;
 }
-*/
+
 /*@font-face{
 	font-family: 'Occupant Oldstyle VF';
 	src: url('fonts/OccupantOldstyle-VF-Roman-Trial.woff2') format('woff2-variations');
@@ -27,7 +27,10 @@
 	margin: 0;
 }
 body{
+	font-family: "Occupant Oldstyle";
+	line-height: 1.5;
 	/* this is the outermost element on your page*/
+	padding: 5em;
 }
 
 h1{
@@ -36,6 +39,8 @@ h1{
 
 p{
 	/* paragraphs */	
+	max-width: 30em;
+	margin-bottom: 1em;
 }
 
 a{
