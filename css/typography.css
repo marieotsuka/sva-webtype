@@ -187,23 +187,3 @@ figcaption{
 	fill: var(--pos)
 }
 
-
-@font-face{
-	font-family: 'Quiosco Grades VF';
-	src: url(../assets/fonts/QuioscoRomanVF.woff2) format('woff2-variations');
-}
-
-@font-face{
-	font-family: 'Allium';
-	src: url(../assets/fonts/Allium-Medium.woff2) format('woff2');
-}
-
-.quiosco td:nth-child(4){
-	font-size: 2rem;
-	font-family: 'Quiosco Grades VF';
-}
-
-.allium td:nth-child(3){
-	font-size: 2rem;
-	font-family: 'Allium';
-}

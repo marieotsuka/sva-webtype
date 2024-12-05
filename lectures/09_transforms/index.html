@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Transforms and Animations</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../css/main.css">
+	<link rel="icon"type="image/svg"href="../../assets/favicon.svg">
+	<script src="../slides.js"></script>
+	<style>
+		.diagram{
+			background: none;
+			border: none;
+			flex: 1;
+		}
+		.square{
+			position: absolute;
+			color: var(--color-tertiary);
+		}
+	</style>
+</head>
+<body class="layout-slides">
+	<main>
+		<section class="slide divider">
+			<div class="text">
+				<h1>CSS Transforms</h1>
+				<h2>Playing with shapes</h2>
+			</div>
+			<footer class="grid">
+				<div class="runner-1">SVA Section 3 24/FA DSD-3662-A</div>
+				<div class="runner-2">Web Type Specimens</div>
+			</footer>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>CSS Transforms</h2>
+				<p>
+					CSS transform allows you to change the shape and position of HTML elements without disrupting the normal flow. For 2D transforms, the x-value is declared first, then the y-value.
+				</p>
+				<p>
+					The general syntax is as follows: <code>transform: transform-type(units);</code> Note: regardless of the what kind of transform you apply, we use the same <code>transform</code> property. The part after the colon specifies the different <code>transform types</code> in the declaration. The transform property has the following parameters.
+				</p>
+			</div>
+		</section>
+
+
+		<section class="slide">
+			<div class="text">
+				<h3>Transform Origin</h3>
+				<p>
+					<code>transform-origin</code> specifies the origin point of the transformation performed. This can be specified in multiple forms, including keywords, <code>%</code> values, and <code>px</code>. It is at the center of the element by default.
+				</p>
+			</div>
+			<div class="text">
+				<h4>CSS</h4>
+						<pre class="language-css"><code>
+.example {
+	transform: rotate(-10deg);
+	transform-origin: bottom left;
+}
+						</code></pre>
+			</div>
+			<figure>
+				<div class="diagram">
+					<div class="square marked-old">
+						a
+					</div>
+					<div class="square marked" style="transform: rotate(-10deg); transform-origin: bottom left;">
+						a
+					</div>
+				</div>
+			</figure>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h3>Rotate</h3>
+				<p>
+					<code>rotate()</code> Rotates the element clockwise or counter-clockwise(<code>-</code>). This must be specified in degrees (<code>deg</code>).
+				</p>
+			</div>
+			<div class="text">
+				<h4>CSS</h4>
+						<pre class="language-css"><code>
+.example {
+	transform: rotate(-10deg);
+}
+						</code></pre>
+			</div>
+			<figure>
+				<div class="diagram">
+					<div class="square marked-old">
+						a
+					</div>
+					<div class="square marked" style="transform: rotate(-10deg);">
+						a
+					</div>
+				</div>
+			</figure>
+		</section>	
+
+		<section class="slide">
+			<div class="text">
+				<h3>2D Translate</h3>
+				<p>
+					<code>translate()</code> moves an element sideways, up, or down. This can be specified in any length unit.
+				</p>
+			</div>
+			<div class="text">
+				<h4>CSS</h4>
+					<pre class="language-css"><code>
+.translate{
+	transform: translate(40px, 20px);
+}
+						</code></pre>
+			</div>
+			<figure>
+				<div class="diagram">
+					<div class="square marked-old">
+						a
+					</div>
+					<div class="square marked" style="transform: translate(40px, 20px);">
+						a
+					</div>
+				</div>
+			</figure>
+		</section>						
+
+		<section class="slide">
+			<div class="text">
+				<h3>Scale</h3>
+				<p>
+					<code>scale()</code> stretches an element horizontally and/or vertically. Scale values are declared unitless, as a ratio. The scaling applies to everything within the element. When specifying one value, it will scale it by that number proportionally. When specifying two (comma-separated) values, it will scale the element along the X and Y axis accordingly. 
+				</p>
+			</div>
+			<div class="text">
+				<h4>CSS</h4>
+					<pre class="language-css"><code>
+.scale-preserve-ratio {
+	transform: scale(.7);
+}
+
+.scale-xy {
+	transform: scale(.5, 1.5);
+}
+				</code></pre>
+			</div>
+			<figure>
+				<div class="diagram" style="height: 110px;">
+					<div class="square marked-old">
+						a
+					</div>
+					<div class="square marked" style="transform: scale(.7);">
+						a
+					</div>
+				</div>
+				<figcaption>proportional scale</figcaption>
+				<br>
+				<br>
+				<div class="diagram" style="height: 150px;">
+					<div class="square marked-old">
+						a
+					</div>
+					<div class="square marked" style="transform: scale(.5, 1.5);">
+						a
+					</div>
+				</div>
+				<figcaption>XY different scale</figcaption>
+			</figure>
+		</section>			
+
+		<section class="slide">
+			<div class="text">
+				<h3>Skew</h3>
+				<p>
+					<code>skew()</code> stretches an element horizontally and/or vertically. Skews are defined in degrees (<code>deg</code>). Contained elements, such as text, will also be skewed. Similar to <code>scale</code>, it can apply along X and/or Y axes.
+				</p>
+			</div>
+			<div class="text">
+				<h4>CSS</h4>
+				<pre class="language-css"><code>
+.skew {
+	transform: skew(10deg, 30deg);
+}				</code></pre>
+			</div>
+			<figure>
+					<div class="diagram">
+						<div class="square marked-old">
+							a
+						</div>
+						<div class="square marked" style="transform: skew(10deg,30deg);">
+							a
+						</div>
+					</div>
+				</figure>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h3>Combining transforms</h3>
+					<p>
+						Multiple transforms can be applied to the same element with a space in between. Note: you cannot declare multiple transforms with separate <code>transform</code> property rules; the latter will override the former. Transforms are applied in the order they are declared. <a href="https://learn.shayhowe.com/advanced-html-css/css-transforms/">More on transforms</a> including perspectival / 3D effects.
+					</p>
+				</div>
+				<div class="text">
+					<pre class="language-css"><code>
+.combined-example {
+	transform: scale(.3, 1.2) rotate(30deg)
+	skewY(-15deg) translate(50px, 20%);
+
+	// this won’t combine
+	// transform: scale(.3, 1.2);
+	// transform: rotate(30deg);
+}
+							</code></pre>
+				</div>
+				<figure>
+					<div class="diagram">
+						<div class="square marked-old">
+							a
+						</div>
+						<div class="square marked" style="transform: scale(.3, 1.2) rotate(30deg) skewY(-15deg) translate(50px, 20%);">
+							a
+						</div>
+					</div>
+				</figure>
+			</section>
+			<section class="slide">
+				<div class="text">
+					<h2>See also: filters & blend modes</h2>
+					<p>
+						While transforms are one way of modifying the shapes on the page, filters and blend-modes provide similar functions to layer effects. See more about <a href="https://css-tricks.com/almanac/properties/f/filter/" target="_blank">filters</a>, <a href="https://css-tricks.com/almanac/properties/b/background-blend-mode/" target="_blank">background blend modes</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode" target="_blank">mix blend modes</a>. Note: <code>background-blend-mode</code> is for a background image of an element, and <code>mix-blend-mode</code> is for an html element itself.
+					</p>
+				</div>
+				<div class="text">
+					<pre class="language-css"><code>
+.blend {
+	transform: translate(40px, 20px);
+	mix-blend-mode: multiply;
+}
+							</code></pre>
+				</div>
+				<figure>
+					<div class="diagram" style="height: 110px;">
+						<div class="square" style="background: var(--color-tertiary); color: white;">
+							a
+						</div>
+						<div class="square marked" style="transform: translate(40px, 20px); mix-blend-mode: multiply;">
+							a
+						</div>
+					</div>
+					<figcaption>A div with <code>translate</code> and <code>mix-blend-mode</code> applied</figcaption>
+				</figure>
+			</section>
+		</main>
+	</body>
+</html>

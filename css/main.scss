@@ -272,11 +272,15 @@ code, strong{
 
 
 main{
-	margin: var(--pad);
 	&.grid{
 		height: calc( 100vh -  2 * var(--pad));
+		position: absolute;
+		top: 0;
+		left: 0;
+		pointer-events: none;
 	}
 }
+
 
 .col::-webkit-scrollbar {
   display: none;
@@ -286,19 +290,24 @@ main{
 	overflow: scroll;
 	-ms-overflow-style: none;  /* IE and Edge */
 	scrollbar-width: none;  /* Firefox */
+	padding-top: 100vh;
 	section{
 		position: relative;
 		background: var(--color-bg);
+		padding: var(--pad);
 		padding-bottom: var(--pad-section);
+		pointer-events: auto;
 	}
-
 }
 nav{
-	position: sticky;
-	top: 0;
 	display: grid;
 	height: 100vh;
+	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(3, 1fr);
+	gap: var(--pad);
+	.box{
+		padding: var(--pad);
+	}
 }
 
 //default is 50 50
@@ -388,11 +397,43 @@ SECTIONS
   }
 }
 
+
+
+@media screen and (max-width: 1100px){
+	:root{
+		--base: 12px;
+	}
+}
+
+@media screen and (max-width: 800px){
+	:root{
+		--base: 12px;
+	}
+	.grid{
+		grid-template-columns: 1fr;
+	}
+	nav{
+		height: auto;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+	}
+	.col{
+		height: auto;
+		overflow: visible;
+		padding-top: 0;
+		&.box:first-child{
+			margin-top: 100vh;
+		}
+	}
+	section{
+		margin-top: var(--pad-section);
+	}
+}
+
+
 @media print {
   body{
     background: white;
     color: black;
   }
 }
-
-

@@ -82,7 +82,7 @@ table{
   h3, h4{
     margin-top: var(--pad);
   }
-  .text > h3:first-child{
+  .text > h3:first-child, .text > h4:first-child{
     margin-top: 0;
   }
 	p{
@@ -241,10 +241,11 @@ p + pre {
   font-style: italic;
 }
 
-.line {
+.line, .position-illo .square{
   background: var(--color-tertiary);
 }
-#block-element .line{
+
+#block-element .line, .position-illo .line{
   height: 1.5em;
   margin-bottom: 0.5em;
 }

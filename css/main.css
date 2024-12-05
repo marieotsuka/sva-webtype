@@ -77,7 +77,7 @@ table.dense {
 .slide h3, .slide h4 {
   margin-top: var(--pad);
 }
-.slide .text > h3:first-child {
+.slide .text > h3:first-child, .slide .text > h4:first-child {
   margin-top: 0;
 }
 .slide p {
@@ -228,11 +228,11 @@ p + pre {
   font-style: italic;
 }
 
-.line {
+.line, .position-illo .square {
   background: var(--color-tertiary);
 }
 
-#block-element .line {
+#block-element .line, .position-illo .line {
   height: 1.5em;
   margin-bottom: 0.5em;
 }
@@ -629,11 +629,12 @@ code, strong {
   gap: var(--pad);
 }
 
-main {
-  margin: var(--pad);
-}
 main.grid {
   height: calc(100vh - 2 * var(--pad));
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }
 
 .col::-webkit-scrollbar {
@@ -645,19 +646,25 @@ main.grid {
   overflow: scroll;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  padding-top: 100vh;
 }
 .col section {
   position: relative;
   background: var(--color-bg);
+  padding: var(--pad);
   padding-bottom: var(--pad-section);
+  pointer-events: auto;
 }
 
 nav {
-  position: sticky;
-  top: 0;
   display: grid;
   height: 100vh;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
+  gap: var(--pad);
+}
+nav .box {
+  padding: var(--pad);
 }
 
 .text-column {
@@ -732,6 +739,35 @@ SECTIONS
   opacity: 1;
 }
 
+@media screen and (max-width: 1100px) {
+  :root {
+    --base: 12px;
+  }
+}
+@media screen and (max-width: 800px) {
+  :root {
+    --base: 12px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  nav {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .col {
+    height: auto;
+    overflow: visible;
+    padding-top: 0;
+  }
+  .col.box:first-child {
+    margin-top: 100vh;
+  }
+  section {
+    margin-top: var(--pad-section);
+  }
+}
 @media print {
   body {
     background: white;
