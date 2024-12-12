@@ -30,7 +30,6 @@ main{
 }
 
 .inputarea{
-	height: 100px;
 	padding: var(--pad);
 }
 

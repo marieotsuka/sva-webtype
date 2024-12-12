@@ -121,8 +121,12 @@ table.dense {
 }
 .slide .source {
   font-size: var(--size-small);
-  padding-left: 1em;
+  margin-left: 1em;
   border: none;
+  padding: 5px;
+}
+.slide .source::after {
+  content: " →";
 }
 .slide footer {
   font-size: var(--size-small);

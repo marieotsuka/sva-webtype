@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Transitions and Animations</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../css/main.css">
+	<link rel="icon"type="image/svg"href="../../assets/favicon.svg">
+	<script src="../slides.js"></script>
+	<style>
+		.diagram{
+			background: none;
+			border: none;
+			flex: 1;
+		}
+		.square{
+			padding-top: 8px;
+			color: var(--color-tertiary);
+		}
+
+		.vf-animate{
+			line-height: 2;
+			padding-left: 20px;
+			font-size: 150px;
+		  animation: axis 6s linear alternate infinite;
+		}
+		@keyframes spin{
+			from{
+				transform: rotate(0deg);
+			}
+			to{
+				transform: rotate(45deg);
+			}
+		}
+		@keyframes axis{
+			0% {
+			  font-variation-settings: 'wght' 200, 'wdth' 150;
+			}
+			25% {
+			  font-variation-settings: 'wght' 900, 'wdth' 150;
+			}
+			50% {
+			  font-variation-settings: 'wght' 900, 'wdth' 50;
+			}
+			75% {
+			  font-variation-settings: 'wght' 200, 'wdth' 50;
+			}
+			100% {
+			  font-variation-settings: 'wght' 200, 'wdth' 150;
+			}
+		}
+				
+	</style>
+</head>
+<body class="layout-slides">
+	<main>
+		<section class="slide divider">
+			<div class="text">
+				<h1>CSS Transitions + Animations</h1>
+				<h2>Change & Motion</h2>
+			</div>
+			<footer class="grid">
+				<div class="runner-1">SVA Section 3 24/FA DSD-3662-A</div>
+				<div class="runner-2">Web Type Specimens</div>
+			</footer>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>CSS Transitions</h2>
+				<p>
+					Transitions allow (“animatable”) property changes in CSS values to occur smoothly over a specified duration. Transitions requires a trigger (such as <code>:hover</code>) to take effect. They are declared to the element targeted for the change. (Note: By specifying the transition on the element itself, you define the transition to occur in both directions, both on/off hover.)
+				</p>
+				<p>
+					The general syntax looks like <code>transition: background-color 1s ease-in 2s;</code> 
+					(This is theshorthand notation that combines the following properties. The first unit of time is always the duration; the second the delay.)
+				</p>
+			</div>
+			<div class="text">
+						<pre class="language-css"><code>
+.normal:hover{
+	transform: rotate(45deg);
+}
+.transition{
+	transition: transform 400ms ease-in-out;
+
+	//note that transition property is applied
+	//to the selector without the :hover
+}
+.transition:hover{
+	transform: rotate(45deg);
+}
+
+				</code></pre>
+			</div>
+			<figure>
+				<div class="diagram">
+					<div class="square marked hover">
+						a
+					</div>
+				</div>
+				<div class="diagram">
+					<div class="square marked hover trans">
+						a
+					</div>
+				</div>
+			</figure>
+		</section>		
+
+			<section class="slide">
+				<div class="text span3">
+					<h3>Transition Properties</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>property</th>
+								<th>description</th>
+								<th>example</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><code>transition-property</code></td>
+								<td>property being transitioned (or use <code>transition-property: all</code>) — see <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties" target="_blank">list of properties</a></td>
+								<td><code>transition-property: background-color</code></td>
+							</tr>
+							<tr>
+								<td><code>transition-duration</code></td>
+								<td>duration of effect, in seconds (s) or milliseconds (ms)</td>
+								<td><code>transition-duration: 1s;</code></td>
+							</tr>
+							<tr>
+								<td><code>transition-timing-function</code></td>
+								<td>transition style — see <a href="https://codepen.io/stephengreig/pen/bHzqm" target="_blank">common easing effects</a></td>
+								<td><code>transition-timing-function: ease-in; </code></td>
+							</tr>
+							<tr>
+								<td><code>transition-delay</code></td>
+								<td>delay until starting effect, in seconds (s) or milliseconds (ms)</td>
+								<td><code>transition-delay: 2s;</code></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section class="slide">
+				<div class="text">
+					<h2>CSS Animations</h2>
+					<p>
+						Using just CSS, you can create animation sequences for any element. Unlike CSS transitions, animations allow motion without triggers. Animations consist of two separate sets of CSS declarations:
+					</p>
+					<ol>
+						<li><code>@keyframes</code> specifies the state of the element at a certain time point (relative to defined timing of animation.) These can be declared with keywords <code>from</code> and <code>to</code> or <code>%</code> units of the animation duration.
+						</li>
+						<li><code>animation</code> properties apply the keyframe animation to one or many elements (depending on the CSS selector)</li>
+					</ol>
+				</div>
+			<div class="text">
+							<pre><code>
+@keyframes spin{
+	from{
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(45deg);
+	}
+}
+#animated-div{
+	animation: spin 1s linear infinite alternate;
+}						
+					</code>
+				</pre>
+			</div>
+			<figure>				
+				<div class="diagram">
+					<div class="square marked" style="animation: spin 1s linear infinite alternate">
+						a
+					</div>
+				</div>
+			</figure>
+			</section>
+
+
+
+		<section class="slide">
+			<div class="text span3">
+				<h3>Animation Properties</h3>
+				<table>
+					<thead>
+						<tr>
+							<th>property</th>
+							<th>description</th>
+							<th>example</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>animation-name</code></td>
+							<td>identifier given to animation in @keyframes declarations, any name without spaces</td>
+							<td><code>animation-name: changecolor;</code></td>
+						</tr>
+						<tr>
+							<td><code>animation-duration</code></td>
+							<td>duration of animation, which is broken up into the waypoints defined in keyframes, in seconds (s) or milliseconds (ms)</td>
+							<td><code>animation-duration: 10s;</code></td>
+						</tr>
+						<tr>
+							<td><code>animation-timing-function</code></td>
+							<td>animation style, same as transitions</td>
+							<td><code>animation-timing-function: linear; </code></td>
+						</tr>
+						<tr>
+							<td><code>animation-delay</code></td>
+							<td>delay until starting animation, in seconds (s) or milliseconds (ms)</td>
+							<td><code>animation-delay: 3s;</code></td>
+						</tr>
+						<tr>
+							<td><code>animation-iteration-count</code></td>
+							<td>number of times the animation runs, <code>infinite</code> or numbers</td>
+							<td><code>animation-iteration-count: infinite;</code></td>
+						</tr>
+						<tr>
+							<td><code>animation-direction</code></td>
+							<td>from what direction the animation begins, <code>normal</code>, <code>reverse</code>, <code>alternate</code>, <code>alternate-reverse</code></td>
+							<td><code>animation-direction: alternate;</code></td>
+						</tr>
+						<tr>
+							<td><code>animation-play-state</code></td>
+							<td>whether to play or pause, <code>running</code> (default), <code>paused</code></td>
+							<td><code>animation-play-state: running;</code></td>
+						</tr>
+						<tr>
+							<td><code>animation-fill-mode</code></td>
+							<td>whether to apply styles before and after the animation executes, <code>none</code> (default), <code>forwards</code>, <code>backwards</code>, <code>both</code></td>
+							<td><code>animation-fill-mode: none;</code></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h2>Animations and Transforms</h2>
+				<p>
+					Transitions and animations can be applied to any <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties" target="_blank">“animatable”</a> CSS property, but we should be careful as some properties may eat up some of your website performance (and your animation may appear choppy.) Not all properties are “animatable.” Transform properties lend well to transitions and animations. Variable font properties can also be animated.
+				</p>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div class="text">
+				<h3>Variable Font Animation Demo</h3>
+				<p>
+					Variable fonts can also be animated in the same way, using CSS transitions and keyframe animations.
+				</p>
+			</div>
+			<div class="text">
+<pre><code>.vf-animate{
+  animation: vfaxes 6s linear alternate infinite;
+}
+@keyframes vfaxes{
+	0% {
+	  font-variation-settings: 'wght' 200, 'wdth' 200;
+	}
+	25% {
+	  font-variation-settings: 'wght' 900, 'wdth' 200;
+	}
+	50% {
+	  font-variation-settings: 'wght' 900, 'wdth' 50;
+	}
+	75% {
+	  font-variation-settings: 'wght' 200, 'wdth' 50;
+	}
+	100% {
+	  font-variation-settings: 'wght' 200, 'wdth' 200;
+	}
+}
+					</code>
+				</pre>
+		</div>
+		<figure>
+			<div class="vf-animate animate">
+						  Abc
+			</div>
+		</figure>
+		</section>
+		</main>
+	</body>
+</html>
