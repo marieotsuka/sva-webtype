@@ -13,22 +13,42 @@ body{
 }
 
 
-#yellowsq, #bluesq{
+
+.yellowsq, .bluesq{
 	background: #3694c5;
 	overflow: auto;
 }
 
-#bluesq .square{
+.bluesq .square{
 	background: blue;
 	width: 300px;
 	height: 300px;
+/*	transition: background 1s linear;*/
 }
 
-#bluesq{
+.animated .square{
+	animation: colorchange 1s infinite alternate;
+}
+
+.bluesq{
 	margin-top: -100px;
 	margin-left: 300px;
 }
 
+.bluesq .square:hover{
+	background: #ff0061;
+}
+
+@keyframes colorchange{
+	0%{
+		background: blue;
+		border-radius: 0;
+	}
+	100%{
+		background: #ff0061;
+		border-radius: 50%;
+	}
+}
 
 #text{
 	display: flex;

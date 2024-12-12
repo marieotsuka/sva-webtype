@@ -1,8 +1,8 @@
 
-console.log('Hi');
+console.log('Hello');
 
 //set up the element that triggers my function
-let trigger = document.getElementById('darkmodeTrigger');
+let trigger = document.getElementById('button');
 
 //set up the event listener for clicking on the trigger
 trigger.addEventListener('click', function(){

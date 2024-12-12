@@ -40,7 +40,7 @@ body{
 }
 
 .darkmode{
-    background: black;
+    background: darkblue;
     color: white;
     --grad: -100;
 }
@@ -49,7 +49,7 @@ body{
     color: yellow;
 }
 
-#darkmodeTrigger{
+#button{
     margin-top: 1em;
     border: 1px solid;
     padding: 10px;
@@ -58,7 +58,7 @@ body{
     letter-spacing: 0.1em;
 }
 
-#darkmodeTrigger:hover{
+#button:hover{
     background: grey;
     cursor: pointer;
 }
